@@ -204,10 +204,10 @@ const heatmapSeries2021 = computed(() => {
 })
 
 const filteredHeatmapSeries2021 = computed(() => {
-  if (selectedTools.value.length === 0) return heatmapSeries2021.value
-  
-  return heatmapSeries2021.value.filter(series => 
-    selectedTools.value.includes(series.name)
+  if (selectedChartTools.value.length === 0) return heatmapSeries2021.value
+
+  return heatmapSeries2021.value.filter(series =>
+    selectedChartTools.value.includes(series.name)
   )
 })
 
