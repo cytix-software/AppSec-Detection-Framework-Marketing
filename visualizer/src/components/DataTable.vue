@@ -60,8 +60,7 @@
 <script setup lang="tsx">
 import { NDataTable, NButton, NInput, NSelect, NPopover } from 'naive-ui'
 import { filter as lodashFilter, includes, every, toLower } from 'lodash-es'
-import { reactive, computed } from 'vue'
-import { h } from 'vue'
+import { reactive, computed, h } from 'vue'
 import type { HydratedTest } from './types'
 
 //
