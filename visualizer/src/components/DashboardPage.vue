@@ -997,6 +997,22 @@ const radarOptions = computed(() => ({
   letter-spacing: 0.3px;
 }
 
+/* Force text color on heatmap data labels */
+.apexcharts-text {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.apexcharts-datalabel text {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+.apexcharts-datalabel tspan {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
 .apexcharts-tooltip {
   background: #ffffff !important;
   border: 2px solid #FF822E !important;
