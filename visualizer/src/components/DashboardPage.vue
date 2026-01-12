@@ -15,7 +15,7 @@
     <div class="main-content">
       <!-- Coverage Gap Analysis -->
       <n-card class="coverage-gap-wrapper">
-        <ToolCoverageGap @tools-selected="handleToolsSelected" />
+        <ToolCoverageGap />
       </n-card>
       
       <!-- Charts Section -->
