@@ -498,7 +498,7 @@ const radarOptions = computed(() => ({
     }
   },
   xaxis: {
-    categories: vulnerabilities.map(v => v.OWASP)
+    categories: vulnerabilities.map(v => `${v.OWASP} ${v.group}`)
   },
   yaxis: {
     show: false,
