@@ -577,7 +577,7 @@ const radarOptions = computed(() => ({
 
 /* Tab styling */
 :deep(.n-tabs-nav) {
-  border-bottom: 2px solid #FF822E;
+  border-bottom: 2px solid #E5E5E5;
 }
 
 :deep(.n-tab-pane) {
@@ -592,8 +592,14 @@ const radarOptions = computed(() => ({
   color: #020E1E;
 }
 
-:deep(.n-tabs--line.n-tabs--top .n-tab__content.n-tab-pane__nav-wrapper--active) {
+:deep(.n-tabs--line .n-tabs-tab) {
+  color: #020E1E;
+  font-weight: 500;
+}
+
+:deep(.n-tabs--line .n-tabs-tab--active) {
   color: #FF822E;
+  font-weight: 700;
 }
 
 :deep(.n-tabs--line .n-tabs-tab--active .n-tab__content) {
@@ -602,8 +608,8 @@ const radarOptions = computed(() => ({
 }
 
 :deep(.n-tabs--line .n-tabs-tab--active::after) {
-  background: linear-gradient(90deg, #FF822E 0%, #89F336 100%);
-  height: 3px;
+  background: #FF822E;
+  height: 4px;
 }
 
 /* Button styling */
