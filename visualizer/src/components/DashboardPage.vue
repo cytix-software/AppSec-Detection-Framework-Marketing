@@ -835,6 +835,12 @@ const radarOptions = computed(() => ({
 
 :deep(.n-card__content) {
   padding: 1.5rem;
+  overflow-x: auto;
+}
+
+:deep(.n-card__content svg) {
+  min-width: 100%;
+  height: auto;
 }
 
 :deep(.n-card__title) {
