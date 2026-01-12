@@ -311,6 +311,22 @@ const heatmapOptions = computed(() => ({
     },
   },
 
+  xaxis: {
+    labels: {
+      show: true,
+      style: {
+        fontSize: '11px',
+        fontWeight: 600,
+        colors: '#020E1E',
+      },
+      rotate: -45,
+      rotateAlways: true,
+      hideOverlappingLabels: false,
+      maxHeight: 120,
+      trim: true,
+    },
+  },
+
   // 1) Data labels in each cell
   dataLabels: {
     enabled: true,
