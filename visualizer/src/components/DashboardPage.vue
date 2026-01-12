@@ -48,9 +48,11 @@
       </div>
 
       <!-- Dataset Table -->
-      <n-card title="Dataset" class="data-table-wrapper">
-        <DataTable :data="filteredHydratedTests" />
-      </n-card>
+      <n-collapse class="data-table-wrapper">
+        <n-collapse-item title="Dataset" name="dataset">
+          <DataTable :data="filteredHydratedTests" />
+        </n-collapse-item>
+      </n-collapse>
     </div>
   </div>
 </template>
