@@ -61,7 +61,6 @@
             </n-tab-pane>
             <n-tab-pane name="radar" tab="Tool Performance (Radar)">
               <div class="tab-content">
-                <p class="tab-description">Tool Comparison - Radar chart showing relative detection coverage for each security tool across all OWASP categories</p>
                 <RadarChart :options="radarOptions" :series="filteredRadarSeries" />
               </div>
             </n-tab-pane>
