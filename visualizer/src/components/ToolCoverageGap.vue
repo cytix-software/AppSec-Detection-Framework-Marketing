@@ -46,6 +46,9 @@
                 :from="0"
                 :to="coverageGaps.length"
               />
+              <template #suffix>
+                <span class="gap-suffix">/ 154</span>
+              </template>
             </n-statistic>
           </n-gi>
           <n-gi>
