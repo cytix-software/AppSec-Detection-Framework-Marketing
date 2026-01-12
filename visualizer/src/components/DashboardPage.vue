@@ -108,13 +108,17 @@ const vulnerabilities2025 = computed(() =>
 // Technologies used for bar chart calculations
 const technologies = ['php', 'nodejs']
 
-// Selected tools state
-const selectedTools = ref<string[]>([])
+// Selected tools state for charts (independent from Coverage Gap Analysis)
+const selectedChartTools = ref<string[]>([])
 
-// Handle tools selected from ToolCoverageGap
-function handleToolsSelected(tools: string[]) {
-  selectedTools.value = tools
-}
+// Tool options for the chart filter
+const toolOptions = computed(() => {
+  const scanners = [...new Set(hydratedHeatmapTests.map((t) => t.scanner))]
+  return scanners.map((scanner) => ({
+    label: scanner,
+    value: scanner
+  }))
+})
 
 // Filter hydrated tests based on selected tools
 const filteredHydratedTests = computed(() => {
