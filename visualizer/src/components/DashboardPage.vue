@@ -343,18 +343,6 @@ const heatmapOptions = computed(() => ({
       const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
       return point.isNoData ? 'No Data' : `${val}%`
     },
-    style: {
-      fontSize: '13px',
-      fontWeight: 600,
-      colors: undefined, // Will be overridden by individual point colors
-    },
-    dropShadow: {
-      enabled: true,
-      top: 1,
-      left: 1,
-      blur: 1,
-      opacity: 0.45,
-    },
   },
 
   // 2) Tooltip
