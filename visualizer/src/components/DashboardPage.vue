@@ -559,6 +559,9 @@ const radarOptions = computed(() => ({
 @media (min-width: 1024px) {
   .page-title {
     font-size: 4.5rem;
+  }
+
+  .page-header {
     margin-bottom: 3.5rem;
   }
 }
@@ -567,6 +570,23 @@ const radarOptions = computed(() => ({
 @media (min-width: 1280px) {
   .page-title {
     font-size: 6rem;
+  }
+}
+
+/* Mobile: adjust header layout for smaller screens */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .page-title {
+    text-align: center;
+  }
+
+  .cytix-logo {
+    height: 60px;
   }
 }
 
