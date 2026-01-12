@@ -557,6 +557,26 @@ function renderOptionLabel(option: any) {
   width: 100%;
 }
 
+.tool-selection-section {
+  width: 100%;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.helper-text {
+  font-size: 0.875rem;
+  color: #666666;
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
 .results-section {
   margin-top: 1rem;
   border-radius: 12px;
