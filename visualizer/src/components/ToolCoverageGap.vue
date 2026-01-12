@@ -63,7 +63,9 @@
             <p class="summary-stat-value">{{ affectedOwaspCategories }} out of 10</p>
             <ul class="summary-stat-details">
               <li>{{ affectedOwaspCategories }} of 10 OWASP 2025 categories have detection gaps</li>
-              <li>{{ affectedOwaspCategories === 10 ? 'No category has complete coverage' : affectedOwaspCategories + ' categories affected' }}</li>
+              <li v-if="affectedOwaspCategoriesList.length > 0">
+                <strong>Affected categories:</strong> {{ affectedOwaspCategoriesList.join(', ') }}
+              </li>
             </ul>
           </div>
 
