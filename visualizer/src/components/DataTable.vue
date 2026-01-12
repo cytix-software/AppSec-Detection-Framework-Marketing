@@ -309,23 +309,28 @@ const filteredData = computed(() => {
 .results-table {
   width: 100%;
   overflow-x: auto;
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
 }
 
 .results-table :deep(.n-data-table-th) {
-  background: #020E1E !important;
+  background: linear-gradient(135deg, #020E1E 0%, #1a1a2e 100%) !important;
   color: #ffffff !important;
-  font-size: 11px !important;
+  font-size: 0.8125rem !important;
   font-weight: 700 !important;
   white-space: nowrap;
-  padding: 6px 8px !important;
+  padding: 12px 10px !important;
   border-bottom: 2px solid #FF822E !important;
+  letter-spacing: 0.3px;
 }
 
 .results-table :deep(.n-data-table-td) {
   white-space: nowrap;
-  padding: 6px 8px !important;
-  border-bottom: 1px solid #F0F0F0 !important;
+  padding: 10px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.results-table :deep(.n-data-table-tr:hover) {
+  background: rgba(255, 130, 46, 0.02) !important;
 }
 
 :deep(.n-button--info) {
