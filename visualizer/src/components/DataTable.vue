@@ -201,7 +201,29 @@ const owaspOptions = computed(() => {
 })
 
 //
-// 6. Build the profileOptions for the multi-select
+// 6. Build the cweOptions for the dropdown
+//
+const cweOptions = computed(() => {
+  const uniqueCwes = Array.from(new Set(processedData.value.map((row) => row.cwe)))
+  return uniqueCwes.sort((a, b) => a - b).map((cwe) => ({
+    label: `CWE-${cwe}`,
+    value: String(cwe),
+  }))
+})
+
+//
+// 7. Build the testOptions for the dropdown
+//
+const testOptions = computed(() => {
+  const uniqueTests = Array.from(new Set(processedData.value.map((row) => row.test)))
+  return uniqueTests.sort().map((test) => ({
+    label: test,
+    value: test,
+  }))
+})
+
+//
+// 8. Build the profileOptions for the multi-select
 //
 const profileOptions = computed(() => {
   const allProfiles = processedData.value.flatMap((row) => row._profiles)
