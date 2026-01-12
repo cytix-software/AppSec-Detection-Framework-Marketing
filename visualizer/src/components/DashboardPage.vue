@@ -588,8 +588,18 @@ const radarOptions = computed(() => ({
     gap: 1rem;
   }
 
+  .header-content {
+    text-align: center;
+    width: 100%;
+  }
+
   .page-title {
     text-align: center;
+  }
+
+  .page-subheading {
+    max-width: 100%;
+    margin: 1rem auto 0;
   }
 
   .cytix-logo {
