@@ -1022,13 +1022,13 @@ const radarOptions = computed(() => ({
   color: #ffffff !important;
 }
 
-/* Target heatmap cells with colored backgrounds - black text */
+/* Target heatmap cells with colored backgrounds - navy text */
 .apexcharts-heatmap-rect[fill="#D3D3D3"] + text,
 .apexcharts-heatmap-rect[fill="#FFCCB3"] + text,
 .apexcharts-heatmap-rect[fill="#FFA366"] + text,
 .apexcharts-heatmap-rect[fill="#FF6B2E"] + text {
-  fill: #000000 !important;
-  color: #000000 !important;
+  fill: #1a1a2e !important;
+  color: #1a1a2e !important;
 }
 
 .apexcharts-tooltip {
