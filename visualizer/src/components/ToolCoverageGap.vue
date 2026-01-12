@@ -553,6 +553,50 @@ const totalCwesWithTests = computed(() => {
   return cwesWithTests.size
 })
 
+// Calculate summary statistics for all tests (default page load view)
+const allTestsSummary = computed(() => {
+  // Get all unique CWEs across all vulnerabilities
+  const allCwes = new Set<number>()
+  const allOwaspCategories = new Set<string>()
+  let totalDetected = 0
+  let totalTests = 0
+
+  // Process all tests from all tools
+  hydratedHeatmapTests.forEach(test => {
+    // Count detected CWEs
+    test.detectedCWEs.forEach(cwe => {
+      allCwes.add(cwe)
+      totalDetected++
+      totalTests++
+    })
+
+    // Count undetected CWEs
+    if (test.undetectedCWEs) {
+      test.undetectedCWEs.forEach(cwe => {
+        allCwes.add(cwe)
+        totalTests++
+      })
+    }
+  })
+
+  // Count affected OWASP categories
+  vulnerabilities.forEach(vuln => {
+    if (vuln.CWEDetails.some(detail => allCwes.has(detail.id))) {
+      allOwaspCategories.add(vuln.OWASP)
+    }
+  })
+
+  const avgDetectionRate = totalTests > 0 ? Math.round((totalDetected / totalTests) * 100) : 0
+
+  return {
+    totalCwes: allCwes.size,
+    owaspCategories: allOwaspCategories.size,
+    avgDetectionRate,
+    totalDetected,
+    totalTests
+  }
+})
+
 // Calculate CWEs with perfect detection (100% detection across all selected tools)
 const cwesWithPerfectDetection = computed(() => {
   if (totalCwesWithTests.value === 0 || coverageGaps.value.length === 0) return 0
