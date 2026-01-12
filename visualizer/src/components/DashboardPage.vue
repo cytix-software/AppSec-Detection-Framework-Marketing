@@ -553,6 +553,7 @@ const radarOptions = computed(() => ({
 
 .title-part-1 {
   color: #1f2937;
+  font-weight: 900;
   display: block;
   width: 100%;
 }
@@ -562,6 +563,7 @@ const radarOptions = computed(() => ({
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 900;
   display: block;
   width: 100%;
 }
