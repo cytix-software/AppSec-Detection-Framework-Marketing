@@ -700,20 +700,34 @@ const radarOptions = computed(() => ({
 
 .chart-tools-filter {
   display: flex;
-  align-items: flex-end;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .chart-tools-filter .filter-label {
-  font-weight: 600;
+  font-weight: 700;
   color: #020E1E;
   text-transform: uppercase;
   font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.filter-hint {
+  font-size: 0.8125rem;
+  color: #999999;
+  font-style: italic;
+  margin-top: -0.5rem;
+}
+
+@media (max-width: 768px) {
+  .chart-tools-filter {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .chart-subheading {
