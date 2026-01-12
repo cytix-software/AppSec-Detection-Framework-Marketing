@@ -825,13 +825,34 @@ const radarOptions = computed(() => ({
   grid-column: 1 / -1;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 1.5rem 2rem;
+  }
+
   .charts-section {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .radar-chart {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .main-content {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .charts-section {
+    gap: 1.5rem;
   }
 }
 </style>
