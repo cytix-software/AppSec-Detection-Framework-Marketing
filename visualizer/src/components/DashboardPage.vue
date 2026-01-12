@@ -797,6 +797,11 @@ const radarOptions = computed(() => ({
   color: white;
 }
 
+:deep(.n-card:focus-within) {
+  box-shadow: 0 4px 20px rgba(255, 130, 46, 0.2);
+  transition: box-shadow 0.2s ease;
+}
+
 /* Tab styling */
 :deep(.n-tabs-nav) {
   border-bottom: 2px solid #E5E5E5;
