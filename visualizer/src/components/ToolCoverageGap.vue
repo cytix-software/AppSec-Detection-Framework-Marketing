@@ -713,20 +713,52 @@ function renderOptionLabel(option: any) {
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
-.select-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+.select-header {
+  margin-bottom: 1.5rem;
 }
 
-.helper-text {
-  font-size: 0.875rem;
-  color: #666666;
+.select-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #020E1E;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+}
+
+.select-description {
+  font-size: 0.9375rem;
+  color: #4b5563;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.5;
-  max-width: 400px;
+  line-height: 1.6;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tool-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 130, 46, 0.05);
+}
+
+.resource-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .owasp-link {
