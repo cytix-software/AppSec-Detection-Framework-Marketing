@@ -676,8 +676,14 @@ const radarOptions = computed(() => ({
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    gap: 2rem;
+  }
 }
 
 .charts-section {
