@@ -483,7 +483,7 @@ const radarOptions = computed(() => ({
       }
     }
   },
-  colors: ['#FF822E', '#89F336'],
+  colors: ['#FF822E', '#89F336', '#DA4100', '#FFB366', '#020E1E', '#8B5CF6'],
   stroke: {
     width: 2
   },
@@ -492,8 +492,8 @@ const radarOptions = computed(() => ({
   },
   markers: {
     size: 4,
-    colors: ['#FF822E', '#89F336'],
-    strokeColors: ['#020E1E'],
+    colors: ['#FF822E', '#89F336', '#DA4100', '#FFB366', '#020E1E', '#8B5CF6'],
+    strokeColors: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
     strokeWidth: 2
   },
   tooltip: {
