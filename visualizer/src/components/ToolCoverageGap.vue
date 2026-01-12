@@ -213,7 +213,7 @@ const selectedTools = ref<string[]>([])
 const coverageGaps = ref<any[]>([])
 
 // Define emits
-const emit = defineEmits(['tools-selected', 'coverage-gaps-updated'])
+const emit = defineEmits(['tools-selected'])
 
 // CWE gaps
 const cweGaps = computed(() => {
