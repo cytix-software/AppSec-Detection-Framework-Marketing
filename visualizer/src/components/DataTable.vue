@@ -200,7 +200,7 @@ const profileOptions = computed(() => {
 })
 
 //
-// 6. Final filtered result
+// 7. Final filtered result
 //
 const filteredData = computed(() => {
   return lodashFilter(processedData.value, (row) => {
