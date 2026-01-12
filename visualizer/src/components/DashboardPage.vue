@@ -1007,6 +1007,18 @@ const radarOptions = computed(() => ({
   padding: 4px 8px !important;
 }
 
+/* Heatmap cell styling for better contrast */
+.apexcharts-heatmap-rect {
+  stroke: #f5f5f5 !important;
+  stroke-width: 0.5px !important;
+}
+
+.apexcharts-heatmap-text {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.3px;
+}
+
 .apexcharts-tooltip {
   background: #ffffff !important;
   border: 2px solid #FF822E !important;
