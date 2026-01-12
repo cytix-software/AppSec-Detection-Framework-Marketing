@@ -906,9 +906,5 @@ const radarOptions = computed(() => ({
     gap: 1.5rem;
     margin-top: 1.5rem;
   }
-
-  .charts-section {
-    gap: 1.5rem;
-  }
 }
 </style>
