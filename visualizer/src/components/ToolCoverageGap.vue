@@ -582,6 +582,27 @@ function renderOptionLabel(option: any) {
   max-width: 400px;
 }
 
+.owasp-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #FF822E;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.owasp-link:hover {
+  color: #DA4100;
+  opacity: 0.8;
+}
+
+.owasp-link:focus {
+  outline: 2px solid #FF822E;
+  outline-offset: 2px;
+}
+
 .results-section {
   margin-top: 2rem;
   border-radius: 12px;
