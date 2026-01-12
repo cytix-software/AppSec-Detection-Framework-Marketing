@@ -717,9 +717,14 @@ const radarOptions = computed(() => ({
 }
 
 .chart-wrapper {
-  overflow: hidden;
+  overflow: visible;
   border-radius: 12px;
   border: 2px solid #FF822E;
+}
+
+:deep(.n-card__content) {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .chart-description {
