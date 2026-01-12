@@ -276,7 +276,20 @@ const heatmapSeries2025 = computed(() => {
 
       const isNoData = !entry || entry.totalCount === 0
       const percentage = isNoData ? 0 : Math.round((entry.detectedCWEs / entry.totalCount) * 100)
-      const labelColor = isNoData || percentage <= 25 ? '#000' : '#fff'
+
+      // Improve contrast: black text on light backgrounds, white on dark
+      let labelColor = '#000000'
+      if (percentage >= 76) {
+        labelColor = '#ffffff'  // White text on dark navy (76-100%)
+      } else if (percentage >= 51) {
+        labelColor = '#ffffff'  // White text on darker orange (51-75%)
+      } else if (percentage >= 26) {
+        labelColor = '#000000'  // Black text on medium orange (26-50%)
+      } else if (percentage >= 1) {
+        labelColor = '#000000'  // Black text on light orange (1-25%)
+      } else {
+        labelColor = '#333333'  // Dark gray text on light gray (0%)
+      }
 
       return {
         x: `${OWASP} ${group}`,
@@ -288,6 +301,8 @@ const heatmapSeries2025 = computed(() => {
           enabled: true,
           style: {
             colors: [labelColor],
+            fontSize: '13px',
+            fontWeight: 600,
           },
         },
       }
