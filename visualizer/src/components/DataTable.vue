@@ -16,13 +16,24 @@
           filterable
         />
 
-        <!-- Other filters as text input -->
-        <n-input
-          v-else
+        <!-- CWE ID dropdown -->
+        <n-select
+          v-else-if="col.key === 'cwe'"
           v-model:value="filters[col.key]"
+          :options="cweOptions"
           :placeholder="`Filter ${col.title}`"
           clearable
-          class="w-full"
+          filterable
+        />
+
+        <!-- Test dropdown -->
+        <n-select
+          v-else-if="col.key === 'test'"
+          v-model:value="filters[col.key]"
+          :options="testOptions"
+          :placeholder="`Filter ${col.title}`"
+          clearable
+          filterable
         />
       </div>
 
