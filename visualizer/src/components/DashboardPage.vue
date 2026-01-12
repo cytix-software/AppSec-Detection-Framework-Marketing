@@ -394,7 +394,15 @@ const barOptions = computed(() => ({
     title: { text: 'Weighted Detection Score (%)' },
     max: 100,
   },
-  colors: ['#216FED'],
+  colors: ['#FF822E'],
+  plotOptions: {
+    bar: {
+      borderRadius: 8,
+      dataLabels: {
+        position: 'top'
+      }
+    }
+  }
 }))
 
 // Filtered bar options based on selected tools
