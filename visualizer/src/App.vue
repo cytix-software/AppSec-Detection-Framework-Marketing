@@ -25,7 +25,7 @@ import { NConfigProvider, NSpin } from 'naive-ui'
 /* Global styles that need to affect child components */
 .app-container {
   font-family:
-    'Inter',
+    'Plus Jakarta Sans',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
