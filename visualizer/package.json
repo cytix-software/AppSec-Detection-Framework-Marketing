@@ -4,8 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "predev": "bun run scripts/mergeResults.ts",
-    "prebuild": "bun run scripts/mergeResults.ts",
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
