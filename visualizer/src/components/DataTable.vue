@@ -178,7 +178,18 @@ const processedData = computed(() => {
 })
 
 //
-// 5. Build the profileOptions for the multi-select
+// 5. Build the owaspOptions for the dropdown
+//
+const owaspOptions = computed(() => {
+  const uniqueOwaspCodes = Array.from(new Set(processedData.value.map((row) => row.owasp)))
+  return uniqueOwaspCodes.sort().map((owasp) => ({
+    label: owasp,
+    value: owasp,
+  }))
+})
+
+//
+// 6. Build the profileOptions for the multi-select
 //
 const profileOptions = computed(() => {
   const allProfiles = processedData.value.flatMap((row) => row._profiles)
