@@ -629,7 +629,7 @@ function renderOptionLabel(option: any) {
 
 .owasp-link {
   display: block;
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
   font-size: 0.875rem;
   font-weight: 600;
   color: #FF822E;
