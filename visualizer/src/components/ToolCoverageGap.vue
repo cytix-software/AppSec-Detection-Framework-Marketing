@@ -945,4 +945,30 @@ function renderOptionLabel(option: any) {
   font-weight: 400;
   margin-left: 0.25rem;
 }
+
+@media (max-width: 640px) {
+  .select-header {
+    margin-bottom: 1rem;
+  }
+
+  .select-label {
+    font-size: 0.75rem;
+  }
+
+  .select-description {
+    font-size: 0.875rem;
+  }
+
+  .summary-stat-title {
+    font-size: 0.8125rem;
+  }
+
+  .summary-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .summary-stat-details {
+    font-size: 0.8125rem;
+  }
+}
 </style>
