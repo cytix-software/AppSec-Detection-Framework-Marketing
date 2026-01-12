@@ -70,7 +70,11 @@
             </n-statistic>
           </n-gi>
         </n-grid>
-        
+
+        <p v-if="coverageGaps.length > 0" class="critical-gaps-explainer">
+          <strong>Critical Gaps:</strong> None of the tests completed were found by tool
+        </p>
+
         <n-collapse v-if="coverageGaps.length > 0" class="results-section">
           <n-collapse-item title="Coverage Gaps" name="gaps">
             <n-tabs type="line" animated>
