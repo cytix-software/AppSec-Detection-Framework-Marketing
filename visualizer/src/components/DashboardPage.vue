@@ -866,8 +866,23 @@ const radarOptions = computed(() => ({
   border-radius: 8px;
 }
 
+:deep(.n-select .n-base-selection) {
+  min-height: 44px;
+  font-size: 0.9375rem;
+}
+
 :deep(.n-input__input) {
   border-radius: 8px;
+  min-height: 44px;
+  font-size: 0.9375rem;
+}
+
+:deep(.n-select:focus-within) {
+  border-color: #FF822E;
+}
+
+:deep(.n-select:focus-within .n-base-selection) {
+  border-color: #FF822E;
 }
 
 /* Apexcharts custom styling */
