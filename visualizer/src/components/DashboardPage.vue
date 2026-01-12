@@ -298,14 +298,14 @@ const heatmapOptions = computed(() => ({
   chart: { type: 'heatmap' },
   plotOptions: {
     heatmap: {
-      shadeIntensity: 0.5,
+      shadeIntensity: 0.7,
       colorScale: {
         ranges: [
-          { from: 0, to: 0, color: '#EBEBEB' },
-          { from: 1, to: 25, color: '#FFD9B8' },
-          { from: 26, to: 50, color: '#FFB366' },
-          { from: 51, to: 75, color: '#FF822E' },
-          { from: 76, to: 100, color: '#020E1E' },
+          { from: 0, to: 0, color: '#D3D3D3' },      // Light gray for 0% (No Data)
+          { from: 1, to: 25, color: '#FFCCB3' },     // Light orange for low detection
+          { from: 26, to: 50, color: '#FFA366' },    // Medium orange
+          { from: 51, to: 75, color: '#FF6B2E' },    // Darker orange
+          { from: 76, to: 100, color: '#1a1a2e' },   // Dark navy for high detection
         ],
       },
     },
