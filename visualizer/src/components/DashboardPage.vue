@@ -889,9 +889,6 @@ const radarOptions = computed(() => ({
   color: white;
 }
 
-.radar-chart {
-  grid-column: 1 / -1;
-}
 
 @media (max-width: 1024px) {
   .dashboard-container {
