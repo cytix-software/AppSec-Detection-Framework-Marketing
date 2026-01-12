@@ -554,10 +554,15 @@ function renderOptionLabel(option: any) {
 
 .results-section {
   margin-top: 1rem;
+  border-radius: 12px;
+  border: 2px solid #FF822E;
 }
 
 .cwe-details, .owasp-details {
   margin-top: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 130, 46, 0.02);
+  border-radius: 8px;
 }
 
 .detection-rate {
@@ -567,21 +572,37 @@ function renderOptionLabel(option: any) {
 .detection-rate strong {
   display: block;
   margin-bottom: 0.25rem;
+  color: #FF822E;
 }
 
 .no-results {
   margin-top: 1rem;
+  border-radius: 12px;
+  padding: 2rem;
+  background: rgba(255, 130, 46, 0.05);
 }
 
 .tool-detection-rates {
   margin-top: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 130, 46, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #FF822E;
+}
+
+.tool-detection-rates strong {
+  color: #020E1E;
+  font-weight: 700;
 }
 
 .tool-rate {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .tool-name {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #020E1E;
 }
 </style>
