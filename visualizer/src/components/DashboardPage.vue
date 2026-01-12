@@ -268,11 +268,11 @@ const heatmapOptions = computed(() => ({
       shadeIntensity: 0.5,
       colorScale: {
         ranges: [
-          { from: 0, to: 0, color: '#E5E7EB' },
-          { from: 1, to: 25, color: '#93C5FD' },
-          { from: 26, to: 50, color: '#216FED' },
-          { from: 51, to: 75, color: '#1A4D8F' },
-          { from: 76, to: 100, color: '#0E1E33' },
+          { from: 0, to: 0, color: '#EBEBEB' },
+          { from: 1, to: 25, color: '#FFD9B8' },
+          { from: 26, to: 50, color: '#FFB366' },
+          { from: 51, to: 75, color: '#FF822E' },
+          { from: 76, to: 100, color: '#020E1E' },
         ],
       },
     },
@@ -294,27 +294,27 @@ const heatmapOptions = computed(() => ({
       formatter(val: number, opts: any) {
         const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
         if (point.isNoData) return 'No Data'
-        
+
         // Find the entry in the correct heatmapData (try 2021 then 2025)
         const scannerName = opts.w.config.series[opts.seriesIndex].name
         const owaspCategory = point.x
-        
-        let entry = find(heatmapData2021.value, { 
-          scanner: scannerName, 
-          OWASP: owaspCategory 
+
+        let entry = find(heatmapData2021.value, {
+          scanner: scannerName,
+          OWASP: owaspCategory
         })
-        
+
         if (!entry) {
-          entry = find(heatmapData2025.value, { 
-            scanner: scannerName, 
-            OWASP: owaspCategory 
+          entry = find(heatmapData2025.value, {
+            scanner: scannerName,
+            OWASP: owaspCategory
           })
         }
-        
+
         if (entry) {
           return `${entry.detectedCWEs}/${entry.totalCount} (${val}%)`
         }
-        
+
         return `${val}%`
       },
     },
