@@ -30,7 +30,6 @@
           <n-tabs type="line" animated>
             <n-tab-pane name="heatmap-2021" tab="OWASP 2021 (Heatmap)">
               <div class="tab-content">
-                <p class="tab-description">OWASP Top 10 2021 - Shows detection coverage across the 2021 vulnerability classification</p>
                 <HeatmapChart
                   :options="heatmapOptions"
                   :series="filteredHeatmapSeries2021"
