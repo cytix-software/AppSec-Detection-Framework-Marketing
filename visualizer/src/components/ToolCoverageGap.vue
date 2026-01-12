@@ -614,55 +614,6 @@ function renderOptionLabel(option: any) {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.summary-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(255, 130, 46, 0.05) 0%, rgba(255, 130, 46, 0.02) 100%);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 130, 46, 0.1);
-}
-
-.summary-stat {
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  border-left: 4px solid #FF822E;
-}
-
-.summary-stat-title {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #FF822E;
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.summary-stat-value {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #020E1E;
-  margin: 0 0 1rem 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.summary-stat-details {
-  margin: 0;
-  padding-left: 1.25rem;
-  font-size: 0.8125rem;
-  color: #666666;
-  line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.summary-stat-details li {
-  margin-bottom: 0.5rem;
-}
-
 .owasp-link:hover {
   color: #DA4100;
   opacity: 0.8;
