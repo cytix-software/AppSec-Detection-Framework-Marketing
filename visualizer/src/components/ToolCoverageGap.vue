@@ -62,7 +62,6 @@
             <h3 class="summary-stat-title">OWASP Categories Affected</h3>
             <p class="summary-stat-value">{{ affectedOwaspCategories }} out of 10</p>
             <ul class="summary-stat-details">
-              <li>{{ affectedOwaspCategories }} of 10 OWASP 2025 categories have detection gaps</li>
               <li v-for="category in affectedOwaspCategoriesList" :key="category" class="category-item">
                 {{ category }}
               </li>
