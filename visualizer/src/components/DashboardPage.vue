@@ -529,12 +529,14 @@ const radarOptions = computed(() => ({
   gap: 0.5rem;
 }
 
+/* sm: text-6xl (3.75rem) */
 @media (min-width: 640px) {
   .page-title {
     font-size: 3.75rem;
   }
 }
 
+/* lg: text-7xl (4.5rem) + mb-14 (3.5rem) */
 @media (min-width: 1024px) {
   .page-title {
     font-size: 4.5rem;
@@ -542,6 +544,7 @@ const radarOptions = computed(() => ({
   }
 }
 
+/* xl: text-8xl (6rem) */
 @media (min-width: 1280px) {
   .page-title {
     font-size: 6rem;
