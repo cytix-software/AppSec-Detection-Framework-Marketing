@@ -476,22 +476,25 @@ const radarOptions = computed(() => ({
     radar: {
       size: 140,
       polygons: {
-        strokeColors: '#e9e9e9',
+        strokeColors: '#FF822E',
         fill: {
-          colors: ['#f8f8f8', '#fff']
+          colors: ['rgba(255, 130, 46, 0.05)', 'rgba(255, 130, 46, 0.1)']
         }
       }
     }
   },
-  colors: ['#216FED', '#93C5FD'],
+  colors: ['#FF822E', '#89F336'],
   stroke: {
     width: 2
   },
   fill: {
-    opacity: 0.1
+    opacity: 0.15
   },
   markers: {
-    size: 0
+    size: 4,
+    colors: ['#FF822E', '#89F336'],
+    strokeColors: ['#020E1E'],
+    strokeWidth: 2
   },
   tooltip: {
     y: {
