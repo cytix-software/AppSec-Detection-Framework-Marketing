@@ -815,9 +815,15 @@ function renderOptionLabel(option: any) {
   .tool-actions {
     flex-direction: column;
     gap: 1rem;
+    justify-content: flex-end;
   }
 
   .tool-actions :deep(.n-button) {
+    width: 100%;
+    order: -1;
+  }
+
+  .resource-links {
     width: 100%;
   }
 }
