@@ -6,7 +6,19 @@
         :key="col.key"
         class="filter-input"
       >
+        <!-- OWASP Code & Group dropdown -->
+        <n-select
+          v-if="col.key === 'owasp'"
+          v-model:value="filters[col.key]"
+          :options="owaspOptions"
+          :placeholder="`Filter ${col.title}`"
+          clearable
+          filterable
+        />
+
+        <!-- Other filters as text input -->
         <n-input
+          v-else
           v-model:value="filters[col.key]"
           :placeholder="`Filter ${col.title}`"
           clearable
