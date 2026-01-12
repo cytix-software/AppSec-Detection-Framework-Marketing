@@ -2,10 +2,13 @@
 <template>
   <div class="dashboard-container">
     <div class="page-header">
-      <h1 class="page-title">
-        <span class="title-part-1">AppSec Detection Framework</span>
-        <span class="title-part-2">Visualiser</span>
-      </h1>
+      <div class="header-content">
+        <h1 class="page-title">
+          <span class="title-part-1">AppSec Detection Framework</span>
+          <span class="title-part-2">Visualiser</span>
+        </h1>
+        <p class="page-subheading">Reducing vulnerability blindspots across SAST, DAST & AI Pentesting</p>
+      </div>
       <img src="https://cdn.builder.io/api/v1/image/assets%2F0ae2d7cfe4b54f369c000b904ffc735e%2Fa5aecfd598a046dc9db2297204b0fd74?format=webp&width=800" alt="Cytix Logo" class="cytix-logo" />
     </div>
 
