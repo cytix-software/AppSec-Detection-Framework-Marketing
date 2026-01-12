@@ -559,12 +559,14 @@ function renderOptionLabel(option: any) {
 
 .tool-selection-section {
   width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .select-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .helper-text {
@@ -578,9 +580,10 @@ function renderOptionLabel(option: any) {
 }
 
 .results-section {
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-radius: 12px;
   border: 2px solid #FF822E;
+  padding: 1.5rem;
 }
 
 .cwe-details, .owasp-details {
