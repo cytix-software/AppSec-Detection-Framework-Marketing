@@ -232,16 +232,33 @@ const filteredData = computed(() => {
 }
 
 .results-table :deep(.n-data-table-th) {
-  background: #0e1e33 !important;
+  background: #020E1E !important;
   color: #ffffff !important;
   font-size: 11px !important;
+  font-weight: 700 !important;
   white-space: nowrap;
   padding: 6px 8px !important;
+  border-bottom: 2px solid #FF822E !important;
 }
 
 .results-table :deep(.n-data-table-td) {
   white-space: nowrap;
   padding: 6px 8px !important;
+  border-bottom: 1px solid #F0F0F0 !important;
+}
+
+.results-table :deep(.n-button--info) {
+  background: #FF822E !important;
+  color: white !important;
+  border: none !important;
+}
+
+.results-table :deep(.n-button--info:hover) {
+  background: #DA4100 !important;
+}
+
+.results-table :deep(.n-button--info.n-button--round) {
+  border-radius: 20px !important;
 }
 
 @media (max-width: 768px) {
