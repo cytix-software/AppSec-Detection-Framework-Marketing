@@ -24,8 +24,7 @@
         <n-card title="Vulnerability Detection Coverage Analysis" class="chart-wrapper">
           <div class="chart-description">
             <p class="chart-subheading">
-              This visualization shows the detection coverage for OWASP Top 10 vulnerabilities across selected security tools.
-              Each cell represents the percentage of vulnerabilities in an OWASP category that were identified by each scanner.
+              Compare the detection coverage for OWASP Top 10 vulnerabilities against selected security tools.<br><br>The higher the percentage, the higher the detection capabilities.
             </p>
           </div>
           <n-tabs type="line" animated>
