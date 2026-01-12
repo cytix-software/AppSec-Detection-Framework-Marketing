@@ -853,15 +853,16 @@ function renderOptionLabel(option: any) {
 
 .summary-stat-details {
   margin: 0;
-  padding-left: 1.25rem;
-  font-size: 0.8125rem;
-  color: #666666;
-  line-height: 1.6;
+  padding-left: 1.5rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.7;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .summary-stat-details li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.625rem;
+  list-style-type: disc;
 }
 
 .results-section {
