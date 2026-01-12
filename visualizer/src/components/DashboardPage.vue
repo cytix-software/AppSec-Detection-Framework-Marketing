@@ -897,15 +897,6 @@ const radarOptions = computed(() => ({
   .dashboard-container {
     padding: 1.5rem 2rem;
   }
-
-  .charts-section {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .radar-chart {
-    grid-column: auto;
-  }
 }
 
 @media (max-width: 640px) {
