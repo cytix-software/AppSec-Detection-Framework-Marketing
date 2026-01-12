@@ -62,12 +62,12 @@
                 <RadarChart :options="radarOptions" :series="filteredRadarSeries" />
               </div>
             </n-tab-pane>
+            <n-tab-pane name="bar" tab="Tool Performance (Bar)">
+              <div class="tab-content">
+                <BarChart :options="filteredBarOptions" :series="filteredBarSeries" />
+              </div>
+            </n-tab-pane>
           </n-tabs>
-        </n-card>
-
-        <!-- Bar Chart -->
-        <n-card title="Tool Performance (Bar)" class="chart-wrapper">
-          <BarChart :options="filteredBarOptions" :series="filteredBarSeries" />
         </n-card>
       </div>
 
