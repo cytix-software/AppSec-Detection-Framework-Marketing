@@ -82,7 +82,7 @@
         </p>
 
         <n-collapse v-if="coverageGaps.length > 0" class="results-section">
-          <n-collapse-item title="Coverage Gaps" name="gaps">
+          <n-collapse-item title="Coverage Gaps Details" name="gaps">
             <n-tabs type="line" animated>
               <n-tab-pane name="cwe" tab="CWE Gaps">
                 <n-list>
