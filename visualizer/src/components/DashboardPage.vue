@@ -686,6 +686,38 @@ const radarOptions = computed(() => ({
   border: 2px solid #FF822E;
 }
 
+.chart-description {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 130, 46, 0.05);
+  border-left: 4px solid #FF822E;
+  border-radius: 4px;
+}
+
+.chart-subheading {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #4b5563;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.tab-content {
+  padding: 1.5rem 0;
+}
+
+.tab-description {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666666;
+  line-height: 1.5;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
 .coverage-gap-wrapper {
   width: 100%;
   border-radius: 12px;
