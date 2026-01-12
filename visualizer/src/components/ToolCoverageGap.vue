@@ -14,7 +14,7 @@
                 style="width: 300px"
                 :render-label="renderOptionLabel"
               />
-              <p class="helper-text">Select one or more security testing tools to analyze and compare their detection coverage gaps across OWASP categories and CWE IDs.</p>
+              <p class="helper-text">Get started by selecting one or more security testing tools to analyze and compare their detection coverage gaps across OWASP categories and CWE IDs.</p>
             </div>
             <n-button
               v-if="coverageGaps.length > 0"
