@@ -477,12 +477,12 @@ const radarData = computed(() => {
 
 const radarSeries = computed(() => radarData.value)
 
-// Filtered radar series based on selected tools
+// Filtered radar series based on selected chart tools
 const filteredRadarSeries = computed(() => {
-  if (selectedTools.value.length === 0) return radarSeries.value
-  
-  return radarSeries.value.filter(series => 
-    selectedTools.value.includes(series.name)
+  if (selectedChartTools.value.length === 0) return radarSeries.value
+
+  return radarSeries.value.filter(series =>
+    selectedChartTools.value.includes(series.name)
   )
 })
 
