@@ -28,15 +28,18 @@
             </p>
           </div>
           <div class="chart-tools-filter">
-            <label class="filter-label">Security Tools</label>
+            <label for="chart-tools-select" class="filter-label">Filter by Security Tools</label>
             <n-select
+              id="chart-tools-select"
               v-model:value="selectedChartTools"
               multiple
               filterable
-              placeholder="Select tools to display"
+              placeholder="Select tools to display charts (optional)"
               :options="toolOptions"
-              style="width: 100%; max-width: 400px"
+              style="width: 100%; max-width: 500px"
+              clearable
             />
+            <span v-if="selectedChartTools.length === 0" class="filter-hint">Leave empty to view all tools</span>
           </div>
           <n-tabs type="line" animated>
             <n-tab-pane name="heatmap-2021" tab="OWASP 2021 (Heatmap)">
