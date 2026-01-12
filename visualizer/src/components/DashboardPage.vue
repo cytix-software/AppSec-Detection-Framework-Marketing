@@ -846,10 +846,19 @@ const radarOptions = computed(() => ({
   background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
   border: none;
   font-weight: 600;
+  min-height: 44px;
+  font-size: 0.9375rem;
 }
 
 :deep(.n-button--primary:hover) {
   background: linear-gradient(90deg, #DA4100 0%, #FF822E 100%);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+:deep(.n-button--primary:focus) {
+  outline: 2px solid #FF822E;
+  outline-offset: 2px;
 }
 
 /* Select dropdown styling */
