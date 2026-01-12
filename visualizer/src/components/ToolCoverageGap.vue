@@ -762,24 +762,34 @@ function renderOptionLabel(option: any) {
 }
 
 .owasp-link {
-  display: block;
-  margin-top: 0.25rem;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
   font-size: 0.875rem;
   font-weight: 600;
   color: #FF822E;
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: all 0.2s ease;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  border-radius: 6px;
+  background: rgba(255, 130, 46, 0.05);
+  border: 1px solid transparent;
 }
 
 .owasp-link:hover {
   color: #DA4100;
-  opacity: 0.8;
+  background: rgba(255, 130, 46, 0.1);
+  border-color: #FF822E;
 }
 
 .owasp-link:focus {
   outline: 2px solid #FF822E;
   outline-offset: 2px;
+  background: rgba(255, 130, 46, 0.15);
+}
+
+.owasp-link:active {
+  transform: scale(0.98);
 }
 
 .summary-section {
