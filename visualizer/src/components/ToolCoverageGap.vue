@@ -24,6 +24,15 @@
               >
                 Explore the full OWASP 2025 categories →
               </a>
+              <a
+                v-if="selectedTools.length > 0"
+                href="https://owasp.org/Top10/2021/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="owasp-link"
+              >
+                Explore the full OWASP 2021 categories →
+              </a>
             </div>
             <n-button
               v-if="coverageGaps.length > 0"
