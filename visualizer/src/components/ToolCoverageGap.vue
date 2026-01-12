@@ -499,21 +499,18 @@ const criticalGapsCount = computed(() => {
   return coverageGaps.value.filter(gap => gap.detectionRate === 0).length
 })
 
-// Calculate total unique CWEs with tests in 2025 dataset
+// Calculate total unique CWEs with tests across both 2021 and 2025 datasets
 const totalCwesWithTests = computed(() => {
-  // Get all unique CWEs from 2025 vulnerabilities that have tests
+  // Get all unique CWEs from both 2021 and 2025 vulnerabilities that have tests
   const cwesWithTests = new Set<number>()
 
   vulnerabilities.forEach(vuln => {
-    // Only process 2025 vulnerabilities (OWASP code contains ":2025")
-    if (vuln.OWASP.includes(':2025')) {
-      vuln.CWEDetails.forEach(cweDetail => {
-        // Check if this CWE has tests defined
-        if (cweDetail.tests && cweDetail.tests.length > 0) {
-          cwesWithTests.add(cweDetail.id)
-        }
-      })
-    }
+    vuln.CWEDetails.forEach(cweDetail => {
+      // Check if this CWE has tests defined
+      if (cweDetail.tests && cweDetail.tests.length > 0) {
+        cwesWithTests.add(cweDetail.id)
+      }
+    })
   })
 
   return cwesWithTests.size
