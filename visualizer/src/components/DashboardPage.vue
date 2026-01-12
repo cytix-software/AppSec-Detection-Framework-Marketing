@@ -255,7 +255,7 @@ const heatmapSeries2025 = computed(() => {
 
   return scanners.map((scanner) => {
     // Use the 2025-specific list
-    const data = vulnerabilities2025.value.map(({ OWASP }) => {
+    const data = vulnerabilities2025.value.map(({ OWASP, group }) => {
       // Use the 2025-specific data
       const entry = find(heatmapData2025.value, { scanner, OWASP })
 
@@ -264,7 +264,8 @@ const heatmapSeries2025 = computed(() => {
       const labelColor = isNoData || percentage <= 25 ? '#000' : '#fff'
 
       return {
-        x: OWASP,
+        x: `${OWASP} ${group}`,
+        owasp: OWASP,
         y: percentage,
         isNoData,
         // Per data point override for text styling
