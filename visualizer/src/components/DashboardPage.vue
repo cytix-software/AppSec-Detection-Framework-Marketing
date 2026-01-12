@@ -116,6 +116,34 @@ const technologies = ['php', 'nodejs']
 // Selected tools state
 const selectedTools = ref<string[]>([])
 
+// Coverage gap statistics state
+const coverageGapStats = ref({
+  total: 0,
+  affectedCategories: 0,
+  critical: 0
+})
+
+// Calculate total unique CWEs with tests in 2025 dataset
+const totalCwesWithTests = computed(() => {
+  const cwesWithTests = new Set<number>()
+  vulnerabilities.forEach(vuln => {
+    if (vuln.OWASP.includes(':2025')) {
+      vuln.CWEDetails.forEach(cweDetail => {
+        if (cweDetail.tests && cweDetail.tests.length > 0) {
+          cwesWithTests.add(cweDetail.id)
+        }
+      })
+    }
+  })
+  return cwesWithTests.size
+})
+
+// Calculate CWEs with perfect detection (100% detection across all selected tools)
+const cwesWithPerfectDetection = computed(() => {
+  if (totalCwesWithTests.value === 0) return 0
+  return totalCwesWithTests.value - coverageGapStats.value.total
+})
+
 // Handle tools selected from ToolCoverageGap
 function handleToolsSelected(tools: string[]) {
   selectedTools.value = tools
