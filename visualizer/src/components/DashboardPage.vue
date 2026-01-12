@@ -27,6 +27,17 @@
               Compare the detection coverage for OWASP Top 10 vulnerabilities against selected security tools.<br><br>The higher the percentage, the higher the detection capabilities.
             </p>
           </div>
+          <div class="chart-tools-filter">
+            <label class="filter-label">Security Tools</label>
+            <n-select
+              v-model:value="selectedChartTools"
+              multiple
+              filterable
+              placeholder="Select tools to display"
+              :options="toolOptions"
+              style="width: 100%; max-width: 400px"
+            />
+          </div>
           <n-tabs type="line" animated>
             <n-tab-pane name="heatmap-2021" tab="OWASP 2021 (Heatmap)">
               <div class="tab-content">
