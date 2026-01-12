@@ -256,9 +256,14 @@ const owaspGaps = computed(() => {
     // Extract category ID (e.g., "A01:2021" -> "A01")
     const categoryId = owasp.split(':')[0]
     
+    // Find the group/title for this OWASP category
+    const vulnInCategory = vulnerabilities.find(v => v.OWASP === owasp)
+    const groupTitle = vulnInCategory?.group || ''
+
     return {
       code: owasp,
       name: owasp.split(' ')[1] || owasp, // Extract name part if available
+      groupTitle, // Add the group title (e.g., "Broken Access Control")
       categoryId, // Add category ID for sorting
       missingCwes: gaps.map(gap => gap.cwe),
       detectionRate: detectionStats.rate,
