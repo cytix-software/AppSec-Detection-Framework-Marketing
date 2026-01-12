@@ -617,6 +617,14 @@ const radarOptions = computed(() => ({
   height: 3px !important;
 }
 
+:deep(.n-tabs--line.n-tabs--top .n-tabs-tab--active::after) {
+  background: #FF822E !important;
+}
+
+:deep(.n-tabs--line.n-tabs--bottom .n-tabs-tab--active::after) {
+  background: #FF822E !important;
+}
+
 /* Button styling */
 :deep(.n-button--primary) {
   background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
