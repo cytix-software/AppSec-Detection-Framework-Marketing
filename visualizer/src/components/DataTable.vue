@@ -274,29 +274,30 @@ const filteredData = computed(() => {
 
 .column-filters {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
   width: 100%;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
+  padding: 1.5rem 0;
+  border-bottom: 2px solid rgba(255, 130, 46, 0.1);
 }
 
 .filter-input-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  min-width: 150px;
+  min-width: 160px;
   width: 100%;
 }
 
 .filter-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: #020E1E;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
 }
 
 .filter-input {
