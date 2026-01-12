@@ -518,12 +518,6 @@ const criticalGapsCount = computed(() => {
   return coverageGaps.value.filter(gap => gap.detectionRate === 0).length
 })
 
-// Calculate CWEs with perfect detection (100% detection across all selected tools)
-const cwesWithPerfectDetection = computed(() => {
-  if (totalCwesWithTests.value === 0 || coverageGaps.value.length === 0) return 0
-  return totalCwesWithTests.value - coverageGaps.value.length
-})
-
 // Calculate total unique CWEs with tests in 2025 dataset
 const totalCwesWithTests = computed(() => {
   // Get all unique CWEs from 2025 vulnerabilities that have tests
@@ -542,6 +536,12 @@ const totalCwesWithTests = computed(() => {
   })
 
   return cwesWithTests.size
+})
+
+// Calculate CWEs with perfect detection (100% detection across all selected tools)
+const cwesWithPerfectDetection = computed(() => {
+  if (totalCwesWithTests.value === 0 || coverageGaps.value.length === 0) return 0
+  return totalCwesWithTests.value - coverageGaps.value.length
 })
 
 // Watch for changes to selectedTools and automatically analyze
