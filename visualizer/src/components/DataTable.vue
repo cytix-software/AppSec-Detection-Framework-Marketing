@@ -206,7 +206,7 @@ const filteredData = computed(() => {
 .data-table-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   overflow-x: auto;
 }
@@ -214,9 +214,11 @@ const filteredData = computed(() => {
 .column-filters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
   width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .filter-input {
