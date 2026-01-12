@@ -319,6 +319,19 @@ const heatmapOptions = computed(() => ({
     },
   },
 
+  states: {
+    hover: {
+      filter: {
+        type: 'none',
+      },
+    },
+    active: {
+      filter: {
+        type: 'none',
+      },
+    },
+  },
+
   xaxis: {
     labels: {
       show: true,
