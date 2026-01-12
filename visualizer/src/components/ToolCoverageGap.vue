@@ -58,6 +58,9 @@
                 :from="0"
                 :to="affectedOwaspCategories"
               />
+              <template #suffix>
+                <span class="gap-suffix">/ 10</span>
+              </template>
             </n-statistic>
           </n-gi>
           <n-gi>
