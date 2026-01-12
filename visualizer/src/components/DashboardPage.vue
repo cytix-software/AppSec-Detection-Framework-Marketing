@@ -697,6 +697,24 @@ const radarOptions = computed(() => ({
   border-radius: 4px;
 }
 
+.chart-tools-filter {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
+}
+
+.chart-tools-filter .filter-label {
+  font-weight: 600;
+  color: #020E1E;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
 .chart-subheading {
   margin: 0;
   font-size: 0.9375rem;
