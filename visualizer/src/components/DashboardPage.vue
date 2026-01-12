@@ -520,16 +520,32 @@ const radarOptions = computed(() => ({
   min-height: 100vh;
 }
 
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
 .page-title {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 900;
   font-size: 3rem;
   line-height: 1;
   letter-spacing: -0.02em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  flex: 1;
+}
+
+.cytix-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* sm: text-6xl (3.75rem) */
