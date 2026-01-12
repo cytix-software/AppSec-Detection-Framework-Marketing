@@ -351,14 +351,39 @@ const filteredData = computed(() => {
   color: #FF822E !important;
 }
 
+@media (max-width: 1024px) {
+  .column-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .data-table-container {
+    gap: 1rem;
+  }
+
   .column-filters {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
   }
 
   .filter-input-group,
   .filter-input {
     min-width: 100%;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table :deep(.n-data-table-th) {
+    padding: 8px 6px !important;
+  }
+
+  .results-table :deep(.n-data-table-td) {
+    padding: 8px 6px !important;
   }
 }
 </style>
