@@ -518,7 +518,7 @@ const radarOptions = computed(() => ({
 }
 
 .page-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 900;
   font-size: 3rem;
   line-height: 1;
