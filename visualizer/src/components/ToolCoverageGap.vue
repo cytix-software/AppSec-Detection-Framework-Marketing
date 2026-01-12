@@ -22,7 +22,7 @@
                 rel="noopener noreferrer"
                 class="owasp-link"
               >
-                Learn about OWASP Top 10 2025 →
+                Explore the full OWASP 2025 categories →
               </a>
             </div>
             <n-button
