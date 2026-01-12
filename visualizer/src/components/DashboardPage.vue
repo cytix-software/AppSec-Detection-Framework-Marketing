@@ -960,18 +960,21 @@ const radarOptions = computed(() => ({
 
 .apexcharts-xaxis-label {
   font-size: 11px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   color: #020E1E !important;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  max-width: 100px;
-  word-wrap: break-word;
-  white-space: normal;
-  line-height: 1.3;
+  letter-spacing: 0.2px;
 }
 
 .apexcharts-xaxis-label tspan {
-  max-width: 100px;
+  font-size: 11px !important;
+}
+
+.apexcharts-xaxistooltip {
+  background: rgba(2, 14, 30, 0.9) !important;
+  color: white !important;
+  font-size: 11px !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
 }
 
 .apexcharts-tooltip {
