@@ -517,13 +517,50 @@ const radarOptions = computed(() => ({
   min-height: 100vh;
 }
 
-.dashboard-container h1 {
+.page-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #FF822E;
-  margin-bottom: 0.5rem;
-  text-transform: none;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .page-title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-title {
+    font-size: 4.5rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-title {
+    font-size: 6rem;
+  }
+}
+
+.title-part-1 {
+  color: #1f2937;
+  display: block;
+  width: 100%;
+}
+
+.title-part-2 {
+  background: linear-gradient(90deg, #FF822E 0%, #FFA84D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  width: 100%;
 }
 
 .main-content {
