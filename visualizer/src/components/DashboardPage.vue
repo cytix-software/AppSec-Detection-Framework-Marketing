@@ -999,18 +999,36 @@ const radarOptions = computed(() => ({
 
 /* Force text color on heatmap data labels */
 .apexcharts-text {
-  font-weight: 600;
-  font-size: 13px;
-}
-
-.apexcharts-datalabel text {
   font-weight: 600 !important;
   font-size: 13px !important;
 }
 
-.apexcharts-datalabel tspan {
+.apexcharts-text tspan {
   font-weight: 600 !important;
   font-size: 13px !important;
+}
+
+/* Ensure text renders with proper color */
+.apexcharts-datalabel text,
+.apexcharts-datalabel text tspan {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+/* Target heatmap cells with dark background (76-100%) - white text */
+.apexcharts-heatmap-rect[fill="#1a1a2e"] + text,
+.apexcharts-heatmap-rect[fill="#1a1a2e"] ~ text {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Target heatmap cells with colored backgrounds - black text */
+.apexcharts-heatmap-rect[fill="#D3D3D3"] + text,
+.apexcharts-heatmap-rect[fill="#FFCCB3"] + text,
+.apexcharts-heatmap-rect[fill="#FFA366"] + text,
+.apexcharts-heatmap-rect[fill="#FF6B2E"] + text {
+  fill: #000000 !important;
+  color: #000000 !important;
 }
 
 .apexcharts-tooltip {
