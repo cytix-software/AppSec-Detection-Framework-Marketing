@@ -473,6 +473,24 @@ const affectedOwaspCategories = computed(() => {
   return new Set(coverageGaps.value.map(gap => gap.owasp)).size
 })
 
+// Get list of affected OWASP categories with their titles
+const affectedOwaspCategoriesList = computed(() => {
+  if (coverageGaps.value.length === 0) return []
+
+  const uniqueOwaspCodes = new Set(coverageGaps.value.map(gap => gap.owasp))
+
+  return Array.from(uniqueOwaspCodes)
+    .map(owaspCode => {
+      // Find the vulnerability entry that has this OWASP code
+      const vuln = vulnerabilities.find(v => v.OWASP === owaspCode)
+      const categoryTitle = vuln?.group || owaspCode
+      // Extract just the code part (e.g., "A01:2025" -> "A01")
+      const code = owaspCode.split(':')[0]
+      return `${code} ${categoryTitle}`
+    })
+    .sort()
+})
+
 // Calculate number of critical gaps (0% detection rate)
 const criticalGapsCount = computed(() => {
   if (coverageGaps.value.length === 0) return 0
