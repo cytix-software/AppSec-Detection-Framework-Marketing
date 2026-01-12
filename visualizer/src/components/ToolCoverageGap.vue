@@ -15,6 +15,9 @@
                 :render-label="renderOptionLabel"
               />
               <p class="helper-text">Get started by selecting one or more security testing tools to analyze and compare.</p>
+              <a href="https://owasp.org/Top10/2025/0x00_2025-Introduction/" target="_blank" rel="noopener noreferrer" class="owasp-link">
+                Learn about OWASP Top 10 2025 →
+              </a>
             </div>
             <n-button
               v-if="coverageGaps.length > 0"
