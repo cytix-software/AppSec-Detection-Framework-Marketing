@@ -247,18 +247,22 @@ const filteredData = computed(() => {
   border-bottom: 1px solid #F0F0F0 !important;
 }
 
-.results-table :deep(.n-button--info) {
+:deep(.n-button--info) {
   background: #FF822E !important;
   color: white !important;
   border: none !important;
 }
 
-.results-table :deep(.n-button--info:hover) {
+:deep(.n-button--info:hover) {
   background: #DA4100 !important;
 }
 
-.results-table :deep(.n-button--info.n-button--round) {
+:deep(.n-button--info.n-button--round) {
   border-radius: 20px !important;
+}
+
+:deep(.n-button--info--text) {
+  color: #FF822E !important;
 }
 
 @media (max-width: 768px) {
