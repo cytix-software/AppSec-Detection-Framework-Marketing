@@ -514,7 +514,16 @@ const radarOptions = computed(() => ({
     }
   },
   xaxis: {
-    categories: vulnerabilities.map(v => `${v.OWASP} ${v.group}`)
+    categories: vulnerabilities.map(v => `${v.OWASP} ${v.group}`),
+    labels: {
+      show: true,
+      style: {
+        fontSize: '11px',
+        fontWeight: 600,
+        colors: '#020E1E',
+      },
+      offsetY: 0,
+    },
   },
   yaxis: {
     show: false,
