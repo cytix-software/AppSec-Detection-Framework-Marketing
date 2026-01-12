@@ -687,4 +687,11 @@ function renderOptionLabel(option: any) {
   color: #DA4100;
   font-weight: 600;
 }
+
+.gap-suffix {
+  font-size: 0.875rem;
+  color: #999999;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
 </style>
