@@ -2,27 +2,32 @@
   <div class="tool-coverage-gap">
     <n-card title="Coverage Gap Analysis">
       <n-space vertical>
-        <n-space justify="space-between">
-          <n-select
-            v-model:value="selectedTools"
-            multiple
-            filterable
-            placeholder="Select tools to analyze"
-            :options="toolOptions"
-            style="width: 300px"
-            :render-label="renderOptionLabel"
-          />
-          <n-button
-            v-if="coverageGaps.length > 0"
-            type="primary"
-            @click="exportCoverageGaps"
-          >
-            <template #icon>
-              <n-icon><download-outlined /></n-icon>
-            </template>
-            Export Coverage Gaps
-          </n-button>
-        </n-space>
+        <div class="tool-selection-section">
+          <n-space justify="space-between">
+            <div class="select-container">
+              <n-select
+                v-model:value="selectedTools"
+                multiple
+                filterable
+                placeholder="Select tools to analyze"
+                :options="toolOptions"
+                style="width: 300px"
+                :render-label="renderOptionLabel"
+              />
+              <p class="helper-text">Select one or more security testing tools to analyze and compare their detection coverage gaps across OWASP categories and CWE IDs.</p>
+            </div>
+            <n-button
+              v-if="coverageGaps.length > 0"
+              type="primary"
+              @click="exportCoverageGaps"
+            >
+              <template #icon>
+                <n-icon><download-outlined /></n-icon>
+              </template>
+              Export Coverage Gaps
+            </n-button>
+          </n-space>
+        </div>
         
         <n-grid v-if="coverageGaps.length > 0" cols="3" :x-gap="12" :y-gap="8">
           <n-gi>
