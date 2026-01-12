@@ -4,8 +4,9 @@
       <div
         v-for="col in columns.filter((c) => c.key !== 'detections')"
         :key="col.key"
-        class="filter-input"
+        class="filter-input-group"
       >
+        <label class="filter-label">{{ col.title }}</label>
         <!-- OWASP Code & Group dropdown -->
         <n-select
           v-if="col.key === 'owasp'"
@@ -37,8 +38,9 @@
         />
       </div>
 
-      <!-- Then place your custom filters (detected + profiles) alongside. -->
-      <div class="filter-input">
+      <!-- Filter Detected -->
+      <div class="filter-input-group">
+        <label class="filter-label">Detected</label>
         <n-select
           v-model:value="filters.detected"
           :options="detectedOptions"
@@ -47,7 +49,9 @@
         />
       </div>
 
-      <div class="filter-input">
+      <!-- Filter Profiles -->
+      <div class="filter-input-group">
+        <label class="filter-label">Profiles</label>
         <n-select
           v-model:value="filters.profiles"
           :options="profileOptions"
