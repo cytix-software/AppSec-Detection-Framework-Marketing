@@ -187,8 +187,8 @@ const heatmapSeries2021 = computed(() => {
       const isNoData = !entry || entry.totalCount === 0
       const percentage = isNoData ? 0 : Math.round((entry.detectedCWEs / entry.totalCount) * 100)
 
-      // Contrast logic: black text on colored backgrounds, white on dark backgrounds
-      const labelColor = percentage >= 76 ? '#ffffff' : '#000000'  // White on dark (76-100%), black on colors (0-75%)
+      // Text color: navy on colored backgrounds, white on dark backgrounds
+      const labelColor = percentage >= 76 ? '#ffffff' : '#1a1a2e'  // White on dark (76-100%), navy on colors (0-75%)
 
       return {
         x: `${OWASP} ${group}`,
