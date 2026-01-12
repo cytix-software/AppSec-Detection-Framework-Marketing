@@ -691,9 +691,13 @@ const radarOptions = computed(() => ({
   background: linear-gradient(135deg, #FF822E 0%, #DA4100 100%);
   color: white;
   font-weight: 700;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 12px 12px 0 0;
   border-bottom: 2px solid #FF822E;
+}
+
+:deep(.n-card__content) {
+  padding: 1.5rem;
 }
 
 :deep(.n-card__title) {
