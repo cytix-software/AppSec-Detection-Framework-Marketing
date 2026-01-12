@@ -349,7 +349,8 @@ const filteredData = computed(() => {
   .column-filters {
     grid-template-columns: 1fr;
   }
-  
+
+  .filter-input-group,
   .filter-input {
     min-width: 100%;
   }
