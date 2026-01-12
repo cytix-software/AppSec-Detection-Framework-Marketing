@@ -678,9 +678,7 @@ const radarOptions = computed(() => ({
 }
 
 .charts-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  width: 100%;
 }
 
 .chart-wrapper {
