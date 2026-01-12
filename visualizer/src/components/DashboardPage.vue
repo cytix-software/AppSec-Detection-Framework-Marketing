@@ -179,7 +179,7 @@ const heatmapSeries2021 = computed(() => {
 
   return scanners.map((scanner) => {
     // Use the 2021-specific list
-    const data = vulnerabilities2021.value.map(({ OWASP }) => {
+    const data = vulnerabilities2021.value.map(({ OWASP, group }) => {
       // Use the 2021-specific data
       const entry = find(heatmapData2021.value, { scanner, OWASP })
 
@@ -189,7 +189,8 @@ const heatmapSeries2021 = computed(() => {
       const labelColor = isNoData || percentage <= 25 ? '#000' : '#fff'
 
       return {
-        x: OWASP,
+        x: `${OWASP} ${group}`,
+        owasp: OWASP,
         y: percentage,
         isNoData,
         dataLabels: {
