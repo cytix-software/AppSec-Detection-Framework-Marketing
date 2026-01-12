@@ -21,22 +21,37 @@
       <!-- Charts Section -->
       <div class="charts-section">
         <!-- Heatmap and Radar Charts in Tabs -->
-        <n-card class="chart-wrapper">
+        <n-card title="Vulnerability Detection Coverage Analysis" class="chart-wrapper">
+          <div class="chart-description">
+            <p class="chart-subheading">
+              This visualization shows the detection coverage for OWASP Top 10 vulnerabilities across selected security tools.
+              Each cell represents the percentage of vulnerabilities in an OWASP category that were identified by each scanner.
+            </p>
+          </div>
           <n-tabs type="line" animated>
             <n-tab-pane name="heatmap-2021" tab="OWASP 2021 (Heatmap)">
-              <HeatmapChart
-                :options="heatmapOptions"
-                :series="filteredHeatmapSeries2021"
-              />
+              <div class="tab-content">
+                <p class="tab-description">OWASP Top 10 2021 - Shows detection coverage across the 2021 vulnerability classification</p>
+                <HeatmapChart
+                  :options="heatmapOptions"
+                  :series="filteredHeatmapSeries2021"
+                />
+              </div>
             </n-tab-pane>
             <n-tab-pane name="heatmap-2025" tab="OWASP 2025 (Heatmap)">
-              <HeatmapChart
-                :options="heatmapOptions"
-                :series="filteredHeatmapSeries2025"
-              />
+              <div class="tab-content">
+                <p class="tab-description">OWASP Top 10 2025 - Shows detection coverage across the 2025 vulnerability classification</p>
+                <HeatmapChart
+                  :options="heatmapOptions"
+                  :series="filteredHeatmapSeries2025"
+                />
+              </div>
             </n-tab-pane>
             <n-tab-pane name="radar" tab="Tool Comparison">
-              <RadarChart :options="radarOptions" :series="filteredRadarSeries" />
+              <div class="tab-content">
+                <p class="tab-description">Tool Comparison - Radar chart showing relative detection coverage for each security tool across all OWASP categories</p>
+                <RadarChart :options="radarOptions" :series="filteredRadarSeries" />
+              </div>
             </n-tab-pane>
           </n-tabs>
         </n-card>
