@@ -47,7 +47,40 @@
           </n-space>
         </div>
 
-        <div v-if="coverageGaps.length > 0" class="summary-section">
+        <!-- Default Summary for All Tests -->
+        <div v-if="selectedTools.length === 0" class="summary-section">
+          <div class="summary-stat">
+            <h3 class="summary-stat-title">Total CWEs Analyzed</h3>
+            <p class="summary-stat-value">{{ allTestsSummary.totalCwes }}</p>
+            <ul class="summary-stat-details">
+              <li>{{ allTestsSummary.totalCwes }} CWEs have defined tests across all frameworks</li>
+              <li>{{ scannerTools.length }} security testing tools available</li>
+              <li>Coverage analysis across {{ allTestsSummary.owaspCategories }} OWASP categories</li>
+            </ul>
+          </div>
+
+          <div class="summary-stat">
+            <h3 class="summary-stat-title">Available Testing Tools</h3>
+            <p class="summary-stat-value">{{ scannerTools.length }}</p>
+            <ul class="summary-stat-details">
+              <li v-for="tool in scannerTools" :key="tool">
+                {{ tool }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="summary-stat">
+            <h3 class="summary-stat-title">Overall Detection Coverage</h3>
+            <p class="summary-stat-value">{{ allTestsSummary.avgDetectionRate }}%</p>
+            <ul class="summary-stat-details">
+              <li>Average detection rate across all tests</li>
+              <li>Select tools above to analyze coverage gaps</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Summary for Selected Tools -->
+        <div v-else-if="coverageGaps.length > 0" class="summary-section">
           <div class="summary-stat">
             <h3 class="summary-stat-title">Total CWEs with Detection Gaps</h3>
             <p class="summary-stat-value">{{ coverageGaps.length }} out of {{ totalCwesWithTests }}</p>
