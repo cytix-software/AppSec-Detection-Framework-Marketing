@@ -47,7 +47,7 @@
                 :to="coverageGaps.length"
               />
               <template #suffix>
-                <span class="gap-suffix">/ 154</span>
+                <span class="gap-suffix">/ {{ totalCwesWithTests }}</span>
               </template>
             </n-statistic>
           </n-gi>
