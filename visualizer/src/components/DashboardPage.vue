@@ -1002,18 +1002,24 @@ const radarOptions = computed(() => ({
 .apexcharts-heatmap-rect {
   stroke: #f5f5f5 !important;
   stroke-width: 0.5px !important;
-  pointer-events: none;
 }
 
-/* Disable hover effects on heatmap */
+/* Disable hover effects on heatmap - remove yellow/highlighted background */
 .apexcharts-heatmap-rect:hover {
   filter: none !important;
   opacity: 1 !important;
+  stroke: #f5f5f5 !important;
 }
 
 .apexcharts-series:hover .apexcharts-heatmap-rect {
   filter: none !important;
   opacity: 1 !important;
+  stroke: #f5f5f5 !important;
+}
+
+/* Ensure no background changes on hover for the entire heatmap */
+.apexcharts-heatmap:hover g.apexcharts-series {
+  filter: none !important;
 }
 
 .apexcharts-heatmap-text {
