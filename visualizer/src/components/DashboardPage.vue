@@ -515,12 +515,26 @@ const radarOptions = computed(() => ({
 
 <style>
 .dashboard-container {
-  padding: 1rem;
+  padding: 2rem 3rem;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 1400px;
   overflow-x: hidden;
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
   min-height: 100vh;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-container {
+    padding: 2rem 2rem;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
 }
 
 .page-header {
@@ -528,7 +542,9 @@ const radarOptions = computed(() => ({
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .header-content {
@@ -637,14 +653,14 @@ const radarOptions = computed(() => ({
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .charts-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .chart-wrapper {
