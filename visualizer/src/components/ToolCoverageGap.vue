@@ -121,7 +121,7 @@
               <n-tab-pane name="owasp" tab="OWASP Category Gaps">
                 <n-list>
                   <n-list-item v-for="owasp in owaspGaps" :key="owasp.code">
-                    <n-thing :title="owasp.code">
+                    <n-thing :title="`${owasp.code} ${owasp.groupTitle}`">
                       <template #description>
                         <div class="owasp-details">
                           <div><strong>Name:</strong> {{ owasp.name }}</div>
