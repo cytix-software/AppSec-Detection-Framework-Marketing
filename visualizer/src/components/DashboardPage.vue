@@ -561,16 +561,18 @@ const radarOptions = computed(() => ({
 }
 
 :deep(.n-card__header) {
-  background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
+  background: linear-gradient(135deg, #FF822E 0%, #DA4100 100%);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   padding: 1rem;
   border-radius: 12px 12px 0 0;
+  border-bottom: 2px solid #FF822E;
 }
 
 :deep(.n-card__title) {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: white;
 }
 
 /* Tab styling */
