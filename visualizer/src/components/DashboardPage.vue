@@ -120,26 +120,16 @@ const toolOptions = computed(() => {
   }))
 })
 
-// Filter hydrated tests based on selected tools
-const filteredHydratedTests = computed(() => {
-  if (selectedTools.value.length === 0) return hydratedTests
-  
-  return hydratedTests.filter(test => 
-    test.detections.some(detection => selectedTools.value.includes(detection.scanner))
-  ).map(test => ({
-    ...test,
-    detections: test.detections.filter(detection => 
-      selectedTools.value.includes(detection.scanner)
-    )
-  }))
-})
+// Filter hydrated tests based on selected tools (for dataset table)
+// Note: Dataset is only filtered by Coverage Gap Analysis selection
+const filteredHydratedTests = computed(() => hydratedTests)
 
-// Filter hydrated heatmap tests based on selected tools
+// Filter hydrated heatmap tests based on selected chart tools
 const filteredHydratedHeatmapTests = computed(() => {
-  if (selectedTools.value.length === 0) return hydratedHeatmapTests
-  
-  return hydratedHeatmapTests.filter(test => 
-    selectedTools.value.includes(test.scanner)
+  if (selectedChartTools.value.length === 0) return hydratedHeatmapTests
+
+  return hydratedHeatmapTests.filter(test =>
+    selectedChartTools.value.includes(test.scanner)
   )
 })
 
