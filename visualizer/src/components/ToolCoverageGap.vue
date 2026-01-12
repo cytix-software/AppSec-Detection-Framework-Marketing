@@ -426,14 +426,14 @@ function analyzeCoverageGaps() {
   coverageGaps.value = gaps
 }
 
-// Get color for progress bar based on detection rate
+// Get color for progress bar based on detection rate - using Cytix brand colors
 function getProgressColor(rate: number) {
-  if (rate === 0) return '#d03050' // Brightest red for 0% detection rate
-  if (rate < 25) return '#e88080' // Light red for very low detection rate
-  if (rate < 50) return '#f0a020' // Yellow for low detection rate
-  if (rate < 75) return '#70c0e8' // Light blue for medium detection rate
-  if (rate < 100) return '#18a058' // Green for high detection rate
-  return '#2080f0' // Blue for 100% detection rate
+  if (rate === 0) return '#DA4100' // Cytix Burnt Orange for 0% detection rate
+  if (rate < 25) return '#FFB366' // Light orange for very low detection rate
+  if (rate < 50) return '#FF822E' // Cytix Orange for low detection rate
+  if (rate < 75) return '#89F336' // Cytix Lime for medium-high detection rate
+  if (rate < 100) return '#89F336' // Cytix Lime for high detection rate
+  return '#020E1E' // Cytix Black for 100% detection rate
 }
 
 // Calculate average detection rate
@@ -584,4 +584,4 @@ function renderOptionLabel(option: any) {
 .tool-name {
   margin-bottom: 0.25rem;
 }
-</style> 
+</style>
