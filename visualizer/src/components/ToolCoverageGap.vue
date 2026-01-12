@@ -3,47 +3,54 @@
     <n-card title="Coverage Gap Analysis">
       <n-space vertical>
         <div class="tool-selection-section">
-          <n-space justify="space-between">
+          <div class="select-header">
+            <label for="tool-select" class="select-label">Select Security Testing Tools</label>
+            <p class="select-description">Choose one or more tools to analyze coverage gaps and detect blindspots in your security testing strategy</p>
+          </div>
+          <n-space vertical style="width: 100%; gap: 1rem">
             <div class="select-container">
               <n-select
+                id="tool-select"
                 v-model:value="selectedTools"
                 multiple
                 filterable
-                placeholder="Select tools to analyze"
+                placeholder="Search and select tools (e.g., Burp Suite, Semgrep, nuclei)"
                 :options="toolOptions"
-                style="width: 300px"
+                style="width: 100%; max-width: 500px"
                 :render-label="renderOptionLabel"
               />
-              <p class="helper-text">Get started by selecting one or more security testing tools to analyze and compare.</p>
-              <a
-                v-if="selectedTools.length > 0"
-                href="https://owasp.org/Top10/2025/0x00_2025-Introduction/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="owasp-link"
-              >
-                Explore the full OWASP 2025 categories →
-              </a>
-              <a
-                v-if="selectedTools.length > 0"
-                href="https://owasp.org/Top10/2021/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="owasp-link"
-              >
-                Explore the full OWASP 2021 categories →
-              </a>
+              <div v-if="selectedTools.length > 0" class="tool-actions">
+                <n-button
+                  type="primary"
+                  @click="exportCoverageGaps"
+                  :disabled="coverageGaps.length === 0"
+                  style="min-width: 180px"
+                >
+                  <template #icon>
+                    <n-icon><download-outlined /></n-icon>
+                  </template>
+                  Export Coverage Gaps
+                </n-button>
+                <div class="resource-links">
+                  <a
+                    href="https://owasp.org/Top10/2025/0x00_2025-Introduction/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="owasp-link"
+                  >
+                    OWASP 2025 Categories →
+                  </a>
+                  <a
+                    href="https://owasp.org/Top10/2021/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="owasp-link"
+                  >
+                    OWASP 2021 Categories →
+                  </a>
+                </div>
+              </div>
             </div>
-            <n-button
-              v-if="coverageGaps.length > 0"
-              type="primary"
-              @click="exportCoverageGaps"
-            >
-              <template #icon>
-                <n-icon><download-outlined /></n-icon>
-              </template>
-              Export Coverage Gaps
-            </n-button>
           </n-space>
         </div>
 
