@@ -890,10 +890,12 @@ function renderOptionLabel(option: any) {
 }
 
 .no-results {
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-radius: 12px;
-  padding: 2rem;
-  background: rgba(255, 130, 46, 0.05);
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 130, 46, 0.05) 0%, rgba(255, 130, 46, 0.02) 100%);
+  border: 1px solid rgba(255, 130, 46, 0.1);
+  text-align: center;
 }
 
 .tool-detection-rates {
