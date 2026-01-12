@@ -499,6 +499,20 @@ const radarOptions = computed(() => ({
   margin: 0 auto;
   max-width: 100%;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  min-height: 100vh;
+}
+
+.dashboard-container h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #020E1E;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #FF822E 0%, #020E1E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .main-content {
@@ -516,33 +530,135 @@ const radarOptions = computed(() => ({
 
 .chart-wrapper {
   overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid #FF822E;
 }
 
 .coverage-gap-wrapper {
   width: 100%;
+  border-radius: 12px;
+  border: 2px solid #FF822E;
 }
 
 .data-table-wrapper {
   overflow-x: auto;
+  border-radius: 12px;
+  border: 2px solid #FF822E;
 }
 
-/* Example apexcharts custom styling */
+/* Naive UI Card overrides */
+:deep(.n-card) {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 130, 46, 0.1);
+}
+
+:deep(.n-card__header) {
+  background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 12px 12px 0 0;
+}
+
+:deep(.n-card__title) {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Tab styling */
+:deep(.n-tabs-nav) {
+  border-bottom: 2px solid #FF822E;
+}
+
+:deep(.n-tab-pane) {
+  padding: 1rem 0;
+}
+
+:deep(.n-tabs--line .n-tab-pane__nav-wrapper) {
+  border-bottom: 2px solid #E5E5E5;
+}
+
+:deep(.n-tabs--line:not(.n-tabs--segment) .n-tab-pad) {
+  color: #020E1E;
+}
+
+:deep(.n-tabs--line.n-tabs--top .n-tab__content.n-tab-pane__nav-wrapper--active) {
+  color: #FF822E;
+}
+
+:deep(.n-tabs--line .n-tabs-tab--active .n-tab__content) {
+  color: #FF822E;
+  font-weight: 700;
+}
+
+:deep(.n-tabs--line .n-tabs-tab--active::after) {
+  background: linear-gradient(90deg, #FF822E 0%, #89F336 100%);
+  height: 3px;
+}
+
+/* Button styling */
+:deep(.n-button--primary) {
+  background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
+  border: none;
+  font-weight: 600;
+}
+
+:deep(.n-button--primary:hover) {
+  background: linear-gradient(90deg, #DA4100 0%, #FF822E 100%);
+}
+
+/* Select dropdown styling */
+:deep(.n-select) {
+  border-radius: 8px;
+}
+
+:deep(.n-input__input) {
+  border-radius: 8px;
+}
+
+/* Apexcharts custom styling */
 .apexcharts-tooltip {
   background: #ffffff !important;
-  border: 2px solid #8181ac !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 20px rgba(2, 14, 30, 0.1) !important;
+  border: 2px solid #FF822E !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(255, 130, 46, 0.2) !important;
 }
 
 .apexcharts-tooltip-title {
-  background: #0e1e33 !important;
+  background: #020E1E !important;
   color: #ffffff !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
   padding: 12px !important;
+  border-radius: 8px 8px 0 0 !important;
 }
 
 .apexcharts-tooltip-series-group {
   padding: 8px 12px !important;
+  background: #ffffff !important;
+}
+
+.apexcharts-tooltip-marker {
+  background: #FF822E !important;
+}
+
+/* Statistic styling */
+:deep(.n-statistic) {
+  border-left: 4px solid #FF822E;
+  padding-left: 1rem;
+}
+
+:deep(.n-statistic__value) {
+  font-weight: 700;
+  color: #FF822E;
+  font-size: 1.5rem;
+}
+
+/* Tag styling */
+:deep(.n-tag--error) {
+  background: #DA4100;
+  border-color: #DA4100;
+  color: white;
 }
 
 .radar-chart {
@@ -553,7 +669,7 @@ const radarOptions = computed(() => ({
   .charts-section {
     grid-template-columns: 1fr;
   }
-  
+
   .radar-chart {
     grid-column: auto;
   }
