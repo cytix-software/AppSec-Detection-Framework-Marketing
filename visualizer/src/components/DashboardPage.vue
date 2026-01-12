@@ -518,12 +518,9 @@ const radarOptions = computed(() => ({
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  color: #020E1E;
+  color: #FF822E;
   margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, #FF822E 0%, #020E1E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-transform: none;
 }
 
 .main-content {
