@@ -784,13 +784,30 @@ function renderOptionLabel(option: any) {
 
 .summary-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  margin: 1.5rem 0;
-  padding: 1.5rem;
+  margin: 2rem 0 1.5rem 0;
+  padding: 2rem;
   background: linear-gradient(135deg, rgba(255, 130, 46, 0.05) 0%, rgba(255, 130, 46, 0.02) 100%);
   border-radius: 12px;
   border: 1px solid rgba(255, 130, 46, 0.1);
+}
+
+@media (max-width: 768px) {
+  .summary-section {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .tool-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tool-actions :deep(.n-button) {
+    width: 100%;
+  }
 }
 
 .summary-stat {
