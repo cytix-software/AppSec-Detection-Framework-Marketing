@@ -822,6 +822,11 @@ const radarOptions = computed(() => ({
 :deep(.n-tabs--line .n-tabs-tab) {
   color: #020E1E;
   font-weight: 500;
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9375rem;
 }
 
 :deep(.n-tabs--line .n-tabs-tab--active) {
