@@ -25,14 +25,12 @@ import { NConfigProvider, NSpin } from 'naive-ui'
 /* Global styles that need to affect child components */
 .app-container {
   font-family:
-    'Plus Jakarta Sans',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
     Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
+    'Helvetica Neue',
+    Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
