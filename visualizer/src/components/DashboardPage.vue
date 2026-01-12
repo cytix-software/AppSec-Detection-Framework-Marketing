@@ -330,7 +330,7 @@ const heatmapOptions = computed(() => ({
 
         // Find the entry in the correct heatmapData (try 2021 then 2025)
         const scannerName = opts.w.config.series[opts.seriesIndex].name
-        const owaspCategory = point.x
+        const owaspCategory = point.owasp
 
         let entry = find(heatmapData2021.value, {
           scanner: scannerName,
