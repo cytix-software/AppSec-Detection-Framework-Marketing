@@ -46,7 +46,37 @@
             </n-button>
           </n-space>
         </div>
-        
+
+        <div v-if="coverageGaps.length > 0" class="summary-section">
+          <div class="summary-stat">
+            <h3 class="summary-stat-title">Total CWEs with Detection Gaps</h3>
+            <p class="summary-stat-value">{{ coverageGaps.length }} out of {{ totalCwesWithTests }}</p>
+            <ul class="summary-stat-details">
+              <li>{{ totalCwesWithTests }} CWEs have defined tests in the 2025 framework</li>
+              <li>{{ coverageGaps.length }} of these have detection gaps (not 100% detected by all tools)</li>
+              <li>{{ cwesWithPerfectDetection }} CWEs are perfectly detected across all selected tools</li>
+            </ul>
+          </div>
+
+          <div class="summary-stat">
+            <h3 class="summary-stat-title">OWASP Categories Affected</h3>
+            <p class="summary-stat-value">{{ affectedOwaspCategories }} out of 10</p>
+            <ul class="summary-stat-details">
+              <li>All 10 OWASP 2025 categories have at least some detection gaps</li>
+              <li>{{ affectedOwaspCategories === 10 ? 'No category has complete coverage' : 'Some categories have good coverage' }}</li>
+            </ul>
+          </div>
+
+          <div class="summary-stat">
+            <h3 class="summary-stat-title">Critical Gaps</h3>
+            <p class="summary-stat-value">{{ criticalGapsCount }} CWEs with 0% Detection</p>
+            <ul class="summary-stat-details">
+              <li>These are vulnerability weaknesses that were NOT found by any tool</li>
+              <li>Represents significant "blindspots" in security testing</li>
+            </ul>
+          </div>
+        </div>
+
         <n-grid v-if="coverageGaps.length > 0" cols="3" :x-gap="12" :y-gap="8">
           <n-gi>
             <n-statistic label="Total CWEs with Detection Gaps">
