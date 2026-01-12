@@ -20,17 +20,6 @@
                 :render-label="renderOptionLabel"
               />
               <div v-if="selectedTools.length > 0" class="tool-actions">
-                <n-button
-                  type="primary"
-                  @click="exportCoverageGaps"
-                  :disabled="coverageGaps.length === 0"
-                  style="min-width: 180px"
-                >
-                  <template #icon>
-                    <n-icon><download-outlined /></n-icon>
-                  </template>
-                  Export Coverage Gaps
-                </n-button>
                 <div class="resource-links">
                   <a
                     href="https://owasp.org/Top10/2025/0x00_2025-Introduction/"
@@ -49,6 +38,17 @@
                     OWASP 2021 Categories →
                   </a>
                 </div>
+                <n-button
+                  type="primary"
+                  @click="exportCoverageGaps"
+                  :disabled="coverageGaps.length === 0"
+                  style="min-width: 180px"
+                >
+                  <template #icon>
+                    <n-icon><download-outlined /></n-icon>
+                  </template>
+                  Export Coverage Gaps
+                </n-button>
               </div>
             </div>
           </n-space>
