@@ -598,18 +598,23 @@ const radarOptions = computed(() => ({
 }
 
 :deep(.n-tabs--line .n-tabs-tab--active) {
-  color: #FF822E;
-  font-weight: 700;
+  color: #FF822E !important;
+  font-weight: 700 !important;
 }
 
 :deep(.n-tabs--line .n-tabs-tab--active .n-tab__content) {
-  color: #FF822E;
-  font-weight: 700;
+  color: #FF822E !important;
+  font-weight: 700 !important;
 }
 
 :deep(.n-tabs--line .n-tabs-tab--active::after) {
-  background: #FF822E;
-  height: 4px;
+  background: #FF822E !important;
+  height: 4px !important;
+}
+
+:deep(.n-tabs-tab--active::before) {
+  background: #FF822E !important;
+  height: 3px !important;
 }
 
 /* Button styling */
