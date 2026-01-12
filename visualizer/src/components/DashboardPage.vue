@@ -1,7 +1,10 @@
 <!-- DashboardPage.vue -->
 <template>
   <div class="dashboard-container">
-    <h1>AppSec Detection Framework Visualiser</h1>
+    <h1 class="page-title">
+      <span class="title-part-1">AppSec Detection Framework</span>
+      <span class="title-part-2">Visualiser</span>
+    </h1>
 
     <div class="main-content">
       <!-- Coverage Gap Analysis -->
