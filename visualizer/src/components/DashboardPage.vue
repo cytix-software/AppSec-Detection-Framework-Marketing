@@ -398,15 +398,15 @@ const barSeries = computed(() => [
   },
 ])
 
-// Filtered bar series based on selected tools
+// Filtered bar series based on selected chart tools
 const filteredBarSeries = computed(() => {
-  if (selectedTools.value.length === 0) return barSeries.value
-  
+  if (selectedChartTools.value.length === 0) return barSeries.value
+
   const scores = calculateWeightedScores()
-  const filteredScores = scores.filter(score => 
-    selectedTools.value.includes(score.scanner)
+  const filteredScores = scores.filter(score =>
+    selectedChartTools.value.includes(score.scanner)
   )
-  
+
   return [{
     name: 'Weighted Detection Score',
     data: filteredScores.map((d) => d.score),
@@ -434,15 +434,15 @@ const barOptions = computed(() => ({
   }
 }))
 
-// Filtered bar options based on selected tools
+// Filtered bar options based on selected chart tools
 const filteredBarOptions = computed(() => {
-  if (selectedTools.value.length === 0) return barOptions.value
-  
+  if (selectedChartTools.value.length === 0) return barOptions.value
+
   const scores = calculateWeightedScores()
-  const filteredScores = scores.filter(score => 
-    selectedTools.value.includes(score.scanner)
+  const filteredScores = scores.filter(score =>
+    selectedChartTools.value.includes(score.scanner)
   )
-  
+
   return {
     ...barOptions.value,
     xaxis: {
