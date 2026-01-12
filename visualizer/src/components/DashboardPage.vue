@@ -12,10 +12,41 @@
       <img src="https://cdn.builder.io/api/v1/image/assets%2F0ae2d7cfe4b54f369c000b904ffc735e%2Fa5aecfd598a046dc9db2297204b0fd74?format=webp&width=800" alt="Cytix Logo" class="cytix-logo" />
     </div>
 
+    <!-- Summary Statistics Section -->
+    <div v-if="selectedTools.length > 0" class="summary-stats-section">
+      <div class="summary-stat">
+        <h3 class="summary-stat-title">Total CWEs with Detection Gaps</h3>
+        <p class="summary-stat-value">{{ coverageGapStats.total }} out of {{ totalCwesWithTests }}</p>
+        <ul class="summary-stat-details">
+          <li>{{ totalCwesWithTests }} CWEs have defined tests in the 2025 framework</li>
+          <li>{{ coverageGapStats.total }} of these have detection gaps (not 100% detected by all tools)</li>
+          <li>{{ cwesWithPerfectDetection }} CWEs are perfectly detected across all selected tools</li>
+        </ul>
+      </div>
+
+      <div class="summary-stat">
+        <h3 class="summary-stat-title">OWASP Categories Affected</h3>
+        <p class="summary-stat-value">{{ coverageGapStats.affectedCategories }} out of 10</p>
+        <ul class="summary-stat-details">
+          <li>All 10 OWASP 2025 categories have at least some detection gaps</li>
+          <li>{{ coverageGapStats.affectedCategories === 10 ? 'No category has complete coverage' : 'Some categories have good coverage' }}</li>
+        </ul>
+      </div>
+
+      <div class="summary-stat">
+        <h3 class="summary-stat-title">Critical Gaps</h3>
+        <p class="summary-stat-value">{{ coverageGapStats.critical }} CWEs with 0% Detection</p>
+        <ul class="summary-stat-details">
+          <li>These are vulnerability weaknesses that were NOT found by any tool</li>
+          <li>Represents significant "blindspots" in security testing</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="main-content">
       <!-- Coverage Gap Analysis -->
       <n-card class="coverage-gap-wrapper">
-        <ToolCoverageGap @tools-selected="handleToolsSelected" />
+        <ToolCoverageGap @tools-selected="handleToolsSelected" @coverage-gaps-updated="handleCoverageGapsUpdated" />
       </n-card>
       
       <!-- Charts Section -->
