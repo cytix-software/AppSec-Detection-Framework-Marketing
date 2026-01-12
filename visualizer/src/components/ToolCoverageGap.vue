@@ -571,7 +571,7 @@ function renderOptionLabel(option: any) {
   font-size: 0.875rem;
   color: #666666;
   margin: 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   max-width: 400px;
