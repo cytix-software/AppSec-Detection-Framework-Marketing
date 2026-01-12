@@ -62,8 +62,8 @@
             <h3 class="summary-stat-title">OWASP Categories Affected</h3>
             <p class="summary-stat-value">{{ affectedOwaspCategories }} out of 10</p>
             <ul class="summary-stat-details">
-              <li>All 10 OWASP 2025 categories have at least some detection gaps</li>
-              <li>{{ affectedOwaspCategories === 10 ? 'No category has complete coverage' : 'Some categories have good coverage' }}</li>
+              <li>{{ affectedOwaspCategories }} of 10 OWASP 2025 categories have detection gaps</li>
+              <li>{{ affectedOwaspCategories === 10 ? 'No category has complete coverage' : affectedOwaspCategories + ' categories affected' }}</li>
             </ul>
           </div>
 
