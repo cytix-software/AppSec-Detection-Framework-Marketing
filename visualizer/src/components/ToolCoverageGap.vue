@@ -510,15 +510,6 @@ watch(selectedTools, () => {
   analyzeCoverageGaps()
 }, { immediate: true })
 
-// Watch for changes to coverage gaps and emit stats to parent
-watch([coverageGaps, affectedOwaspCategories, criticalGapsCount], () => {
-  emit('coverage-gaps-updated', {
-    total: coverageGaps.value.length,
-    affectedCategories: affectedOwaspCategories.value,
-    critical: criticalGapsCount.value
-  })
-}, { immediate: true })
-
 // Export coverage gaps to CSV
 function exportCoverageGaps() {
   if (coverageGaps.value.length === 0) return
