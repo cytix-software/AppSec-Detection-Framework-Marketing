@@ -747,9 +747,10 @@ function renderOptionLabel(option: any) {
 
 .tool-actions {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: flex-start;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 130, 46, 0.05);
@@ -759,6 +760,7 @@ function renderOptionLabel(option: any) {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .owasp-link {
