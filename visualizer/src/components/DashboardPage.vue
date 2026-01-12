@@ -90,11 +90,6 @@ function handleToolsSelected(tools: string[]) {
   selectedTools.value = tools
 }
 
-// Handle coverage gaps updated from ToolCoverageGap
-function handleCoverageGapsUpdated(stats: { total: number; affectedCategories: number; critical: number }) {
-  coverageGapStats.value = stats
-}
-
 // Filter hydrated tests based on selected tools
 const filteredHydratedTests = computed(() => {
   if (selectedTools.value.length === 0) return hydratedTests
