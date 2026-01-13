@@ -785,6 +785,10 @@ function renderOptionLabel(option: any) {
   font-size: 1.5rem;
   color: #1f2937;
   margin: 0 0 2rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.2;
 }
