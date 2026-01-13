@@ -779,20 +779,6 @@ function renderOptionLabel(option: any) {
 }
 
 
-/* Tablet breakpoint */
-@media (min-width: 768px) {
-  .coverage-gap-title {
-    font-size: 1.875rem;
-  }
-}
-
-/* Desktop breakpoint */
-@media (min-width: 1024px) {
-  .coverage-gap-title {
-    font-size: 2.25rem;
-  }
-}
-
 .selected-tools-header {
   margin: 1.5rem 0 1rem 0;
   padding: 1rem 0;
