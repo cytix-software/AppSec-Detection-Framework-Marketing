@@ -4,10 +4,10 @@
     <div class="navbar-main">
       <!-- Logo -->
       <div class="navbar-logo">
-        <a href="/" class="logo-link">
-          <img 
-            src="https://cdn.builder.io/api/v1/image/assets%2F0ae2d7cfe4b54f369c000b904ffc735e%2F2c22103cea5b47c8941084370846936c?format=webp&width=400" 
-            alt="Cytix Logo" 
+        <a href="https://cytix.io" target="_blank" rel="noopener noreferrer" class="logo-link">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F0ae2d7cfe4b54f369c000b904ffc735e%2F2c22103cea5b47c8941084370846936c?format=webp&width=400"
+            alt="Cytix Logo"
             class="logo-image"
           />
         </a>
