@@ -182,36 +182,38 @@
               </n-tab-pane>
 
               <n-tab-pane name="owasp" tab="OWASP Category Gaps">
-                <n-list>
-                  <n-list-item v-for="owasp in paginatedOwaspGaps" :key="owasp.code">
-                    <n-thing :title="`${owasp.code} ${owasp.groupTitle}`">
-                      <template #description>
-                        <div class="owasp-details">
-                          <div><strong>Name:</strong> {{ owasp.name }}</div>
-                          <div><strong>Missing CWEs:</strong> {{ owasp.missingCwes.length }}</div>
-                          
-                          <div class="tool-detection-rates">
-                            <strong>Detection Rate by Tool:</strong>
-                            <div v-for="(rate, tool) in owasp.toolDetectionRates" :key="tool" class="tool-rate">
-                              <div class="tool-name">{{ tool }}:</div>
-                              <n-progress 
-                                type="line" 
-                                :percentage="rate.rate" 
-                                :color="getProgressColour(rate.rate)"
-                                :indicator-placement="'inside'"
-                                :height="16"
-                                :rail-color="rate.rate === 0 ? '#d03050' : undefined"
-                                :show-indicator="true"
-                              >
-                                {{ rate.detected }}/{{ rate.total }} ({{ rate.rate }}%)
-                              </n-progress>
+                <div class="gaps-scroll-container">
+                  <n-list>
+                    <n-list-item v-for="owasp in paginatedOwaspGaps" :key="owasp.code">
+                      <n-thing :title="`${owasp.code} ${owasp.groupTitle}`">
+                        <template #description>
+                          <div class="owasp-details">
+                            <div><strong>Name:</strong> {{ owasp.name }}</div>
+                            <div><strong>Missing CWEs:</strong> {{ owasp.missingCwes.length }}</div>
+
+                            <div class="tool-detection-rates">
+                              <strong>Detection Rate by Tool:</strong>
+                              <div v-for="(rate, tool) in owasp.toolDetectionRates" :key="tool" class="tool-rate">
+                                <div class="tool-name">{{ tool }}:</div>
+                                <n-progress
+                                  type="line"
+                                  :percentage="rate.rate"
+                                  :color="getProgressColour(rate.rate)"
+                                  :indicator-placement="'inside'"
+                                  :height="16"
+                                  :rail-color="rate.rate === 0 ? '#d03050' : undefined"
+                                  :show-indicator="true"
+                                >
+                                  {{ rate.detected }}/{{ rate.total }} ({{ rate.rate }}%)
+                                </n-progress>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </template>
-                    </n-thing>
-                  </n-list-item>
-                </n-list>
+                        </template>
+                      </n-thing>
+                    </n-list-item>
+                  </n-list>
+                </div>
                 <div v-if="totalOwaspPages > 1" class="pagination-controls">
                   <n-button
                     :disabled="currentOwaspPage === 1"
