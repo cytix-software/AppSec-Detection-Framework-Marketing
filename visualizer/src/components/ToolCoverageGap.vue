@@ -893,6 +893,22 @@ function renderOptionLabel(option: any) {
   list-style-type: disc;
 }
 
+.results-guide {
+  margin: 2rem 0 0 0;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 130, 46, 0.1);
+}
+
+.results-guide p {
+  font-size: 0.9375rem;
+  color: #4b5563;
+  margin: 0;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
 .results-section {
   margin-top: 2rem;
   border-radius: 12px;
