@@ -21,7 +21,10 @@
       <!-- Charts Section -->
       <div class="charts-section">
         <!-- Heatmap and Radar Charts in Tabs -->
-        <n-card title="Vulnerability Detection Coverage Analysis" class="chart-wrapper">
+        <n-card class="chart-wrapper">
+          <template #header>
+            <h2 class="coverage-gap-title">Vulnerability Detection Coverage Analysis</h2>
+          </template>
           <div class="chart-description">
             <p class="chart-subheading">
               Compare the detection coverage for OWASP Top 10 vulnerabilities against selected security tools.<br><br>The higher the percentage, the higher the detection capabilities.
