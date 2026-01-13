@@ -740,7 +740,12 @@ const radarOptions = computed(() => ({
 .chart-wrapper {
   overflow: visible;
   border-radius: 12px;
-  border: 2px solid #FF822E;
+  border: none;
+}
+
+:deep(.chart-wrapper .n-card__header) {
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 :deep(.n-card__content) {
