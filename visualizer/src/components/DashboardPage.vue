@@ -756,51 +756,51 @@ const radarOptions = computed(() => ({
   text-align: center;
 }
 
-.github-data-button {
+.github-data-button-link {
   display: inline-block;
   margin-top: 1.5rem;
   text-decoration: none;
 }
 
-.github-data-button :deep(.n-button) {
-  min-height: 48px !important;
-  padding: 0 2rem !important;
-  font-size: 0.9375rem !important;
-  font-weight: 700 !important;
-  background: #FF822E !important;
-  background-color: #FF822E !important;
-  border: 2px solid transparent !important;
-  color: #ffffff !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 16px rgba(255, 130, 46, 0.3) !important;
-  letter-spacing: 0.3px !important;
+.github-data-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  padding: 0 2rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: #FF822E;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 130, 46, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.github-data-button :deep(.n-button__content) {
-  color: #ffffff !important;
-  font-weight: 700 !important;
+.github-data-button:hover {
+  background: #DA4100;
+  box-shadow: 0 6px 24px rgba(255, 130, 46, 0.4);
+  transform: translateY(-2px);
 }
 
-.github-data-button :deep(.n-button:hover) {
-  background: #DA4100 !important;
-  background-color: #DA4100 !important;
-  box-shadow: 0 6px 24px rgba(255, 130, 46, 0.4) !important;
-  transform: translateY(-2px) !important;
+.github-data-button:active {
+  transform: translateY(0);
 }
 
-.github-data-button :deep(.n-button:active) {
-  transform: translateY(0) !important;
+.github-data-button:focus {
+  outline: 2px solid #FF822E;
+  outline-offset: 2px;
 }
 
-.github-data-button :deep(.n-button:focus) {
-  outline: 2px solid #FF822E !important;
-  outline-offset: 2px !important;
-}
-
-.github-data-button :deep(.n-icon) {
-  margin-right: 0.5rem;
-  font-size: 1rem;
-  color: #ffffff !important;
+.github-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.2em;
+  color: #ffffff;
 }
 
 .main-content {
