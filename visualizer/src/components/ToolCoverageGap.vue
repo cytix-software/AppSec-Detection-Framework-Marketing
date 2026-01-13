@@ -801,8 +801,8 @@ function renderOptionLabel(option: any) {
 
 .resource-links {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: row;
+  gap: 0.75rem;
   flex-shrink: 0;
 }
 
