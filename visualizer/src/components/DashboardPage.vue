@@ -915,10 +915,14 @@ const radarOptions = computed(() => ({
 }
 
 .coverage-gap-wrapper {
-  width: 100%;
+  overflow: visible;
   border-radius: 12px;
   border: none;
-  overflow: visible;
+}
+
+:deep(.coverage-gap-wrapper .n-card__header) {
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 
