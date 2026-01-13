@@ -738,9 +738,10 @@ const radarOptions = computed(() => ({
   font-size: 1.125rem;
   font-weight: 500;
   color: #4b5563;
-  margin: 1rem 0 0 0;
+  margin: 1rem auto 0;
   line-height: 1.6;
   max-width: 600px;
+  text-align: center;
 }
 
 .main-content {
