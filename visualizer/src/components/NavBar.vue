@@ -295,46 +295,6 @@ const isMobileMenuOpen = ref(false)
   color: #FF822E;
 }
 
-.mobile-dropdown-trigger {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.mobile-chevron {
-  width: 1rem;
-  height: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.mobile-chevron.chevron-open {
-  transform: rotate(180deg);
-}
-
-.mobile-dropdown-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background-color: #f9fafb;
-  border-radius: 0.375rem;
-  padding: 0.5rem 0;
-  margin-top: 0.5rem;
-  border-left: 4px solid #FF822E;
-}
-
-.mobile-dropdown-item {
-  padding: 0.75rem 1rem;
-  color: #374151;
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s ease;
-}
-
-.mobile-dropdown-item:hover {
-  color: #FF822E;
-}
-
 .mobile-cta {
   color: #ffffff;
   background-color: #FF822E;
