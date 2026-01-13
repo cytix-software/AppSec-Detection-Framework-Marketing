@@ -102,7 +102,7 @@
 // -----------------------------------------------------------------------------
 // Imports
 // -----------------------------------------------------------------------------
-import { NCard, NTabs, NTabPane, NCollapse, NCollapseItem, NSelect, NButton, NIcon } from 'naive-ui'
+import { NCard, NTabs, NTabPane, NSelect, NButton, NIcon } from 'naive-ui'
 import { groupBy, filter, find, some, includes, flatten, map } from 'lodash-es'
 import { loadData } from './data'
 import RadarChart from './RadarChart.vue'
