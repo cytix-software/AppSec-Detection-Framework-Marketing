@@ -100,7 +100,7 @@
             <p class="summary-stat-value">{{ coverageGaps.length }} out of {{ totalCwesWithTests }}</p>
             <ul class="summary-stat-details">
               <li>{{ totalCwesWithTests }} CWEs have defined tests in the 2025 framework</li>
-              <li>{{ coverageGaps.length }} of these have detection gaps (not 100% detected by all tools)</li>
+              <li>{{ coverageGaps.length }} of these have detection gaps (not 100% detected by the selected tool(s))</li>
               <li>{{ cwesWithPerfectDetection }} CWEs are perfectly detected across all selected tools</li>
             </ul>
           </div>
