@@ -502,8 +502,8 @@ function analyseCoverageGaps() {
   coverageGaps.value = gaps
 }
 
-// Get color for progress bar based on detection rate - using Cytix brand colors
-function getProgressColor(rate: number) {
+// Get colour for progress bar based on detection rate - using Cytix brand colours
+function getProgressColour(rate: number) {
   if (rate === 0) return '#DA4100' // Cytix Burnt Orange for 0% detection rate
   if (rate < 25) return '#FFB366' // Light orange for very low detection rate
   if (rate < 50) return '#FF822E' // Cytix Orange for low detection rate
