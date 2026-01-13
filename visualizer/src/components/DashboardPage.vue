@@ -846,12 +846,14 @@ const radarOptions = computed(() => ({
 }
 
 :deep(.n-card__header) {
-  background: linear-gradient(135deg, #FF822E 0%, #DA4100 100%);
-  color: white;
+  background: transparent;
+  color: #020E1E;
   font-weight: 700;
-  padding: 1.5rem;
-  border-radius: 12px 12px 0 0;
-  border-bottom: 2px solid #FF822E;
+  padding: 1rem 0;
+  border-radius: 0;
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
+  margin-bottom: 1.5rem;
 }
 
 :deep(.n-card__content) {
@@ -866,8 +868,10 @@ const radarOptions = computed(() => ({
 
 :deep(.n-card__title) {
   font-weight: 700;
-  font-size: 1.1rem;
-  color: white;
+  font-size: 1.125rem;
+  color: #020E1E;
+  letter-spacing: 0.3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 :deep(.n-card:focus-within) {
