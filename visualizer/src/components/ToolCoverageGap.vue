@@ -918,10 +918,7 @@ function renderOptionLabel(option: any) {
 .summary-stat-value {
   font-size: 2.25rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #FF822E 0%, #89F336 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FF822E;
   margin: 0 0 1.25rem 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1;
