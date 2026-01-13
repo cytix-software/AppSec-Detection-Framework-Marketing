@@ -82,33 +82,6 @@ const isMobileMenuOpen = ref(false)
   backdrop-filter: blur(4px);
 }
 
-/* Banner Bar */
-.banner-bar {
-  background: linear-gradient(90deg, #020E1E 0%, #1a1a2e 100%);
-  padding: 0.75rem 0;
-  text-align: center;
-  border-bottom: 1px solid #333;
-}
-
-.banner-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.banner-link {
-  color: #ffffff;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-  display: inline-block;
-}
-
-.banner-link:hover {
-  opacity: 0.8;
-}
-
 /* Main Navbar */
 .navbar-main {
   display: flex;
