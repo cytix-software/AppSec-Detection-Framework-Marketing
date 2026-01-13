@@ -10,7 +10,6 @@
         </h1>
         <p class="page-subheading">Reducing vulnerability blindspots across SAST, DAST & AI Pentesting</p>
       </div>
-      <img src="https://cdn.builder.io/api/v1/image/assets%2F0ae2d7cfe4b54f369c000b904ffc735e%2Fa5aecfd598a046dc9db2297204b0fd74?format=webp&width=800" alt="Cytix Logo" class="cytix-logo" />
     </div>
 
     <div class="main-content">
