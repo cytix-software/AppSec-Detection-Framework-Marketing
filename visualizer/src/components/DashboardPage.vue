@@ -27,7 +27,7 @@
           </template>
           <div class="chart-description">
             <p class="chart-subheading">
-              Compare the detection coverage for OWASP Top 10 vulnerabilities against selected security tools.<br><br>The higher the percentage, the higher the detection capabilities.
+              Compare the percentage detection coverage for OWASP Top 10 categories against selected security tools.<br><br>The higher the percentage, the higher the detection capabilities.<br><br>
             </p>
           </div>
           <div class="chart-tools-filter">
