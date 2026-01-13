@@ -320,6 +320,22 @@ const cweGaps = computed(() => {
   }).sort((a, b) => a.id - b.id) // Sort by CWE ID
 })
 
+// Paginated CWE gaps
+const totalCwePages = computed(() => {
+  return Math.ceil(cweGaps.value.length / itemsPerPage)
+})
+
+const paginatedCweGaps = computed(() => {
+  const startIndex = (currentCwePage.value - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  return cweGaps.value.slice(startIndex, endIndex)
+})
+
+// Reset to page 1 when gaps change
+watch(cweGaps, () => {
+  currentCwePage.value = 1
+})
+
 // OWASP category gaps
 const owaspGaps = computed(() => {
   if (coverageGaps.value.length === 0) return []
