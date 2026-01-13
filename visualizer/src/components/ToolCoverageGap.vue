@@ -120,10 +120,10 @@
               </li>
             </ul>
           </div>
-        </div>
 
-        <div v-if="coverageGaps.length > 0" class="results-guide">
-          <p>Check out the full test results below <n-icon class="guide-arrow"><DownOutlined /></n-icon></p>
+          <div class="results-guide">
+            <p>Check out the full test results below <n-icon class="guide-arrow"><DownOutlined /></n-icon></p>
+          </div>
         </div>
 
         <n-collapse v-if="coverageGaps.length > 0" class="results-section">
