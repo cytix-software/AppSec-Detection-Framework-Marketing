@@ -106,7 +106,7 @@ const isMobileMenuOpen = ref(false)
 }
 
 .logo-image {
-  height: 3.5rem;
+  height: 4.5rem;
   width: auto;
   object-fit: contain;
 }
