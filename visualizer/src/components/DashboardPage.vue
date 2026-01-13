@@ -951,11 +951,6 @@ const radarOptions = computed(() => ({
   margin-bottom: 0;
 }
 
-:deep(.coverage-gap-wrapper .n-card__header) {
-  border-top: 2px solid #FF822E;
-  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
-}
-
 :deep(.n-card__content) {
   padding: 1.5rem;
   overflow-x: auto;
