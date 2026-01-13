@@ -955,46 +955,6 @@ function renderOptionLabel(option: any) {
   line-height: 1.6;
 }
 
-.results-guide {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  text-align: center;
-  background: rgba(255, 130, 46, 0.08);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 130, 46, 0.15);
-  grid-column: 1 / -1;
-}
-
-.results-guide p {
-  font-size: 0.9375rem;
-  color: #020E1E;
-  margin: 0;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.guide-arrow {
-  font-size: 0.875rem;
-  color: #FF822E;
-  display: inline-flex;
-  align-items: center;
-  animation: slideRight 1s ease-in-out infinite;
-}
-
-@keyframes slideRight {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(4px);
-  }
-}
-
 .results-section {
   margin-top: 2rem;
   border-radius: 12px;
