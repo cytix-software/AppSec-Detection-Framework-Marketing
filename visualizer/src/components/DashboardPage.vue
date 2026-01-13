@@ -667,13 +667,6 @@ const radarOptions = computed(() => ({
   flex: 1;
 }
 
-.cytix-logo {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
 /* sm: text-6xl (3.75rem) */
 @media (min-width: 640px) {
   .page-title {
