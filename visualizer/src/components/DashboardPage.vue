@@ -1,5 +1,6 @@
 <!-- DashboardPage.vue -->
 <template>
+  <NavBar />
   <div class="dashboard-container">
     <div class="page-header">
       <div class="header-content">
