@@ -24,9 +24,12 @@
 
     <div class="main-content">
       <!-- Coverage Gap Analysis -->
-      <div class="coverage-gap-wrapper">
+      <n-card class="coverage-gap-wrapper">
+        <template #header>
+          <h2 class="coverage-gap-title">Tool Gap Analysis</h2>
+        </template>
         <ToolCoverageGap />
-      </div>
+      </n-card>
       
       <!-- Charts Section -->
       <div class="charts-section">
