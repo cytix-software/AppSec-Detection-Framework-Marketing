@@ -58,7 +58,7 @@
       <a href="https://portal.cytix.io" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
         Sign In
       </a>
-      <a href="https://cytix.io/book-a-demo" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-cta">
+      <a href="https://www.cytix.io/book-a-demo" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-cta">
         Start a Conversation
       </a>
     </div>
