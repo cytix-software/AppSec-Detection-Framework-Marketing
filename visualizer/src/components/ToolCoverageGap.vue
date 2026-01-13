@@ -71,6 +71,7 @@
               <li>{{ allTestsSummary.totalCwes }} CWEs have defined tests across all frameworks</li>
               <li>{{ scannerTools.length }} security testing tools available</li>
               <li>Coverage analysis across {{ allTestsSummary.owaspCategories }} OWASP categories</li>
+              <li class="benchmark-description">A comprehensive benchmark dataset of 175 CWEs (mapped to OWASP Top 10) designed to test, evaluate, and rank security scanner performance</li>
             </ul>
           </div>
 
