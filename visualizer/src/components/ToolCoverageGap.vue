@@ -1,10 +1,7 @@
 <template>
   <div class="tool-coverage-gap">
-    <n-card>
-      <template #header>
-        <h2 class="coverage-gap-title">Tool Gap Analysis</h2>
-      </template>
-      <n-space vertical>
+    <h2 class="coverage-gap-title">Tool Gap Analysis</h2>
+    <n-space vertical>
         <div class="tool-selection-section">
           <div class="select-header">
             <label for="tool-select" class="select-label">Select Security Testing Tools</label>
@@ -238,7 +235,6 @@
           <n-empty description="No coverage gaps found for the selected tools" />
         </div>
       </n-space>
-    </n-card>
   </div>
 </template>
 
