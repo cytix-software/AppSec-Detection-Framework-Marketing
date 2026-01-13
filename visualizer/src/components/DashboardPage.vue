@@ -105,7 +105,7 @@
 // -----------------------------------------------------------------------------
 // Imports
 // -----------------------------------------------------------------------------
-import { NCard, NTabs, NTabPane, NCollapse, NCollapseItem, NSelect } from 'naive-ui'
+import { NCard, NTabs, NTabPane, NCollapse, NCollapseItem, NSelect, NButton, NIcon } from 'naive-ui'
 import { groupBy, filter, find, some, includes, flatten, map } from 'lodash-es'
 import { loadData } from './data'
 import RadarChart from './RadarChart.vue'
@@ -115,6 +115,7 @@ import DataTable from './DataTable.vue'
 import ToolCoverageGap from './ToolCoverageGap.vue'
 import { computed, ref } from 'vue'
 import NavBar from './NavBar.vue'
+import { GithubOutlined } from '@vicons/antd'
 
 const { hydratedTests, hydratedHeatmapTests, vulnerabilities } = loadData()
 
