@@ -54,6 +54,11 @@
           </n-space>
         </div>
 
+        <!-- Selected Tools Header -->
+        <div v-if="selectedTools.length > 0" class="selected-tools-header">
+          <h2>Analyzing: {{ selectedTools.join(', ') }}</h2>
+        </div>
+
         <!-- Default Summary for All Tests -->
         <div v-if="selectedTools.length === 0" class="summary-section">
           <div class="summary-stat">
