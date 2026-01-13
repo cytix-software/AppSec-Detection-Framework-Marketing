@@ -107,8 +107,7 @@
             <h3 class="summary-stat-title">Critical Gaps</h3>
             <p class="summary-stat-value">{{ criticalGapsCount }} CWEs with 0% Detection</p>
             <ul class="summary-stat-details">
-              <li>These are vulnerability weaknesses that were NOT found by any tool</li>
-              <li>Represents significant "blindspots" in security testing</li>
+              <li>None of the tests completed were found by tool</li>
             </ul>
           </div>
 
