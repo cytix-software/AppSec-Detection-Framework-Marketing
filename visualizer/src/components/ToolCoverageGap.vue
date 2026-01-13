@@ -903,35 +903,53 @@ function renderOptionLabel(option: any) {
 }
 
 .summary-stat-title {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 800;
   color: #FF822E;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.875rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .summary-stat-value {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #020E1E;
-  margin: 0 0 1rem 0;
+  font-size: 2.25rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FF822E 0%, #89F336 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.25rem 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1;
 }
 
 .summary-stat-details {
   margin: 0;
-  padding-left: 1.5rem;
-  font-size: 0.875rem;
+  padding: 1rem 0 0 0;
+  border-top: 1px solid rgba(255, 130, 46, 0.2);
+  font-size: 0.8125rem;
   color: #4b5563;
-  line-height: 1.7;
+  line-height: 1.8;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .summary-stat-details li {
-  margin-bottom: 0.625rem;
-  list-style-type: disc;
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.summary-stat-details li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #FF822E;
+  font-weight: 700;
 }
 
 .benchmark-description {
