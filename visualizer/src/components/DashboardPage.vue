@@ -754,6 +754,26 @@ const radarOptions = computed(() => ({
   text-align: center;
 }
 
+.github-data-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+}
+
+.github-data-button :deep(.n-button) {
+  min-height: 44px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
+  border: none;
+}
+
+.github-data-button :deep(.n-button:hover) {
+  background: linear-gradient(90deg, #DA4100 0%, #FF822E 100%);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
