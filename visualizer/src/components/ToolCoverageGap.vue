@@ -791,9 +791,9 @@ function renderOptionLabel(option: any) {
 .tool-actions {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 130, 46, 0.05);
