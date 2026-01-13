@@ -20,7 +20,7 @@
       <!-- Right Side Actions -->
       <div class="navbar-actions">
         <!-- Sign In Link -->
-        <a href="https://portal.cytix.io" target="_blank" rel="noopener noreferrer" class="sign-in-link">
+        <a href="https://portal.cytix.io/login" target="_blank" rel="noopener noreferrer" class="sign-in-link">
           <button class="sign-in-button">
             Sign In
           </button>
