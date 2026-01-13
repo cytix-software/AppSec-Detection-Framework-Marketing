@@ -126,7 +126,10 @@
         </div>
 
         <n-collapse v-if="coverageGaps.length > 0" class="results-section">
-          <n-collapse-item title="Coverage Gap Details" name="gaps">
+          <n-collapse-item name="gaps">
+            <template #header>
+              <h2 class="coverage-gap-title">Coverage Gap Details</h2>
+            </template>
             <n-tabs type="line" animated>
               <n-tab-pane name="cwe" tab="CWE Gaps">
                 <n-list>
