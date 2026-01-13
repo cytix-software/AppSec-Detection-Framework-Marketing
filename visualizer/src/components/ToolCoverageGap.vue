@@ -233,7 +233,7 @@ import {
 import { loadData, getDetailsByCwe, dataJson } from './data'
 import { groupBy, uniq, difference } from 'lodash-es'
 import type { VulnerabilitiesData } from './types'
-import { DownloadOutlined } from '@vicons/antd'
+import { DownloadOutlined, DownOutlined } from '@vicons/antd'
 
 const { hydratedHeatmapTests, vulnerabilities } = loadData()
 
