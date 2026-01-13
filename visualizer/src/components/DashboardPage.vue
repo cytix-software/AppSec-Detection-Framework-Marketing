@@ -881,10 +881,6 @@ const radarOptions = computed(() => ({
   border: none !important;
 }
 
-:deep(.coverage-gap-wrapper) {
-  border: none !important;
-}
-
 :deep(.n-card__header) {
   background: transparent;
   color: #020E1E;
