@@ -69,41 +69,6 @@
 
     <!-- Mobile Menu -->
     <div v-if="isMobileMenuOpen" class="mobile-menu">
-      <a href="https://cytix.io/how-it-works" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
-        How It Works
-      </a>
-      <button 
-        @click="isMobileResourcesOpen = !isMobileResourcesOpen"
-        class="mobile-nav-link mobile-dropdown-trigger"
-      >
-        Resources
-        <svg 
-          class="mobile-chevron"
-          :class="{ 'chevron-open': isMobileResourcesOpen }"
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path 
-            fill-rule="evenodd" 
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" 
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
-      <div v-if="isMobileResourcesOpen" class="mobile-dropdown-menu">
-        <a href="https://cytix.io/resources" target="_blank" rel="noopener noreferrer" class="mobile-dropdown-item">
-          All Resources
-        </a>
-        <a href="https://cytix.io/blog" target="_blank" rel="noopener noreferrer" class="mobile-dropdown-item">
-          Blog
-        </a>
-        <a href="https://cytix.io/documentation" target="_blank" rel="noopener noreferrer" class="mobile-dropdown-item">
-          Documentation
-        </a>
-        <a href="https://cytix.io/case-studies" target="_blank" rel="noopener noreferrer" class="mobile-dropdown-item">
-          Case Studies
-        </a>
-      </div>
       <a href="https://portal.cytix.io" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
         Sign In
       </a>
