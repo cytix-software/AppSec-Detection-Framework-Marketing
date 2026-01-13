@@ -52,7 +52,6 @@
             </n-tab-pane>
             <n-tab-pane name="heatmap-2025" tab="OWASP 2025 (Heatmap)">
               <div class="tab-content">
-                <p class="tab-description">OWASP Top 10 2025 - Shows detection coverage across the 2025 vulnerability classification</p>
                 <HeatmapChart
                   :options="heatmapOptions"
                   :series="filteredHeatmapSeries2025"
