@@ -844,16 +844,16 @@ function renderOptionLabel(option: any) {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0 1.5rem 0;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(255, 130, 46, 0.05) 0%, rgba(255, 130, 46, 0.02) 100%);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 130, 46, 0.1);
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
 }
 
 @media (max-width: 768px) {
   .summary-section {
     grid-template-columns: 1fr;
-    padding: 1.5rem;
+    padding: 0;
     gap: 1rem;
   }
 
@@ -874,16 +874,32 @@ function renderOptionLabel(option: any) {
 }
 
 .summary-stat {
-  padding: 1.5rem;
-  background: white;
-  border-radius: 8px;
-  border-left: 4px solid #FF822E;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  border-radius: 12px;
+  border: 2px solid #FF822E;
+  border-top: 4px solid #FF822E;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 130, 46, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF822E 0%, #89F336 100%);
+  border-radius: 12px 12px 0 0;
 }
 
 .summary-stat:hover {
-  box-shadow: 0 4px 12px rgba(255, 130, 46, 0.1);
+  box-shadow: 0 6px 24px rgba(255, 130, 46, 0.18);
+  transform: translateY(-2px);
+  border-color: #DA4100;
 }
 
 .summary-stat-title {
