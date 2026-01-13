@@ -1118,6 +1118,33 @@ function renderOptionLabel(option: any) {
   }
 }
 
+.gaps-scroll-container {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 8px;
+  padding-right: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+.gaps-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gaps-scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 130, 46, 0.05);
+  border-radius: 8px;
+}
+
+.gaps-scroll-container::-webkit-scrollbar-thumb {
+  background: #FF822E;
+  border-radius: 8px;
+}
+
+.gaps-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #DA4100;
+}
+
 .pagination-controls {
   display: flex;
   justify-content: center;
