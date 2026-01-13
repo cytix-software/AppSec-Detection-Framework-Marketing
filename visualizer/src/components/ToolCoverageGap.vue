@@ -920,6 +920,16 @@ function renderOptionLabel(option: any) {
   list-style-type: disc;
 }
 
+.benchmark-description {
+  margin-top: 1rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 130, 46, 0.2);
+  font-style: italic;
+  color: #666666;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
 .results-guide {
   margin-top: 1.5rem;
   padding: 1rem 0 0 0;
