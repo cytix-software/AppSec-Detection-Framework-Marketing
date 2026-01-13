@@ -374,6 +374,22 @@ const owaspGaps = computed(() => {
   })
 })
 
+// Paginated OWASP gaps
+const totalOwaspPages = computed(() => {
+  return Math.ceil(owaspGaps.value.length / itemsPerPage)
+})
+
+const paginatedOwaspGaps = computed(() => {
+  const startIndex = (currentOwaspPage.value - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  return owaspGaps.value.slice(startIndex, endIndex)
+})
+
+// Reset to page 1 when gaps change
+watch(owaspGaps, () => {
+  currentOwaspPage.value = 1
+})
+
 // Calculate detection rate for an OWASP category
 const calculateOwaspDetectionRate = (owasp: string) => {
   const cwesInCategory = vulnerabilities
