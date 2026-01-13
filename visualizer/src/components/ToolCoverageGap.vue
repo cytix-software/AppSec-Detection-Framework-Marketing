@@ -905,7 +905,7 @@ function renderOptionLabel(option: any) {
 .summary-stat-title {
   font-size: 0.75rem;
   font-weight: 800;
-  color: #FF822E;
+  color: #020E1E;
   margin: 0 0 0.875rem 0;
   text-transform: uppercase;
   letter-spacing: 0.6px;
