@@ -907,6 +907,17 @@ function renderOptionLabel(option: any) {
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.guide-arrow {
+  font-size: 0.875rem;
+  color: #FF822E;
+  display: inline-flex;
+  align-items: center;
 }
 
 .results-section {
