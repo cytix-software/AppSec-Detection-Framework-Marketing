@@ -892,7 +892,7 @@ function renderOptionLabel(option: any) {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #FF822E 0%, #89F336 100%);
+  background: #FF822E;
   border-radius: 12px 12px 0 0;
 }
 
