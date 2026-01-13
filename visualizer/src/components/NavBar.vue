@@ -117,7 +117,7 @@ const isMobileMenuOpen = ref(false)
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: 5rem;
+  height: 5.5rem;
   gap: 2rem;
 }
 
