@@ -651,6 +651,7 @@ const radarOptions = computed(() => ({
 
 .header-content {
   flex: 1;
+  text-align: center;
 }
 
 .page-title {
