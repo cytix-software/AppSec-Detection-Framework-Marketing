@@ -1,19 +1,5 @@
 <template>
   <nav class="navbar-container">
-    <!-- Top Banner -->
-    <div class="banner-bar">
-      <div class="banner-content">
-        <a 
-          href="https://cytix.io/virtual-event-micro-pen-testing" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="banner-link"
-        >
-          VIRTUAL EVENT: Micro Pen Testing in the SDLC: Closing the Gap Between Dev and Security - Watch Here
-        </a>
-      </div>
-    </div>
-
     <!-- Main Navigation -->
     <div class="navbar-main">
       <!-- Logo -->
