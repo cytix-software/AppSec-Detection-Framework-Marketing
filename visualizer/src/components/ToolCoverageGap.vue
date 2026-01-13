@@ -104,21 +104,21 @@
           </div>
 
           <div class="summary-stat">
+            <h3 class="summary-stat-title">Critical Gaps</h3>
+            <p class="summary-stat-value">{{ criticalGapsCount }} CWEs with 0% Detection</p>
+            <ul class="summary-stat-details">
+              <li>These are vulnerability weaknesses that were NOT found by any tool</li>
+              <li>Represents significant "blindspots" in security testing</li>
+            </ul>
+          </div>
+
+          <div class="summary-stat">
             <h3 class="summary-stat-title">OWASP Categories Affected</h3>
             <p class="summary-stat-value">{{ affectedOwaspCategories }} out of 10</p>
             <ul class="summary-stat-details">
               <li v-for="category in affectedOwaspCategoriesList" :key="category" class="category-item">
                 {{ category }}
               </li>
-            </ul>
-          </div>
-
-          <div class="summary-stat">
-            <h3 class="summary-stat-title">Critical Gaps</h3>
-            <p class="summary-stat-value">{{ criticalGapsCount }} CWEs with 0% Detection</p>
-            <ul class="summary-stat-details">
-              <li>These are vulnerability weaknesses that were NOT found by any tool</li>
-              <li>Represents significant "blindspots" in security testing</li>
             </ul>
           </div>
         </div>
