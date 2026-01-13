@@ -946,23 +946,6 @@ function renderOptionLabel(option: any) {
   color: #020E1E;
 }
 
-.critical-gaps-explainer {
-  font-size: 0.875rem;
-  color: #666666;
-  margin: 1rem 0 0 0;
-  padding: 0.75rem 1rem;
-  background: rgba(218, 65, 0, 0.05);
-  border-left: 3px solid #DA4100;
-  border-radius: 4px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.5;
-}
-
-.critical-gaps-explainer strong {
-  color: #DA4100;
-  font-weight: 600;
-}
-
 .gap-suffix {
   font-size: 0.875rem;
   color: #999999;
