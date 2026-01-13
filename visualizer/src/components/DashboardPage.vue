@@ -982,13 +982,14 @@ const radarOptions = computed(() => ({
 
 /* Collapse styling */
 :deep(.n-collapse-item__header) {
-  padding: 1rem 0 !important;
+  padding: 0 !important;
   border-top: 2px solid #FF822E;
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
   font-weight: 700;
   font-size: 1.125rem;
   color: #020E1E;
   letter-spacing: 0.3px;
+  align-items: center !important;
 }
 
 :deep(.n-collapse-item__header-main) {
