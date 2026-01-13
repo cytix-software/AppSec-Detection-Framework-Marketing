@@ -24,9 +24,9 @@
 
     <div class="main-content">
       <!-- Coverage Gap Analysis -->
-      <n-card class="coverage-gap-wrapper">
+      <div class="coverage-gap-wrapper">
         <ToolCoverageGap />
-      </n-card>
+      </div>
       
       <!-- Charts Section -->
       <div class="charts-section">
