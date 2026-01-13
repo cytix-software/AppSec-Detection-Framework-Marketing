@@ -664,6 +664,8 @@ const radarOptions = computed(() => ({
   flex-wrap: wrap;
   gap: 0.5rem;
   flex: 1;
+  justify-content: center;
+  text-align: center;
 }
 
 /* sm: text-6xl (3.75rem) */
