@@ -396,8 +396,8 @@ function calculateOwaspToolDetectionRates(owaspCategory: string) {
   return toolRates
 }
 
-// Analyze coverage gaps
-function analyzeCoverageGaps() {
+// Analyse coverage gaps
+function analyseCoverageGaps() {
   if (selectedTools.value.length === 0) {
     coverageGaps.value = []
     return
