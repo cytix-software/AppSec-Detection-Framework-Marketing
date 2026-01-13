@@ -65,7 +65,7 @@
         <!-- Default Summary for All Tests -->
         <div v-if="selectedTools.length === 0" class="summary-section">
           <div class="summary-stat">
-            <h3 class="summary-stat-title">Total CWEs Analyzed</h3>
+            <h3 class="summary-stat-title">Total CWEs Analysed</h3>
             <p class="summary-stat-value">{{ allTestsSummary.totalCwes }}</p>
             <ul class="summary-stat-details">
               <li>A comprehensive benchmark dataset of 175 CWEs designed to test, evaluate, and rank scanner performance</li>
