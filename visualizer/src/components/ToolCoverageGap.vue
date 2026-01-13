@@ -963,7 +963,7 @@ function renderOptionLabel(option: any) {
   margin-top: 2rem;
   padding: 1.5rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 130, 46, 0.08) 0%, rgba(137, 243, 54, 0.05) 100%);
+  background: rgba(255, 130, 46, 0.08);
   border-radius: 8px;
   border: 1px solid rgba(255, 130, 46, 0.15);
   grid-column: 1 / -1;
