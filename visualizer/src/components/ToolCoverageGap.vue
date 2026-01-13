@@ -616,9 +616,9 @@ const cwesWithPerfectDetection = computed(() => {
   return totalCwesWithTests.value - coverageGaps.value.length
 })
 
-// Watch for changes to selectedTools and automatically analyze
+// Watch for changes to selectedTools and automatically analyse
 watch(selectedTools, () => {
-  analyzeCoverageGaps()
+  analyseCoverageGaps()
 }, { immediate: true })
 
 // Export coverage gaps to CSV
