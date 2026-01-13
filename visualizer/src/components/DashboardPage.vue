@@ -101,6 +101,7 @@ import HeatmapChart from './HeatmapChart.vue'
 import DataTable from './DataTable.vue'
 import ToolCoverageGap from './ToolCoverageGap.vue'
 import { computed, ref } from 'vue'
+import NavBar from './NavBar.vue'
 
 const { hydratedTests, hydratedHeatmapTests, vulnerabilities } = loadData()
 
