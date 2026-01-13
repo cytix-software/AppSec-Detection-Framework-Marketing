@@ -241,7 +241,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, h } from 'vue'
 import { 
-  NCard, 
   NSelect, 
   NSpace, 
   NDivider, 
