@@ -919,16 +919,19 @@ const radarOptions = computed(() => ({
 }
 
 
-.data-table-wrapper {
-  overflow-x: auto;
+.dataset-section {
+  width: 100%;
   border-radius: 12px;
   border: none;
+  overflow: visible;
 }
 
-:deep(.data-table-wrapper .n-collapse-item__header) {
+.dataset-section .coverage-gap-title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 2px solid #FF822E;
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
-  padding: 1rem 1.5rem !important;
+  margin-bottom: 1.5rem;
 }
 
 /* Naive UI Card overrides */
