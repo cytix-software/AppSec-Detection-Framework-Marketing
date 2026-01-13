@@ -147,7 +147,7 @@
                               <n-progress 
                                 type="line" 
                                 :percentage="rate.rate" 
-                                :color="getProgressColor(rate.rate)"
+                                :color="getProgressColour(rate.rate)"
                                 :indicator-placement="'inside'"
                                 :height="16"
                                 :rail-color="rate.rate === 0 ? '#d03050' : undefined"
@@ -180,7 +180,7 @@
                               <n-progress 
                                 type="line" 
                                 :percentage="rate.rate" 
-                                :color="getProgressColor(rate.rate)"
+                                :color="getProgressColour(rate.rate)"
                                 :indicator-placement="'inside'"
                                 :height="16"
                                 :rail-color="rate.rate === 0 ? '#d03050' : undefined"
