@@ -88,7 +88,7 @@
             <p class="summary-stat-value">{{ allTestsSummary.avgDetectionRate }}%</p>
             <ul class="summary-stat-details">
               <li>Average detection rate across all tests</li>
-              <li>Select tools above to analyze coverage gaps</li>
+              <li>Select tools above to analyse coverage gaps</li>
             </ul>
           </div>
         </div>
