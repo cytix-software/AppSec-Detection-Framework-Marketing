@@ -859,15 +859,16 @@ function renderOptionLabel(option: any) {
     flex-direction: column;
     gap: 1rem;
     justify-content: flex-end;
+    align-items: stretch;
   }
 
   .tool-actions :deep(.n-button) {
     width: 100%;
-    order: -1;
   }
 
   .resource-links {
     width: 100%;
+    flex-direction: column;
   }
 }
 
