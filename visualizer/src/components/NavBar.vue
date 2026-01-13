@@ -27,7 +27,7 @@
         </a>
 
         <!-- Start a Conversation CTA -->
-        <a href="https://cytix.io/book-a-demo" target="_blank" rel="noopener noreferrer" class="cta-link">
+        <a href="https://www.cytix.io/book-a-demo" target="_blank" rel="noopener noreferrer" class="cta-link">
           <button class="cta-button">
             Start a Conversation
           </button>
