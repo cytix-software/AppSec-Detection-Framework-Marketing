@@ -997,6 +997,13 @@ const radarOptions = computed(() => ({
   color: #020E1E;
   font-size: 1.125rem;
   letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+}
+
+:deep(.n-collapse-item__header) .n-collapse-item__arrow {
+  align-self: center !important;
+  margin-top: 0 !important;
 }
 
 /* Tab styling */
