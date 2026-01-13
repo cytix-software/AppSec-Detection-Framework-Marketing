@@ -761,17 +761,36 @@ const radarOptions = computed(() => ({
 }
 
 .github-data-button :deep(.n-button) {
-  min-height: 44px;
+  min-height: 48px;
+  padding: 0 2rem;
   font-size: 0.9375rem;
-  font-weight: 600;
-  background: linear-gradient(90deg, #FF822E 0%, #DA4100 100%);
-  border: none;
+  font-weight: 700;
+  background: #FF822E;
+  border: 2px solid transparent;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 130, 46, 0.3);
+  letter-spacing: 0.3px;
 }
 
 .github-data-button :deep(.n-button:hover) {
-  background: linear-gradient(90deg, #DA4100 0%, #FF822E 100%);
+  background: #DA4100;
+  box-shadow: 0 6px 24px rgba(255, 130, 46, 0.4);
   transform: translateY(-2px);
-  transition: all 0.2s ease;
+}
+
+.github-data-button :deep(.n-button:active) {
+  transform: translateY(0);
+}
+
+.github-data-button :deep(.n-button:focus) {
+  outline: 2px solid #FF822E;
+  outline-offset: 2px;
+}
+
+.github-data-button :deep(.n-icon) {
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
 .main-content {
