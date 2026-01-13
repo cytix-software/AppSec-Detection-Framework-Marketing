@@ -1113,4 +1113,39 @@ function renderOptionLabel(option: any) {
     font-size: 0.8125rem;
   }
 }
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 130, 46, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 130, 46, 0.15);
+}
+
+.pagination-info {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #020E1E;
+  min-width: 120px;
+  text-align: center;
+}
+
+.pagination-controls :deep(.n-button) {
+  min-width: 120px;
+}
+
+@media (max-width: 640px) {
+  .pagination-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pagination-controls :deep(.n-button) {
+    width: 100%;
+  }
+}
 </style>
