@@ -894,10 +894,11 @@ function renderOptionLabel(option: any) {
 }
 
 .results-guide {
-  margin: 2rem 0 0 0;
-  padding: 1rem 0;
+  margin-top: 1.5rem;
+  padding: 1rem 0 0 0;
   text-align: center;
   border-top: 1px solid rgba(255, 130, 46, 0.1);
+  grid-column: 1 / -1;
 }
 
 .results-guide p {
