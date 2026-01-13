@@ -929,18 +929,14 @@ const radarOptions = computed(() => ({
 
 
 .dataset-section {
-  width: 100%;
+  overflow: visible;
   border-radius: 12px;
   border: none;
-  overflow: visible;
 }
 
-.dataset-section .coverage-gap-title {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+:deep(.dataset-section .n-card__header) {
   border-top: 2px solid #FF822E;
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
-  margin-bottom: 1.5rem;
 }
 
 /* Naive UI Card overrides */
