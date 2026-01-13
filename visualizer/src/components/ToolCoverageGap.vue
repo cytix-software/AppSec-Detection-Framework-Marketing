@@ -68,8 +68,8 @@
             <h3 class="summary-stat-title">Total CWEs Analyzed</h3>
             <p class="summary-stat-value">{{ allTestsSummary.totalCwes }}</p>
             <ul class="summary-stat-details">
-              <li class="benchmark-description">A comprehensive benchmark dataset of 175 CWEs designed to test, evaluate, and rank scanner performance</li>
-              <li class="benchmark-description">All CWEs tested mapped to OWASP Top 10 for 2021 and 2025</li>
+              <li>A comprehensive benchmark dataset of 175 CWEs designed to test, evaluate, and rank scanner performance</li>
+              <li>All CWEs tested mapped to OWASP Top 10 for 2021 and 2025</li>
             </ul>
           </div>
 
