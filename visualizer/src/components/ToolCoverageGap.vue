@@ -712,6 +712,22 @@ function renderOptionLabel(option: any) {
   width: 100%;
 }
 
+.selected-tools-header {
+  margin: 1.5rem 0 1rem 0;
+  padding: 1rem 0;
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
+}
+
+.selected-tools-header h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #020E1E;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.3px;
+}
+
 .tool-selection-section {
   width: 100%;
   padding-bottom: 1.5rem;
