@@ -2,7 +2,7 @@
   <div class="tool-coverage-gap">
     <n-card>
       <template #header>
-        <h2 class="coverage-gap-title">Coverage Gap Analysis</h2>
+        <h2 class="coverage-gap-title">Tool Gap Analysis</h2>
       </template>
       <n-space vertical>
         <div class="tool-selection-section">
