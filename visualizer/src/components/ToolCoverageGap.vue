@@ -961,7 +961,6 @@ function renderOptionLabel(option: any) {
 .results-section {
   margin-top: 2rem;
   border-radius: 12px;
-  border: 2px solid #FF822E;
   padding: 1.5rem;
 }
 
