@@ -192,8 +192,10 @@ const heatmapSeries2021 = computed(() => {
       const isNoData = !entry || entry.totalCount === 0
       const percentage = isNoData ? 0 : Math.round((entry.detectedCWEs / entry.totalCount) * 100)
 
-      // Text color: navy on colored backgrounds, white on dark backgrounds
-      const labelColor = percentage >= 76 ? '#ffffff' : '#1a1a2e'  // White on dark (76-100%), navy on colors (0-75%)
+      // Text color: navy on colored backgrounds, black or white on dark backgrounds
+      const toolsWithBlackText = ['nuclei', 'Semgrep', 'Burp Suite - Deep Scan', 'Burp Suite - Light Scan', 'Zap']
+      const darkBackgroundColor = toolsWithBlackText.includes(scanner) ? '#000000' : '#ffffff'
+      const labelColor = percentage >= 76 ? darkBackgroundColor : '#1a1a2e'  // Dark bg text (76-100%), navy on colors (0-75%)
 
       return {
         x: `${OWASP} ${group}`,
