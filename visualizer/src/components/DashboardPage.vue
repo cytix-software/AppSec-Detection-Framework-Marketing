@@ -647,7 +647,6 @@ const radarOptions = computed(() => ({
   gap: 2rem;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .header-content {
