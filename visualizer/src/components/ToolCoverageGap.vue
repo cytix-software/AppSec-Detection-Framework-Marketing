@@ -122,6 +122,10 @@
           </div>
         </div>
 
+        <div v-if="coverageGaps.length > 0" class="results-guide">
+          <p>Check out the full test results below</p>
+        </div>
+
         <n-collapse v-if="coverageGaps.length > 0" class="results-section">
           <n-collapse-item title="Coverage Gap Details" name="gaps">
             <n-tabs type="line" animated>
