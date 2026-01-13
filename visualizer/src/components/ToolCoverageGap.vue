@@ -1,6 +1,5 @@
 <template>
   <div class="tool-coverage-gap">
-    <h2 class="coverage-gap-title">Tool Gap Analysis</h2>
     <n-space vertical>
         <div class="tool-selection-section">
           <div class="select-header">
