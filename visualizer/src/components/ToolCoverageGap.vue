@@ -132,36 +132,38 @@
             </template>
             <n-tabs type="line" animated>
               <n-tab-pane name="cwe" tab="CWE Gaps">
-                <n-list>
-                  <n-list-item v-for="cwe in paginatedCweGaps" :key="cwe.id">
-                    <n-thing :title="`CWE-${cwe.id}: ${cwe.name}`">
-                      <template #description>
-                        <div class="cwe-details">
-                          <div><strong>OWASP Category:</strong> {{ cwe.owasp }}</div>
-                          <div><strong>Description:</strong> {{ cwe.description }}</div>
-                          
-                          <div class="tool-detection-rates">
-                            <strong>Detection Rate by Tool:</strong>
-                            <div v-for="(rate, tool) in cwe.toolDetectionRates" :key="tool" class="tool-rate">
-                              <div class="tool-name">{{ tool }}:</div>
-                              <n-progress 
-                                type="line" 
-                                :percentage="rate.rate" 
-                                :color="getProgressColour(rate.rate)"
-                                :indicator-placement="'inside'"
-                                :height="16"
-                                :rail-color="rate.rate === 0 ? '#d03050' : undefined"
-                                :show-indicator="true"
-                              >
-                                {{ rate.detected }}/{{ rate.total }} ({{ rate.rate }}%)
-                              </n-progress>
+                <div class="gaps-scroll-container">
+                  <n-list>
+                    <n-list-item v-for="cwe in paginatedCweGaps" :key="cwe.id">
+                      <n-thing :title="`CWE-${cwe.id}: ${cwe.name}`">
+                        <template #description>
+                          <div class="cwe-details">
+                            <div><strong>OWASP Category:</strong> {{ cwe.owasp }}</div>
+                            <div><strong>Description:</strong> {{ cwe.description }}</div>
+
+                            <div class="tool-detection-rates">
+                              <strong>Detection Rate by Tool:</strong>
+                              <div v-for="(rate, tool) in cwe.toolDetectionRates" :key="tool" class="tool-rate">
+                                <div class="tool-name">{{ tool }}:</div>
+                                <n-progress
+                                  type="line"
+                                  :percentage="rate.rate"
+                                  :color="getProgressColour(rate.rate)"
+                                  :indicator-placement="'inside'"
+                                  :height="16"
+                                  :rail-color="rate.rate === 0 ? '#d03050' : undefined"
+                                  :show-indicator="true"
+                                >
+                                  {{ rate.detected }}/{{ rate.total }} ({{ rate.rate }}%)
+                                </n-progress>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </template>
-                    </n-thing>
-                  </n-list-item>
-                </n-list>
+                        </template>
+                      </n-thing>
+                    </n-list-item>
+                  </n-list>
+                </div>
                 <div v-if="totalCwePages > 1" class="pagination-controls">
                   <n-button
                     :disabled="currentCwePage === 1"
