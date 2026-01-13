@@ -877,6 +877,11 @@ const radarOptions = computed(() => ({
 :deep(.n-card) {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(255, 130, 46, 0.1);
+  border: none !important;
+}
+
+:deep(.coverage-gap-wrapper) {
+  border: none !important;
 }
 
 :deep(.n-card__header) {
