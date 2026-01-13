@@ -289,6 +289,11 @@ const selectedTools = ref<string[]>([])
 // Coverage gaps results
 const coverageGaps = ref<any[]>([])
 
+// Pagination state
+const currentCwePage = ref(1)
+const currentOwaspPage = ref(1)
+const itemsPerPage = 10
+
 // Define emits
 const emit = defineEmits(['tools-selected'])
 
