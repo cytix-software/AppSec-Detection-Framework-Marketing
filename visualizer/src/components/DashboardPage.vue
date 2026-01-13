@@ -774,7 +774,7 @@ const radarOptions = computed(() => ({
   background: #FF822E;
   color: #ffffff;
   border: none;
-  border-radius: 6px;
+  border-radius: 9999px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(255, 130, 46, 0.3);
