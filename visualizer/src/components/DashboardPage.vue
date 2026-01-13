@@ -77,7 +77,10 @@
 
       <!-- Dataset Table -->
       <n-collapse class="data-table-wrapper">
-        <n-collapse-item title="Dataset" name="dataset">
+        <n-collapse-item name="dataset">
+          <template #header>
+            <h2 class="coverage-gap-title">Dataset</h2>
+          </template>
           <DataTable :data="filteredHydratedTests" />
         </n-collapse-item>
       </n-collapse>
