@@ -830,13 +830,24 @@ const radarOptions = computed(() => ({
 .coverage-gap-wrapper {
   width: 100%;
   border-radius: 12px;
-  border: 2px solid #FF822E;
+  border: none;
+}
+
+:deep(.coverage-gap-wrapper .n-card__header) {
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .data-table-wrapper {
   overflow-x: auto;
   border-radius: 12px;
-  border: 2px solid #FF822E;
+  border: none;
+}
+
+:deep(.data-table-wrapper .n-collapse-item__header) {
+  border-top: 2px solid #FF822E;
+  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
+  padding: 1rem 1.5rem !important;
 }
 
 /* Naive UI Card overrides */
