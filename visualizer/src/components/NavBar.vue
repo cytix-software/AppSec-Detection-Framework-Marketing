@@ -133,7 +133,7 @@ const isMobileMenuOpen = ref(false)
 }
 
 .logo-image {
-  height: 2.5rem;
+  height: 3.5rem;
   width: auto;
   object-fit: contain;
 }
