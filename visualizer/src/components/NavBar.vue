@@ -271,13 +271,13 @@ const isMobileMenuOpen = ref(false)
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .navbar-main {
-    height: 4.5rem;
+    height: 5.5rem;
     padding: 0 1rem;
     gap: 1rem;
   }
 
   .logo-image {
-    height: 2.5rem;
+    height: 3rem;
   }
 }
 </style>
