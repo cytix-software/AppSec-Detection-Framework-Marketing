@@ -858,6 +858,7 @@ const radarOptions = computed(() => ({
   width: 100%;
   border-radius: 12px;
   border: none;
+  overflow: visible;
 }
 
 
