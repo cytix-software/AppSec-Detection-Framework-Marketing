@@ -9,6 +9,19 @@
           <span class="title-part-2">Visualiser</span>
         </h1>
         <p class="page-subheading">Reducing vulnerability blindspots across SAST, DAST & AI Pentesting</p>
+        <n-button
+          type="primary"
+          class="github-data-button"
+          tag="a"
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <template #icon>
+            <n-icon><github-icon /></n-icon>
+          </template>
+          ASDF GitHub Data
+        </n-button>
       </div>
     </div>
 
