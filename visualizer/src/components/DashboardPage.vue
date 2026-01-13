@@ -642,8 +642,8 @@ const radarOptions = computed(() => ({
 
 .page-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
