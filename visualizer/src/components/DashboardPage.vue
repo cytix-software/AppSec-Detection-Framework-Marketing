@@ -5,7 +5,7 @@
       <div class="header-content">
         <h1 class="page-title">
           <span class="title-part-1">AppSec Detection Framework (ASDF)</span>
-          <span class="title-part-2">Visualizer</span>
+          <span class="title-part-2">Visualiser</span>
         </h1>
         <p class="page-subheading">Reducing vulnerability blindspots across SAST, DAST & AI Pentesting</p>
       </div>
