@@ -979,31 +979,6 @@ const radarOptions = computed(() => ({
   transition: box-shadow 0.2s ease;
 }
 
-/* Collapse styling */
-:deep(.n-collapse-item__header) {
-  padding: 0 !important;
-  border-top: 2px solid #FF822E;
-  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: #020E1E;
-  letter-spacing: 0.3px;
-  align-items: center !important;
-}
-
-:deep(.n-collapse-item__header-main) {
-  font-weight: 700;
-  color: #020E1E;
-  font-size: 1.125rem;
-  letter-spacing: 0.3px;
-  display: flex;
-  align-items: center;
-}
-
-:deep(.n-collapse-item__header) .n-collapse-item__arrow {
-  align-self: center !important;
-  margin-top: 0 !important;
-}
 
 /* Tab styling */
 :deep(.n-tabs-nav) {
