@@ -9,7 +9,7 @@
           <span class="title-part-2">Visualiser</span>
         </h1>
         <p class="page-subheading">Reducing vulnerability blindspots across SAST, DAST & AI Pentesting</p>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-data-button">
+        <a href="https://github.com/cytix-software/AppSec-Detection-Framework" target="_blank" rel="noopener noreferrer" class="github-data-button">
           <n-button type="primary">
             <template #icon>
               <n-icon><GithubOutlined /></n-icon>
