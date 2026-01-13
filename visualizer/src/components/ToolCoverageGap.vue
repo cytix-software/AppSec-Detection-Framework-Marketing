@@ -107,7 +107,7 @@
             <h3 class="summary-stat-title">Critical Gaps</h3>
             <p class="summary-stat-value">{{ criticalGapsCount }} CWEs with 0% Detection</p>
             <ul class="summary-stat-details">
-              <li>Critical gaps are when 0 tests against the individual CWEs detect the vulnerability. Compared to partial gaps where the tool picks up the CWE during some of the tests.</li>
+              <li>Critical gaps occur when there's 0% detection rate by the tool across multiple tests.</li>
             </ul>
           </div>
 
