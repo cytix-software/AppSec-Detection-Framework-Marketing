@@ -772,19 +772,19 @@ const radarOptions = computed(() => ({
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 0.3px;
-  background: #FF822E;
+  background: #020E1E;
   color: #ffffff;
   border: none;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 130, 46, 0.3);
+  box-shadow: 0 4px 16px rgba(2, 14, 30, 0.3);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .github-data-button:hover {
-  background: #DA4100;
-  box-shadow: 0 6px 24px rgba(255, 130, 46, 0.4);
+  background: #1a1a2e;
+  box-shadow: 0 6px 24px rgba(2, 14, 30, 0.4);
   transform: translateY(-2px);
 }
 
@@ -793,7 +793,7 @@ const radarOptions = computed(() => ({
 }
 
 .github-data-button:focus {
-  outline: 2px solid #FF822E;
+  outline: 2px solid #020E1E;
   outline-offset: 2px;
 }
 
