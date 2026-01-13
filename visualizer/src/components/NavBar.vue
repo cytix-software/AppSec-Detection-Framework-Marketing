@@ -82,9 +82,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const isResourcesOpen = ref(false)
 const isMobileMenuOpen = ref(false)
-const isMobileResourcesOpen = ref(false)
 </script>
 
 <style scoped>
