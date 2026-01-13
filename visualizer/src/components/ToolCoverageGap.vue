@@ -162,11 +162,26 @@
                     </n-thing>
                   </n-list-item>
                 </n-list>
+                <div v-if="totalCwePages > 1" class="pagination-controls">
+                  <n-button
+                    :disabled="currentCwePage === 1"
+                    @click="currentCwePage--"
+                  >
+                    ← Previous
+                  </n-button>
+                  <span class="pagination-info">Page {{ currentCwePage }} of {{ totalCwePages }}</span>
+                  <n-button
+                    :disabled="currentCwePage === totalCwePages"
+                    @click="currentCwePage++"
+                  >
+                    Next →
+                  </n-button>
+                </div>
               </n-tab-pane>
-              
+
               <n-tab-pane name="owasp" tab="OWASP Category Gaps">
                 <n-list>
-                  <n-list-item v-for="owasp in owaspGaps" :key="owasp.code">
+                  <n-list-item v-for="owasp in paginatedOwaspGaps" :key="owasp.code">
                     <n-thing :title="`${owasp.code} ${owasp.groupTitle}`">
                       <template #description>
                         <div class="owasp-details">
