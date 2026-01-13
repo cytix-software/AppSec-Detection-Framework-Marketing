@@ -210,6 +210,21 @@
                     </n-thing>
                   </n-list-item>
                 </n-list>
+                <div v-if="totalOwaspPages > 1" class="pagination-controls">
+                  <n-button
+                    :disabled="currentOwaspPage === 1"
+                    @click="currentOwaspPage--"
+                  >
+                    ← Previous
+                  </n-button>
+                  <span class="pagination-info">Page {{ currentOwaspPage }} of {{ totalOwaspPages }}</span>
+                  <n-button
+                    :disabled="currentOwaspPage === totalOwaspPages"
+                    @click="currentOwaspPage++"
+                  >
+                    Next →
+                  </n-button>
+                </div>
               </n-tab-pane>
             </n-tabs>
           </n-collapse-item>
