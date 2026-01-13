@@ -55,7 +55,7 @@
 
     <!-- Mobile Menu -->
     <div v-if="isMobileMenuOpen" class="mobile-menu">
-      <a href="https://portal.cytix.io" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+      <a href="https://portal.cytix.io/login" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
         Sign In
       </a>
       <a href="https://www.cytix.io/book-a-demo" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-cta">
