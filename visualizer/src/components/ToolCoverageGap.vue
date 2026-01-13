@@ -755,7 +755,6 @@ function renderOptionLabel(option: any) {
 .tool-selection-section {
   width: 100%;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .select-header {
