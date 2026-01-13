@@ -133,7 +133,7 @@
             <n-tabs type="line" animated>
               <n-tab-pane name="cwe" tab="CWE Gaps">
                 <n-list>
-                  <n-list-item v-for="cwe in cweGaps" :key="cwe.id">
+                  <n-list-item v-for="cwe in paginatedCweGaps" :key="cwe.id">
                     <n-thing :title="`CWE-${cwe.id}: ${cwe.name}`">
                       <template #description>
                         <div class="cwe-details">
