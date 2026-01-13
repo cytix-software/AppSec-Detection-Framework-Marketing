@@ -8,7 +8,7 @@
         <div class="tool-selection-section">
           <div class="select-header">
             <label for="tool-select" class="select-label">Select Security Testing Tools</label>
-            <p class="select-description">Choose one or more tools to analyze coverage gaps and detect blindspots in your security testing strategy</p>
+            <p class="select-description">Choose one or more tools to analyse coverage gaps and detect blindspots in your security testing strategy</p>
           </div>
           <n-space vertical style="width: 100%; gap: 1rem">
             <div class="select-container">
