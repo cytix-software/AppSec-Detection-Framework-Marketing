@@ -965,45 +965,6 @@ function renderOptionLabel(option: any) {
   padding: 1.5rem;
 }
 
-.results-section :deep(.n-collapse-item__header) {
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: #1f2937;
-  margin: 0 0 2rem 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.2;
-  padding: 0 !important;
-  border: none !important;
-}
-
-.results-section :deep(.n-collapse-item__header-main) {
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: #1f2937;
-}
-
-/* Tablet breakpoint */
-@media (min-width: 768px) {
-  .results-section :deep(.n-collapse-item__header) {
-    font-size: 1.875rem;
-  }
-
-  .results-section :deep(.n-collapse-item__header-main) {
-    font-size: 1.875rem;
-  }
-}
-
-/* Desktop breakpoint */
-@media (min-width: 1024px) {
-  .results-section :deep(.n-collapse-item__header) {
-    font-size: 2.25rem;
-  }
-
-  .results-section :deep(.n-collapse-item__header-main) {
-    font-size: 2.25rem;
-  }
-}
-
 .cwe-details, .owasp-details {
   margin-top: 0.5rem;
   padding: 1rem;
