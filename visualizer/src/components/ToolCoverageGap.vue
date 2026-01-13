@@ -123,7 +123,7 @@
         </div>
 
         <div v-if="coverageGaps.length > 0" class="results-guide">
-          <p>Check out the full test results below</p>
+          <p>Check out the full test results below <n-icon class="guide-arrow"><DownOutlined /></n-icon></p>
         </div>
 
         <n-collapse v-if="coverageGaps.length > 0" class="results-section">
