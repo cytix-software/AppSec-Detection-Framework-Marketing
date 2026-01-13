@@ -963,18 +963,20 @@ function renderOptionLabel(option: any) {
 }
 
 .results-guide {
-  margin-top: 1.5rem;
-  padding: 1rem 0 0 0;
+  margin-top: 2rem;
+  padding: 1.5rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 130, 46, 0.1);
+  background: linear-gradient(135deg, rgba(255, 130, 46, 0.08) 0%, rgba(137, 243, 54, 0.05) 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 130, 46, 0.15);
   grid-column: 1 / -1;
 }
 
 .results-guide p {
   font-size: 0.9375rem;
-  color: #4b5563;
+  color: #020E1E;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   display: flex;
@@ -988,6 +990,16 @@ function renderOptionLabel(option: any) {
   color: #FF822E;
   display: inline-flex;
   align-items: center;
+  animation: slideRight 1s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
 }
 
 .results-section {
