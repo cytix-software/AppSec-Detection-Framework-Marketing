@@ -589,6 +589,29 @@ const radarOptions = computed(() => ({
 </script>
 
 <style>
+.coverage-gap-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin: 0 0 2rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.2;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  .coverage-gap-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .coverage-gap-title {
+    font-size: 2.25rem;
+  }
+}
+
 .dashboard-container {
   padding: 2rem 3rem;
   margin: 0 auto;
