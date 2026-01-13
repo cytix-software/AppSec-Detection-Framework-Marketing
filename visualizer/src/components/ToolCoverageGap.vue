@@ -740,7 +740,6 @@ function renderOptionLabel(option: any) {
   margin: 1.5rem 0 1rem 0;
   padding: 1rem 0;
   border-top: 2px solid #FF822E;
-  border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
 .selected-tools-header h2 {
