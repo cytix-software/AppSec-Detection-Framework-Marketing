@@ -89,10 +89,12 @@
       </div>
 
       <!-- Dataset Table -->
-      <div class="dataset-section">
-        <h2 class="coverage-gap-title">Dataset</h2>
+      <n-card class="dataset-section">
+        <template #header>
+          <h2 class="coverage-gap-title">Dataset</h2>
+        </template>
         <DataTable :data="filteredHydratedTests" />
-      </div>
+      </n-card>
     </div>
   </div>
 </template>
