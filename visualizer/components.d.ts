@@ -21,6 +21,5 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ToolCoverageGap: typeof import('./src/components/ToolCoverageGap.vue')['default']
-    TreemapChart: typeof import('./src/components/TreemapChart.vue')['default']
   }
 }

@@ -20,6 +20,7 @@ frontend:
   cache:
     paths:
       - visualizer/node_modules/**/*
+      - visualizer/.bun/**/*
   customHeaders:
     - pattern: '**/*'
       headers:
