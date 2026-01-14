@@ -938,21 +938,27 @@ const radarOptions = computed(() => ({
 }
 
 .tab-content {
-  padding: 2rem 0 1.5rem 0;
+  padding: 1.5rem 0;
   overflow-x: auto;
-  min-height: 500px;
+  min-height: 350px;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
+  .tab-content {
+    padding: 2rem 0 1.5rem 0;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
   .tab-content {
     min-height: 450px;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1280px) {
   .tab-content {
-    min-height: 400px;
-    padding: 1.5rem 0;
+    min-height: 500px;
   }
 }
 
