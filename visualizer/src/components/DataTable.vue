@@ -307,19 +307,25 @@ const filteredData = computed(() => {
 .filter-input-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  min-width: 160px;
+  gap: 0.4rem;
   width: 100%;
 }
 
 .filter-label {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #020E1E;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
+}
+
+@media (min-width: 768px) {
+  .filter-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 .filter-input {
