@@ -111,11 +111,30 @@ import BarChart from './BarChart.vue'
 import HeatmapChart from './HeatmapChart.vue'
 import DataTable from './DataTable.vue'
 import ToolCoverageGap from './ToolCoverageGap.vue'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import NavBar from './NavBar.vue'
 import { GithubOutlined } from '@vicons/antd'
 
 const { hydratedTests, hydratedHeatmapTests, vulnerabilities } = loadData()
+
+// Mobile responsiveness tracking
+const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+const isMobile = computed(() => windowWidth.value < 768)
+const isTablet = computed(() => windowWidth.value >= 768 && windowWidth.value < 1024)
+const isDesktop = computed(() => windowWidth.value >= 1024)
+
+const handleResize = () => {
+  windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
 
 // Split the combined list by year
 const vulnerabilities2021 = computed(() =>
@@ -324,94 +343,105 @@ const filteredHeatmapSeries2025 = computed(() => {
 // Shared Heatmap Options
 // -----------------------------------------------------------------------------
 
-const heatmapOptions = computed(() => ({
-  chart: { type: 'heatmap' },
-  plotOptions: {
-    heatmap: {
-      shadeIntensity: 0.7,
-      colorScale: {
-        ranges: [
-          { from: 0, to: 0, color: '#D3D3D3' },      // Light gray for 0% (No Data)
-          { from: 1, to: 25, color: '#FFCCB3' },     // Light orange for low detection
-          { from: 26, to: 50, color: '#FFA366' },    // Medium orange
-          { from: 51, to: 75, color: '#FF6B2E' },    // Darker orange
-          { from: 76, to: 100, color: '#1a1a2e' },   // Dark navy for high detection
-        ],
+// Responsive heatmap options for different screen sizes
+const heatmapOptions = computed(() => {
+  const baseFontSize = isMobile.value ? '9px' : isTablet.value ? '10px' : '11px'
+  const dataLabelFontSize = isMobile.value ? '10px' : isTablet.value ? '11px' : '13px'
+  const labelRotation = isMobile.value ? -25 : isTablet.value ? -35 : -45
+  const maxLabelHeight = isMobile.value ? 80 : isTablet.value ? 100 : 120
+  const dataLabelsEnabled = !isMobile.value // Disable data labels on mobile for clarity
+
+  return {
+    chart: { type: 'heatmap' },
+    plotOptions: {
+      heatmap: {
+        shadeIntensity: 0.7,
+        colorScale: {
+          ranges: [
+            { from: 0, to: 0, color: '#D3D3D3' },
+            { from: 1, to: 25, color: '#FFCCB3' },
+            { from: 26, to: 50, color: '#FFA366' },
+            { from: 51, to: 75, color: '#FF6B2E' },
+            { from: 76, to: 100, color: '#1a1a2e' },
+          ],
+        },
       },
     },
-  },
 
-  states: {
-    hover: {
-      filter: {
-        type: 'none',
+    states: {
+      hover: {
+        filter: {
+          type: 'none',
+        },
+      },
+      active: {
+        filter: {
+          type: 'none',
+        },
       },
     },
-    active: {
-      filter: {
-        type: 'none',
+
+    xaxis: {
+      labels: {
+        show: true,
+        style: {
+          fontSize: baseFontSize,
+          fontWeight: 600,
+          colors: '#020E1E',
+        },
+        rotate: labelRotation,
+        rotateAlways: true,
+        hideOverlappingLabels: isMobile.value,
+        maxHeight: maxLabelHeight,
+        trim: true,
       },
     },
-  },
 
-  xaxis: {
-    labels: {
-      show: true,
-      style: {
-        fontSize: '11px',
-        fontWeight: 600,
-        colors: '#020E1E',
-      },
-      rotate: -45,
-      rotateAlways: true,
-      hideOverlappingLabels: false,
-      maxHeight: 120,
-      trim: true,
-    },
-  },
-
-  // 1) Data labels in each cell
-  dataLabels: {
-    enabled: true,
-    formatter(val: number, opts: any) {
-      // Access the data object
-      const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
-      return point.isNoData ? 'No Data' : `${val}%`
-    },
-  },
-
-  // 2) Tooltip
-  tooltip: {
-    y: {
+    dataLabels: {
+      enabled: dataLabelsEnabled,
       formatter(val: number, opts: any) {
         const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
-        if (point.isNoData) return 'No Data'
+        return point.isNoData ? 'No Data' : `${val}%`
+      },
+      style: {
+        fontSize: dataLabelFontSize,
+        fontWeight: 600,
+      },
+    },
 
-        // Find the entry in the correct heatmapData (try 2021 then 2025)
-        const scannerName = opts.w.config.series[opts.seriesIndex].name
-        const owaspCategory = point.owasp
+    tooltip: {
+      enabled: true,
+      y: {
+        formatter(val: number, opts: any) {
+          const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
+          if (point.isNoData) return 'No Data'
 
-        let entry = find(heatmapData2021.value, {
-          scanner: scannerName,
-          OWASP: owaspCategory
-        })
+          const scannerName = opts.w.config.series[opts.seriesIndex].name
+          const owaspCategory = point.owasp
 
-        if (!entry) {
-          entry = find(heatmapData2025.value, {
+          let entry = find(heatmapData2021.value, {
             scanner: scannerName,
             OWASP: owaspCategory
           })
-        }
 
-        if (entry) {
-          return `${entry.detectedCWEs}/${entry.totalCount} (${val}%)`
-        }
+          if (!entry) {
+            entry = find(heatmapData2025.value, {
+              scanner: scannerName,
+              OWASP: owaspCategory
+            })
+          }
 
-        return `${val}%`
+          if (entry) {
+            return `${entry.detectedCWEs}/${entry.totalCount} (${val}%)`
+          }
+
+          return `${val}%`
+        },
       },
+      theme: isMobile.value ? 'light' : 'light',
     },
-  },
-}))
+  }
+})
 
 // -----------------------------------------------------------------------------
 // forPerformance (Bar Chart Logic)
@@ -972,9 +1002,26 @@ const radarOptions = computed(() => ({
 }
 
 .tab-content {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   overflow-x: auto;
-  min-height: 350px;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  min-height: 280px;
+}
+
+/* Mobile: reduced height for better mobile viewing */
+@media (max-width: 640px) {
+  .tab-content {
+    padding: 0.75rem 0;
+    min-height: 250px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+  .tab-content {
+    padding: 1.25rem 0;
+    min-height: 300px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1171,8 +1218,10 @@ const radarOptions = computed(() => ({
 }
 
 /* Apexcharts custom styling */
+/* Apexcharts responsive design */
 .apexcharts-canvas {
   margin: 0 auto;
+  width: 100% !important;
 }
 
 .apexcharts-xaxis-label {
@@ -1186,12 +1235,41 @@ const radarOptions = computed(() => ({
   font-size: 11px !important;
 }
 
+/* Mobile optimizations for xaxis labels */
+@media (max-width: 768px) {
+  .apexcharts-xaxis-label {
+    font-size: 8px !important;
+    letter-spacing: 0px;
+  }
+
+  .apexcharts-xaxis-label tspan {
+    font-size: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .apexcharts-xaxis-label {
+    font-size: 7px !important;
+  }
+
+  .apexcharts-xaxis-label tspan {
+    font-size: 7px !important;
+  }
+}
+
 .apexcharts-xaxistooltip {
   background: rgba(2, 14, 30, 0.9) !important;
   color: white !important;
   font-size: 11px !important;
   border-radius: 4px !important;
   padding: 4px 8px !important;
+}
+
+@media (max-width: 768px) {
+  .apexcharts-xaxistooltip {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+  }
 }
 
 /* Heatmap cell styling for better contrast */
@@ -1224,6 +1302,21 @@ const radarOptions = computed(() => ({
   letter-spacing: 0.3px;
 }
 
+/* Mobile optimization for heatmap text */
+@media (max-width: 768px) {
+  .apexcharts-heatmap-text {
+    font-weight: 600 !important;
+    font-size: 10px !important;
+    letter-spacing: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apexcharts-heatmap-text {
+    font-size: 8px !important;
+  }
+}
+
 /* Force text color on heatmap data labels */
 .apexcharts-text {
   font-weight: 600 !important;
@@ -1240,6 +1333,21 @@ const radarOptions = computed(() => ({
 .apexcharts-datalabel text tspan {
   font-weight: 600 !important;
   font-size: 13px !important;
+}
+
+/* Mobile optimization for data labels */
+@media (max-width: 768px) {
+  .apexcharts-datalabel text,
+  .apexcharts-datalabel text tspan {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .apexcharts-datalabel text,
+  .apexcharts-datalabel text tspan {
+    font-size: 7px !important;
+  }
 }
 
 /* Target heatmap cells with dark background (76-100%) - white text */
@@ -1265,6 +1373,13 @@ const radarOptions = computed(() => ({
   box-shadow: 0 4px 20px rgba(255, 130, 46, 0.2) !important;
 }
 
+@media (max-width: 768px) {
+  .apexcharts-tooltip {
+    border-radius: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
 .apexcharts-tooltip-title {
   background: #020E1E !important;
   color: #ffffff !important;
@@ -1274,9 +1389,23 @@ const radarOptions = computed(() => ({
   border-radius: 8px 8px 0 0 !important;
 }
 
+@media (max-width: 768px) {
+  .apexcharts-tooltip-title {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
 .apexcharts-tooltip-series-group {
   padding: 8px 12px !important;
   background: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .apexcharts-tooltip-series-group {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+  }
 }
 
 .apexcharts-tooltip-marker {
