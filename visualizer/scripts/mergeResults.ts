@@ -1,5 +1,8 @@
 import { readFile, readdir, writeFile } from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function mergeResults() {
   const resultsDir = path.resolve(__dirname, '../../results');
