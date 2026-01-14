@@ -265,7 +265,7 @@ const isMobileMenuOpen = ref(false)
   gap: 0;
   border-top: 1px solid #e5e7eb;
   background-color: #ffffff;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem;
 }
 
 @media (min-width: 768px) {
