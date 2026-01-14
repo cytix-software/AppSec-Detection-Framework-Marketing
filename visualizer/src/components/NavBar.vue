@@ -208,8 +208,14 @@ const isMobileMenuOpen = ref(false)
   background-color: #FF822E;
   color: #ffffff;
   border-radius: 9999px;
-  padding: 0.625rem 1.5rem;
+  padding: 0.4rem 0.8rem;
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .cta-button {
+    padding: 0.625rem 1.5rem;
+  }
 }
 
 .cta-button:hover {
