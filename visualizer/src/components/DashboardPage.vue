@@ -957,11 +957,18 @@ const radarOptions = computed(() => ({
 
 .chart-subheading {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #4b5563;
-  line-height: 1.6;
+  line-height: 1.5;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .chart-subheading {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
 }
 
 .tab-content {
