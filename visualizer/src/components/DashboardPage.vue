@@ -608,9 +608,9 @@ const radarOptions = computed(() => ({
 <style>
 .coverage-gap-title {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   color: #1f2937;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.2;
 }
@@ -618,12 +618,20 @@ const radarOptions = computed(() => ({
 /* Tablet breakpoint */
 @media (min-width: 768px) {
   .coverage-gap-title {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;
   }
 }
 
 /* Desktop breakpoint */
 @media (min-width: 1024px) {
+  .coverage-gap-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Large desktop breakpoint */
+@media (min-width: 1280px) {
   .coverage-gap-title {
     font-size: 2.25rem;
   }
@@ -647,8 +655,14 @@ const radarOptions = computed(() => ({
 
 @media (max-width: 768px) {
   .dashboard-container {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.75rem;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.75rem 0.5rem;
   }
 }
 
@@ -656,9 +670,17 @@ const radarOptions = computed(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+  }
 }
 
 .header-content {
@@ -669,7 +691,7 @@ const radarOptions = computed(() => ({
 .page-title {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 1.75rem;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 0;
@@ -681,17 +703,24 @@ const radarOptions = computed(() => ({
   text-align: center;
 }
 
-/* sm: text-6xl (3.75rem) */
+/* sm: text-4xl (2.25rem) */
 @media (min-width: 640px) {
   .page-title {
-    font-size: 3.75rem;
+    font-size: 2.25rem;
   }
 }
 
-/* lg: text-7xl (4.5rem) + mb-14 (3.5rem) */
+/* md: text-5xl (3rem) */
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+}
+
+/* lg: text-6xl (3.75rem) + mb-14 (3.5rem) */
 @media (min-width: 1024px) {
   .page-title {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
   }
 
   .page-header {
@@ -699,10 +728,10 @@ const radarOptions = computed(() => ({
   }
 }
 
-/* xl: text-8xl (6rem) */
+/* xl: text-7xl (4.5rem) */
 @media (min-width: 1280px) {
   .page-title {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -748,38 +777,68 @@ const radarOptions = computed(() => ({
 
 .page-subheading {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #4b5563;
-  margin: 1rem auto 0;
+  margin: 0.75rem auto 0;
   line-height: 1.6;
   max-width: 600px;
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .page-subheading {
+    font-size: 1rem;
+    margin: 1rem auto 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-subheading {
+    font-size: 1.125rem;
+  }
+}
+
 .github-data-button-link {
   display: inline-block;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .github-data-button-link {
+    margin-top: 0.75rem;
+  }
 }
 
 .github-data-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  min-height: 48px;
-  padding: 0 2rem;
-  font-size: 0.9375rem;
+  gap: 0.5rem;
+  min-height: 40px;
+  padding: 0 1.25rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   background: #020E1E;
   color: #ffffff;
   border: none;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(2, 14, 30, 0.3);
+  box-shadow: 0 2px 8px rgba(2, 14, 30, 0.2);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .github-data-button {
+    min-height: 48px;
+    padding: 0 2rem;
+    font-size: 0.9375rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 16px rgba(2, 14, 30, 0.3);
+    gap: 0.75rem;
+  }
 }
 
 .github-data-button:hover {
@@ -838,19 +897,27 @@ const radarOptions = computed(() => ({
 }
 
 .chart-description {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
   background: rgba(255, 130, 46, 0.05);
-  border-left: 4px solid #FF822E;
+  border-left: 3px solid #FF822E;
   border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .chart-description {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid #FF822E;
+  }
 }
 
 .chart-tools-filter {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
@@ -858,50 +925,74 @@ const radarOptions = computed(() => ({
   font-weight: 700;
   color: #020E1E;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
+  font-size: 0.65rem;
+  letter-spacing: 0.4px;
   display: block;
 }
 
 .filter-hint {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: #999999;
   font-style: italic;
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .chart-tools-filter {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .chart-tools-filter .filter-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .filter-hint {
+    font-size: 0.8125rem;
+    margin-top: -0.5rem;
   }
 }
 
 .chart-subheading {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #4b5563;
-  line-height: 1.6;
+  line-height: 1.5;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.tab-content {
-  padding: 2rem 0 1.5rem 0;
-  overflow-x: auto;
-  min-height: 500px;
+@media (min-width: 768px) {
+  .chart-subheading {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
 }
 
-@media (max-width: 1024px) {
+.tab-content {
+  padding: 1.5rem 0;
+  overflow-x: auto;
+  min-height: 350px;
+}
+
+@media (min-width: 768px) {
+  .tab-content {
+    padding: 2rem 0 1.5rem 0;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
   .tab-content {
     min-height: 450px;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1280px) {
   .tab-content {
-    min-height: 400px;
-    padding: 1.5rem 0;
+    min-height: 500px;
   }
 }
 

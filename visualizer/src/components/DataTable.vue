@@ -267,37 +267,65 @@ const filteredData = computed(() => {
 .data-table-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
   overflow-x: auto;
 }
 
+@media (min-width: 768px) {
+  .data-table-container {
+    gap: 1.5rem;
+  }
+}
+
 .column-filters {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   border-bottom: 2px solid rgba(255, 130, 46, 0.1);
+}
+
+@media (min-width: 640px) {
+  .column-filters {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .column-filters {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+  }
 }
 
 .filter-input-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  min-width: 160px;
+  gap: 0.4rem;
   width: 100%;
 }
 
 .filter-label {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #020E1E;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
+}
+
+@media (min-width: 768px) {
+  .filter-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 .filter-input {
@@ -315,18 +343,30 @@ const filteredData = computed(() => {
 .results-table :deep(.n-data-table-th) {
   background: linear-gradient(135deg, #020E1E 0%, #1a1a2e 100%) !important;
   color: #ffffff !important;
-  font-size: 0.8125rem !important;
+  font-size: 0.7rem !important;
   font-weight: 700 !important;
   white-space: nowrap;
-  padding: 12px 10px !important;
+  padding: 8px 6px !important;
   border-bottom: 2px solid #FF822E !important;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .results-table :deep(.n-data-table-td) {
   white-space: nowrap;
-  padding: 10px !important;
+  padding: 8px 6px !important;
   border-bottom: 1px solid #f0f0f0 !important;
+}
+
+@media (min-width: 768px) {
+  .results-table :deep(.n-data-table-th) {
+    font-size: 0.8125rem !important;
+    padding: 12px 10px !important;
+    letter-spacing: 0.3px;
+  }
+
+  .results-table :deep(.n-data-table-td) {
+    padding: 10px !important;
+  }
 }
 
 .results-table :deep(.n-data-table-tr:hover) {
