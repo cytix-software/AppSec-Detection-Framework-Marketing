@@ -907,9 +907,9 @@ const radarOptions = computed(() => ({
 .chart-tools-filter {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 130, 46, 0.1);
 }
 
@@ -917,22 +917,33 @@ const radarOptions = computed(() => ({
   font-weight: 700;
   color: #020E1E;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
+  font-size: 0.65rem;
+  letter-spacing: 0.4px;
   display: block;
 }
 
 .filter-hint {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: #999999;
   font-style: italic;
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .chart-tools-filter {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .chart-tools-filter .filter-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .filter-hint {
+    font-size: 0.8125rem;
+    margin-top: -0.5rem;
   }
 }
 
