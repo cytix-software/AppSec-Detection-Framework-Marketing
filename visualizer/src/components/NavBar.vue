@@ -89,9 +89,23 @@ const isMobileMenuOpen = ref(false)
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  height: 6.5rem;
-  gap: 2rem;
+  padding: 0 0.75rem;
+  height: 4rem;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-main {
+    padding: 0 1.5rem;
+    height: 5.5rem;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-main {
+    height: 6.5rem;
+  }
 }
 
 /* Logo */
