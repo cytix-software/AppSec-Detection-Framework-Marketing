@@ -120,9 +120,21 @@ const isMobileMenuOpen = ref(false)
 }
 
 .logo-image {
-  height: 4.5rem;
+  height: 2rem;
   width: auto;
   object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .logo-image {
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-image {
+    height: 4.5rem;
+  }
 }
 
 /* Menu Items */
