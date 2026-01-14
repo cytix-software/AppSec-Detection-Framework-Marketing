@@ -769,13 +769,26 @@ const radarOptions = computed(() => ({
 
 .page-subheading {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #4b5563;
-  margin: 1rem auto 0;
+  margin: 0.75rem auto 0;
   line-height: 1.6;
   max-width: 600px;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-subheading {
+    font-size: 1rem;
+    margin: 1rem auto 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-subheading {
+    font-size: 1.125rem;
+  }
 }
 
 .github-data-button-link {
