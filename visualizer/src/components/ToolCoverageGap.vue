@@ -1198,24 +1198,45 @@ function renderOptionLabel(option: any) {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  padding: 1.5rem;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
   background: rgba(255, 130, 46, 0.05);
   border-radius: 8px;
   border: 1px solid rgba(255, 130, 46, 0.15);
+  flex-wrap: wrap;
 }
 
 .pagination-info {
-  font-size: 0.9375rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #020E1E;
-  min-width: 120px;
+  min-width: 100px;
   text-align: center;
 }
 
 .pagination-controls :deep(.n-button) {
-  min-width: 120px;
+  min-width: 90px;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .pagination-controls {
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .pagination-info {
+    font-size: 0.9375rem;
+    min-width: 120px;
+  }
+
+  .pagination-controls :deep(.n-button) {
+    min-width: 120px;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 640px) {
