@@ -805,24 +805,36 @@ function renderOptionLabel(option: any) {
 
 .select-label {
   display: block;
-  font-size: 0.9375rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #020E1E;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.75rem;
+  letter-spacing: 0.4px;
 }
 
 .select-description {
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   color: #4b5563;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .select-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .select-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
 }
 
 .select-container {
