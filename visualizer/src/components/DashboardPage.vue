@@ -1302,6 +1302,21 @@ const radarOptions = computed(() => ({
   letter-spacing: 0.3px;
 }
 
+/* Mobile optimization for heatmap text */
+@media (max-width: 768px) {
+  .apexcharts-heatmap-text {
+    font-weight: 600 !important;
+    font-size: 10px !important;
+    letter-spacing: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apexcharts-heatmap-text {
+    font-size: 8px !important;
+  }
+}
+
 /* Force text color on heatmap data labels */
 .apexcharts-text {
   font-weight: 600 !important;
@@ -1318,6 +1333,21 @@ const radarOptions = computed(() => ({
 .apexcharts-datalabel text tspan {
   font-weight: 600 !important;
   font-size: 13px !important;
+}
+
+/* Mobile optimization for data labels */
+@media (max-width: 768px) {
+  .apexcharts-datalabel text,
+  .apexcharts-datalabel text tspan {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .apexcharts-datalabel text,
+  .apexcharts-datalabel text tspan {
+    font-size: 7px !important;
+  }
 }
 
 /* Target heatmap cells with dark background (76-100%) - white text */
