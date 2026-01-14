@@ -608,9 +608,9 @@ const radarOptions = computed(() => ({
 <style>
 .coverage-gap-title {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   color: #1f2937;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.2;
 }
@@ -618,12 +618,20 @@ const radarOptions = computed(() => ({
 /* Tablet breakpoint */
 @media (min-width: 768px) {
   .coverage-gap-title {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;
   }
 }
 
 /* Desktop breakpoint */
 @media (min-width: 1024px) {
+  .coverage-gap-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Large desktop breakpoint */
+@media (min-width: 1280px) {
   .coverage-gap-title {
     font-size: 2.25rem;
   }
