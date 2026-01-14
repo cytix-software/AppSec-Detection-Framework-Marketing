@@ -4,18 +4,43 @@
       <div
         v-for="col in columns.filter((c) => c.key !== 'detections')"
         :key="col.key"
-        class="filter-input"
+        class="filter-input-group"
       >
-        <n-input
+        <label class="filter-label">{{ col.title }}</label>
+        <!-- OWASP Code & Group dropdown -->
+        <n-select
+          v-if="col.key === 'owasp'"
           v-model:value="filters[col.key]"
+          :options="owaspOptions"
           :placeholder="`Filter ${col.title}`"
           clearable
-          class="w-full"
+          filterable
+        />
+
+        <!-- CWE ID dropdown -->
+        <n-select
+          v-else-if="col.key === 'cwe'"
+          v-model:value="filters[col.key]"
+          :options="cweOptions"
+          :placeholder="`Filter ${col.title}`"
+          clearable
+          filterable
+        />
+
+        <!-- Test dropdown -->
+        <n-select
+          v-else-if="col.key === 'test'"
+          v-model:value="filters[col.key]"
+          :options="testOptions"
+          :placeholder="`Filter ${col.title}`"
+          clearable
+          filterable
         />
       </div>
 
-      <!-- Then place your custom filters (detected + profiles) alongside. -->
-      <div class="filter-input">
+      <!-- Filter Detected -->
+      <div class="filter-input-group">
+        <label class="filter-label">Detected</label>
         <n-select
           v-model:value="filters.detected"
           :options="detectedOptions"
@@ -24,7 +49,9 @@
         />
       </div>
 
-      <div class="filter-input">
+      <!-- Filter Profiles -->
+      <div class="filter-input-group">
+        <label class="filter-label">Profiles</label>
         <n-select
           v-model:value="filters.profiles"
           :options="profileOptions"
@@ -48,6 +75,7 @@
 <script setup lang="tsx">
 import { NDataTable, NButton, NInput, NSelect, NPopover } from 'naive-ui'
 import { filter as lodashFilter, includes, every, toLower } from 'lodash-es'
+import { reactive, computed, h } from 'vue'
 import type { HydratedTest } from './types'
 
 //
@@ -166,7 +194,40 @@ const processedData = computed(() => {
 })
 
 //
-// 5. Build the profileOptions for the multi-select
+// 5. Build the owaspOptions for the dropdown
+//
+const owaspOptions = computed(() => {
+  const uniqueOwaspCodes = Array.from(new Set(processedData.value.map((row) => row.owasp)))
+  return uniqueOwaspCodes.sort().map((owasp) => ({
+    label: owasp,
+    value: owasp,
+  }))
+})
+
+//
+// 6. Build the cweOptions for the dropdown
+//
+const cweOptions = computed(() => {
+  const uniqueCwes = Array.from(new Set(processedData.value.map((row) => row.cwe)))
+  return uniqueCwes.sort((a, b) => a - b).map((cwe) => ({
+    label: `CWE-${cwe}`,
+    value: String(cwe),
+  }))
+})
+
+//
+// 7. Build the testOptions for the dropdown
+//
+const testOptions = computed(() => {
+  const uniqueTests = Array.from(new Set(processedData.value.map((row) => row.test)))
+  return uniqueTests.sort().map((test) => ({
+    label: test,
+    value: test,
+  }))
+})
+
+//
+// 8. Build the profileOptions for the multi-select
 //
 const profileOptions = computed(() => {
   const allProfiles = processedData.value.flatMap((row) => row._profiles)
@@ -177,7 +238,7 @@ const profileOptions = computed(() => {
 })
 
 //
-// 6. Final filtered result
+// 9. Final filtered result
 //
 const filteredData = computed(() => {
   return lodashFilter(processedData.value, (row) => {
@@ -206,17 +267,37 @@ const filteredData = computed(() => {
 .data-table-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   overflow-x: auto;
 }
 
 .column-filters {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
   width: 100%;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid rgba(255, 130, 46, 0.1);
+}
+
+.filter-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 160px;
+  width: 100%;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #020E1E;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
 }
 
 .filter-input {
@@ -228,29 +309,81 @@ const filteredData = computed(() => {
 .results-table {
   width: 100%;
   overflow-x: auto;
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
 }
 
 .results-table :deep(.n-data-table-th) {
-  background: #0e1e33 !important;
+  background: linear-gradient(135deg, #020E1E 0%, #1a1a2e 100%) !important;
   color: #ffffff !important;
-  font-size: 11px !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
   white-space: nowrap;
-  padding: 6px 8px !important;
+  padding: 12px 10px !important;
+  border-bottom: 2px solid #FF822E !important;
+  letter-spacing: 0.3px;
 }
 
 .results-table :deep(.n-data-table-td) {
   white-space: nowrap;
-  padding: 6px 8px !important;
+  padding: 10px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.results-table :deep(.n-data-table-tr:hover) {
+  background: rgba(255, 130, 46, 0.02) !important;
+}
+
+:deep(.n-button--info) {
+  background: #FF822E !important;
+  color: white !important;
+  border: none !important;
+}
+
+:deep(.n-button--info:hover) {
+  background: #DA4100 !important;
+}
+
+:deep(.n-button--info.n-button--round) {
+  border-radius: 20px !important;
+}
+
+:deep(.n-button--info--text) {
+  color: #FF822E !important;
+}
+
+@media (max-width: 1024px) {
+  .column-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
+  .data-table-container {
+    gap: 1rem;
+  }
+
   .column-filters {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
   }
-  
+
+  .filter-input-group,
   .filter-input {
     min-width: 100%;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table :deep(.n-data-table-th) {
+    padding: 8px 6px !important;
+  }
+
+  .results-table :deep(.n-data-table-td) {
+    padding: 8px 6px !important;
   }
 }
 </style>
