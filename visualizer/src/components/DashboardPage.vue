@@ -343,94 +343,105 @@ const filteredHeatmapSeries2025 = computed(() => {
 // Shared Heatmap Options
 // -----------------------------------------------------------------------------
 
-const heatmapOptions = computed(() => ({
-  chart: { type: 'heatmap' },
-  plotOptions: {
-    heatmap: {
-      shadeIntensity: 0.7,
-      colorScale: {
-        ranges: [
-          { from: 0, to: 0, color: '#D3D3D3' },      // Light gray for 0% (No Data)
-          { from: 1, to: 25, color: '#FFCCB3' },     // Light orange for low detection
-          { from: 26, to: 50, color: '#FFA366' },    // Medium orange
-          { from: 51, to: 75, color: '#FF6B2E' },    // Darker orange
-          { from: 76, to: 100, color: '#1a1a2e' },   // Dark navy for high detection
-        ],
+// Responsive heatmap options for different screen sizes
+const heatmapOptions = computed(() => {
+  const baseFontSize = isMobile.value ? '9px' : isTablet.value ? '10px' : '11px'
+  const dataLabelFontSize = isMobile.value ? '10px' : isTablet.value ? '11px' : '13px'
+  const labelRotation = isMobile.value ? -25 : isTablet.value ? -35 : -45
+  const maxLabelHeight = isMobile.value ? 80 : isTablet.value ? 100 : 120
+  const dataLabelsEnabled = !isMobile.value // Disable data labels on mobile for clarity
+
+  return {
+    chart: { type: 'heatmap' },
+    plotOptions: {
+      heatmap: {
+        shadeIntensity: 0.7,
+        colorScale: {
+          ranges: [
+            { from: 0, to: 0, color: '#D3D3D3' },
+            { from: 1, to: 25, color: '#FFCCB3' },
+            { from: 26, to: 50, color: '#FFA366' },
+            { from: 51, to: 75, color: '#FF6B2E' },
+            { from: 76, to: 100, color: '#1a1a2e' },
+          ],
+        },
       },
     },
-  },
 
-  states: {
-    hover: {
-      filter: {
-        type: 'none',
+    states: {
+      hover: {
+        filter: {
+          type: 'none',
+        },
+      },
+      active: {
+        filter: {
+          type: 'none',
+        },
       },
     },
-    active: {
-      filter: {
-        type: 'none',
+
+    xaxis: {
+      labels: {
+        show: true,
+        style: {
+          fontSize: baseFontSize,
+          fontWeight: 600,
+          colors: '#020E1E',
+        },
+        rotate: labelRotation,
+        rotateAlways: true,
+        hideOverlappingLabels: isMobile.value,
+        maxHeight: maxLabelHeight,
+        trim: true,
       },
     },
-  },
 
-  xaxis: {
-    labels: {
-      show: true,
-      style: {
-        fontSize: '11px',
-        fontWeight: 600,
-        colors: '#020E1E',
-      },
-      rotate: -45,
-      rotateAlways: true,
-      hideOverlappingLabels: false,
-      maxHeight: 120,
-      trim: true,
-    },
-  },
-
-  // 1) Data labels in each cell
-  dataLabels: {
-    enabled: true,
-    formatter(val: number, opts: any) {
-      // Access the data object
-      const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
-      return point.isNoData ? 'No Data' : `${val}%`
-    },
-  },
-
-  // 2) Tooltip
-  tooltip: {
-    y: {
+    dataLabels: {
+      enabled: dataLabelsEnabled,
       formatter(val: number, opts: any) {
         const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
-        if (point.isNoData) return 'No Data'
+        return point.isNoData ? 'No Data' : `${val}%`
+      },
+      style: {
+        fontSize: dataLabelFontSize,
+        fontWeight: 600,
+      },
+    },
 
-        // Find the entry in the correct heatmapData (try 2021 then 2025)
-        const scannerName = opts.w.config.series[opts.seriesIndex].name
-        const owaspCategory = point.owasp
+    tooltip: {
+      enabled: true,
+      y: {
+        formatter(val: number, opts: any) {
+          const point = opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex]
+          if (point.isNoData) return 'No Data'
 
-        let entry = find(heatmapData2021.value, {
-          scanner: scannerName,
-          OWASP: owaspCategory
-        })
+          const scannerName = opts.w.config.series[opts.seriesIndex].name
+          const owaspCategory = point.owasp
 
-        if (!entry) {
-          entry = find(heatmapData2025.value, {
+          let entry = find(heatmapData2021.value, {
             scanner: scannerName,
             OWASP: owaspCategory
           })
-        }
 
-        if (entry) {
-          return `${entry.detectedCWEs}/${entry.totalCount} (${val}%)`
-        }
+          if (!entry) {
+            entry = find(heatmapData2025.value, {
+              scanner: scannerName,
+              OWASP: owaspCategory
+            })
+          }
 
-        return `${val}%`
+          if (entry) {
+            return `${entry.detectedCWEs}/${entry.totalCount} (${val}%)`
+          }
+
+          return `${val}%`
+        },
       },
+      theme: isMobile.value ? 'light' : 'light',
     },
-  },
-}))
+  }
+})
 
 // -----------------------------------------------------------------------------
 // forPerformance (Bar Chart Logic)
