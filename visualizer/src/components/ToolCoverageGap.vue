@@ -866,8 +866,16 @@ function renderOptionLabel(option: any) {
 .resource-links {
   display: flex;
   flex-direction: row;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .resource-links {
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+  }
 }
 
 .owasp-link {
