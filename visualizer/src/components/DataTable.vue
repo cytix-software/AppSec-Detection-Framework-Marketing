@@ -343,18 +343,30 @@ const filteredData = computed(() => {
 .results-table :deep(.n-data-table-th) {
   background: linear-gradient(135deg, #020E1E 0%, #1a1a2e 100%) !important;
   color: #ffffff !important;
-  font-size: 0.8125rem !important;
+  font-size: 0.7rem !important;
   font-weight: 700 !important;
   white-space: nowrap;
-  padding: 12px 10px !important;
+  padding: 8px 6px !important;
   border-bottom: 2px solid #FF822E !important;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .results-table :deep(.n-data-table-td) {
   white-space: nowrap;
-  padding: 10px !important;
+  padding: 8px 6px !important;
   border-bottom: 1px solid #f0f0f0 !important;
+}
+
+@media (min-width: 768px) {
+  .results-table :deep(.n-data-table-th) {
+    font-size: 0.8125rem !important;
+    padding: 12px 10px !important;
+    letter-spacing: 0.3px;
+  }
+
+  .results-table :deep(.n-data-table-td) {
+    padding: 10px !important;
+  }
 }
 
 .results-table :deep(.n-data-table-tr:hover) {
