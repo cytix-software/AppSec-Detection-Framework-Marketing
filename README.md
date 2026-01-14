@@ -27,7 +27,7 @@ A framework for understanding the capabilities of automated detection methods at
   - [Linting](#linting)
 - [Contributing](#contributing)
 - [License](#license)
-
+.
 ## Overview
 
 ASDF is designed to evaluate and compare the effectiveness of various security scanners in detecting common web application vulnerabilities. It provides a standardized set of vulnerable applications and a framework for testing security tools against them.
