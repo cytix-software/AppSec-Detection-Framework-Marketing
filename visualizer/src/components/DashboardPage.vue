@@ -675,7 +675,7 @@ const radarOptions = computed(() => ({
 .page-title {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 1.75rem;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 0;
@@ -687,17 +687,24 @@ const radarOptions = computed(() => ({
   text-align: center;
 }
 
-/* sm: text-6xl (3.75rem) */
+/* sm: text-4xl (2.25rem) */
 @media (min-width: 640px) {
   .page-title {
-    font-size: 3.75rem;
+    font-size: 2.25rem;
   }
 }
 
-/* lg: text-7xl (4.5rem) + mb-14 (3.5rem) */
+/* md: text-5xl (3rem) */
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+}
+
+/* lg: text-6xl (3.75rem) + mb-14 (3.5rem) */
 @media (min-width: 1024px) {
   .page-title {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
   }
 
   .page-header {
@@ -705,10 +712,10 @@ const radarOptions = computed(() => ({
   }
 }
 
-/* xl: text-8xl (6rem) */
+/* xl: text-7xl (4.5rem) */
 @media (min-width: 1280px) {
   .page-title {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
 }
 
