@@ -1218,8 +1218,10 @@ const radarOptions = computed(() => ({
 }
 
 /* Apexcharts custom styling */
+/* Apexcharts responsive design */
 .apexcharts-canvas {
   margin: 0 auto;
+  width: 100% !important;
 }
 
 .apexcharts-xaxis-label {
@@ -1233,12 +1235,41 @@ const radarOptions = computed(() => ({
   font-size: 11px !important;
 }
 
+/* Mobile optimizations for xaxis labels */
+@media (max-width: 768px) {
+  .apexcharts-xaxis-label {
+    font-size: 8px !important;
+    letter-spacing: 0px;
+  }
+
+  .apexcharts-xaxis-label tspan {
+    font-size: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .apexcharts-xaxis-label {
+    font-size: 7px !important;
+  }
+
+  .apexcharts-xaxis-label tspan {
+    font-size: 7px !important;
+  }
+}
+
 .apexcharts-xaxistooltip {
   background: rgba(2, 14, 30, 0.9) !important;
   color: white !important;
   font-size: 11px !important;
   border-radius: 4px !important;
   padding: 4px 8px !important;
+}
+
+@media (max-width: 768px) {
+  .apexcharts-xaxistooltip {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+  }
 }
 
 /* Heatmap cell styling for better contrast */
