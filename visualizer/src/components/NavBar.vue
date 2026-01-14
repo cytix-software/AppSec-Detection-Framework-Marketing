@@ -311,16 +311,4 @@ const isMobileMenuOpen = ref(false)
   background-color: #DA4100;
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .navbar-main {
-    height: 5.5rem;
-    padding: 0 1rem;
-    gap: 1rem;
-  }
-
-  .logo-image {
-    height: 3rem;
-  }
-}
 </style>
