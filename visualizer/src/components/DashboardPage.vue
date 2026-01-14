@@ -897,11 +897,19 @@ const radarOptions = computed(() => ({
 }
 
 .chart-description {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
   background: rgba(255, 130, 46, 0.05);
-  border-left: 4px solid #FF822E;
+  border-left: 3px solid #FF822E;
   border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .chart-description {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid #FF822E;
+  }
 }
 
 .chart-tools-filter {
