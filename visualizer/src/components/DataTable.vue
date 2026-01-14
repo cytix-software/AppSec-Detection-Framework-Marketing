@@ -280,12 +280,28 @@ const filteredData = computed(() => {
 
 .column-filters {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   border-bottom: 2px solid rgba(255, 130, 46, 0.1);
+}
+
+@media (min-width: 640px) {
+  .column-filters {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .column-filters {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+  }
 }
 
 .filter-input-group {
