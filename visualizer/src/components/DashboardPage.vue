@@ -1373,6 +1373,13 @@ const radarOptions = computed(() => ({
   box-shadow: 0 4px 20px rgba(255, 130, 46, 0.2) !important;
 }
 
+@media (max-width: 768px) {
+  .apexcharts-tooltip {
+    border-radius: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
 .apexcharts-tooltip-title {
   background: #020E1E !important;
   color: #ffffff !important;
@@ -1382,9 +1389,23 @@ const radarOptions = computed(() => ({
   border-radius: 8px 8px 0 0 !important;
 }
 
+@media (max-width: 768px) {
+  .apexcharts-tooltip-title {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
 .apexcharts-tooltip-series-group {
   padding: 8px 12px !important;
   background: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .apexcharts-tooltip-series-group {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+  }
 }
 
 .apexcharts-tooltip-marker {
