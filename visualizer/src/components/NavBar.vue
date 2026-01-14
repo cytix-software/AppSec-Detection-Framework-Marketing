@@ -178,8 +178,16 @@ const isMobileMenuOpen = ref(false)
   font-weight: 600;
   border-radius: 0.375rem;
   transition: all 0.2s ease;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .sign-in-button,
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
 }
 
 .sign-in-button {
