@@ -1168,11 +1168,18 @@ function renderOptionLabel(option: any) {
 }
 
 .gaps-scroll-container {
-  max-height: 600px;
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: 8px;
-  padding-right: 0.5rem;
+  padding-right: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .gaps-scroll-container {
+    max-height: 600px;
+    padding-right: 0.5rem;
+  }
 }
 
 /* Custom scrollbar styling */
