@@ -289,7 +289,7 @@ const heatmapSeries2025 = computed(() => {
       // Text color: navy on colored backgrounds, black or white on dark backgrounds
       const toolsWithBlackText = ['nuclei', 'Semgrep', 'Burp Suite - Deep Scan', 'Burp Suite - Light Scan', 'Zap']
       const darkBackgroundColor = toolsWithBlackText.includes(scanner) ? '#000000' : '#ffffff'
-      const labelColor = percentage >= 76 ? darkBackgroundColor : '#1a1a2e'  // Dark bg text (76-100%), navy on colors (0-75%)
+      const labelColor = percentage >= 76 ? darkBackgroundColor : '#000000'  // Dark bg text (76-100%), black on colors (0-75%)
 
       return {
         x: `${OWASP} ${group}`,
