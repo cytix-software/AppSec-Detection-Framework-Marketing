@@ -267,9 +267,15 @@ const filteredData = computed(() => {
 .data-table-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
   overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  .data-table-container {
+    gap: 1.5rem;
+  }
 }
 
 .column-filters {
