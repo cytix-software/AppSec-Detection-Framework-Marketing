@@ -3,13 +3,16 @@ frontend:
   phases:
     preBuild:
       commands:
+        - curl -fsSL https://bun.sh/install | bash
+        - export PATH="$HOME/.bun/bin:$PATH"
         - cd visualizer
-        - npm install
-        - npm run prebuild
+        - bun install
+        - bun run prebuild
     build:
       commands:
+        - export PATH="$HOME/.bun/bin:$PATH"
         - cd visualizer
-        - npm run build-only
+        - bun run build-only
   artifacts:
     baseDirectory: visualizer/dist
     files:
