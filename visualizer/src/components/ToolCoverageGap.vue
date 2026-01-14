@@ -880,17 +880,26 @@ function renderOptionLabel(option: any) {
 
 .owasp-link {
   display: inline-block;
-  padding: 0.75rem 1rem;
-  margin: 0.25rem 0;
-  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.125rem 0;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #FF822E;
   text-decoration: none;
   transition: all 0.2s ease;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  border-radius: 6px;
+  border-radius: 4px;
   background: rgba(255, 130, 46, 0.05);
   border: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .owasp-link {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    border-radius: 6px;
+  }
 }
 
 .owasp-link:hover {
