@@ -5,10 +5,11 @@ frontend:
       commands:
         - cd visualizer
         - npm install
+        - npm run prebuild
     build:
       commands:
         - cd visualizer
-        - npm run build
+        - npm run build-only
   artifacts:
     baseDirectory: visualizer/dist
     files:
