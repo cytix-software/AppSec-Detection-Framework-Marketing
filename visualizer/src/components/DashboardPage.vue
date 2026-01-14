@@ -647,8 +647,14 @@ const radarOptions = computed(() => ({
 
 @media (max-width: 768px) {
   .dashboard-container {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.75rem;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.75rem 0.5rem;
   }
 }
 
