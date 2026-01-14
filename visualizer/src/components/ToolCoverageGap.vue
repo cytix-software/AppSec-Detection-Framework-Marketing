@@ -780,18 +780,30 @@ function renderOptionLabel(option: any) {
 
 
 .selected-tools-header {
-  margin: 1.5rem 0 1rem 0;
-  padding: 1rem 0;
+  margin: 1rem 0 0.75rem 0;
+  padding: 0.75rem 0;
   border-top: 2px solid #FF822E;
 }
 
 .selected-tools-header h2 {
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #020E1E;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
+}
+
+@media (min-width: 768px) {
+  .selected-tools-header {
+    margin: 1.5rem 0 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .selected-tools-header h2 {
+    font-size: 1.125rem;
+    letter-spacing: 0.3px;
+  }
 }
 
 .tool-selection-section {
