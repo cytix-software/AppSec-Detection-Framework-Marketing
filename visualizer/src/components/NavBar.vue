@@ -275,10 +275,10 @@ const isMobileMenuOpen = ref(false)
 }
 
 .mobile-nav-link {
-  padding: 0.75rem 0;
+  padding: 0.5rem 0.5rem;
   color: #374151;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: color 0.2s ease;
   border: none;
@@ -289,16 +289,18 @@ const isMobileMenuOpen = ref(false)
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 0.375rem;
 }
 
 .mobile-nav-link:hover {
   color: #FF822E;
+  background: rgba(255, 130, 46, 0.05);
 }
 
 .mobile-cta {
   color: #ffffff;
   background-color: #FF822E;
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.375rem;
   text-align: center;
   font-weight: 700;
