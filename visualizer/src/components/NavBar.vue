@@ -232,14 +232,15 @@ const isMobileMenuOpen = ref(false)
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   background: none;
   border: none;
   color: #374151;
   cursor: pointer;
   transition: color 0.2s ease;
+  flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
@@ -253,8 +254,8 @@ const isMobileMenuOpen = ref(false)
 }
 
 .menu-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /* Mobile Menu */
