@@ -111,11 +111,30 @@ import BarChart from './BarChart.vue'
 import HeatmapChart from './HeatmapChart.vue'
 import DataTable from './DataTable.vue'
 import ToolCoverageGap from './ToolCoverageGap.vue'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import NavBar from './NavBar.vue'
 import { GithubOutlined } from '@vicons/antd'
 
 const { hydratedTests, hydratedHeatmapTests, vulnerabilities } = loadData()
+
+// Mobile responsiveness tracking
+const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+const isMobile = computed(() => windowWidth.value < 768)
+const isTablet = computed(() => windowWidth.value >= 768 && windowWidth.value < 1024)
+const isDesktop = computed(() => windowWidth.value >= 1024)
+
+const handleResize = () => {
+  windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
 
 // Split the combined list by year
 const vulnerabilities2021 = computed(() =>
