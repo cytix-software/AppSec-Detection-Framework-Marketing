@@ -845,13 +845,22 @@ function renderOptionLabel(option: any) {
 
 .tool-actions {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
   border-top: 1px solid rgba(255, 130, 46, 0.05);
+}
+
+@media (min-width: 768px) {
+  .tool-actions {
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 .resource-links {
