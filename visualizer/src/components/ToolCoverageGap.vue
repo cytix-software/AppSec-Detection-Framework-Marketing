@@ -808,11 +808,21 @@ function renderOptionLabel(option: any) {
 
 .tool-selection-section {
   width: 100%;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .select-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tool-selection-section {
+    padding-bottom: 1.5rem;
+  }
+
+  .select-header {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .select-label {
